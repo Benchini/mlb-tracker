@@ -6,58 +6,221 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <link rel="manifest" href="/mlb-tracker/manifest.json">
-  <title>MLB Merch Tracker</title>
+  <title>Tracker App</title>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{width:100%;min-height:100vh;background:#f0f2f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a1a}
-    header{background:#041E42;color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;box-shadow:0 2px 6px rgba(0,0,0,.4)}
-    header h1{font-size:1.1rem;font-weight:700}
-    header small{font-size:.75rem;opacity:.75}.tabs{display:flex;background:#fff;border-bottom:2px solid #e0e0e0;position:sticky;top:49px;z-index:40}.tab{flex:1;padding:11px 4px;text-align:center;font-size:.72rem;font-weight:700;color:#888;cursor:pointer;border-bottom:3px solid transparent;transition:all.2s;-webkit-tap-highlight-color:transparent;user-select:none}.tab.active{color:#041E42;border-bottom-color:#041E42}.tab span{display:block;font-size:1.1rem;margin-bottom:2px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px;background:#fff;border-bottom:1px solid #ddd}.toolbar button{flex:1;min-width:100px;padding:9px 8px;border:none;border-radius:8px;font-size:.8rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.toolbar button:active{opacity:.7}.tb-export{background:#041E42;color:#fff}.tb-sort{background:#e8e8e8;color:#333}.tb-reset{background:#BF0D3E;color:#fff}.grand-total{text-align:center;padding:8px 12px;background:#fff;border-bottom:1px solid #eee;font-size:.85rem;color:#555}.grand-total b{color:#041E42;font-size:1rem}.page{display:none}.page.active{display:block}.section-label{padding:12px 14px 4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;padding:0 12px 12px}
 
-    /* ── Card — border uses team secondary colour, set via inline style ── */.card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);overflow:hidden;display:flex;flex-direction:column;border-width:2px;border-style:solid;border-color:transparent}.card-head{padding:8px 10px;font-size:.75rem;font-weight:700;line-height:1.3;min-height:44px;display:flex;align-items:center;color:#fff}.card-body{display:flex;align-items:center;gap:6px;padding:8px 10px}.log-btn{flex:1;border:none;border-radius:8px;padding:10px 4px;font-size:.85rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;color:#fff}.log-btn:active{opacity:.8}.badge{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:700;cursor:pointer;flex-shrink:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;color:#fff;border:2px solid rgba(255,255,255,.3)}.badge.lit{border-color:transparent}.rankings-wrap{padding:12px}.rank-card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);margin-bottom:8px;display:flex;align-items:center;padding:12px 14px;gap:12px}.rank-pos{font-size:1.3rem;width:36px;text-align:center;flex-shrink:0}.rank-info{flex:1;min-width:0}.rank-name{font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rank-div{font-size:.72rem;color:#888;margin-top:2px}.rank-bar-wrap{width:90px;flex-shrink:0}.rank-bar-bg{background:#f0f0f0;border-radius:4px;height:8px;overflow:hidden}.rank-bar-fill{height:8px;border-radius:4px;transition:width.4s ease}.rank-count{font-size:1rem;font-weight:700;width:28px;text-align:right;flex-shrink:0}.rank-zero.rank-name{color:#bbb}.rank-zero.rank-count{color:#ccc}.rank-zero.rank-bar-fill{background:#ddd!important}.rank-divider{padding:8px 14px 4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888}.activity-wrap{padding:12px}.activity-toolbar{display:flex;gap:8px;margin-bottom:12px}.activity-toolbar button{flex:1;padding:8px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent}.act-filter-btn{background:#e8e8e8;color:#333}.act-filter-btn.active{background:#041E42;color:#fff}.activity-empty{text-align:center;color:#aaa;padding:40px 20px;font-size:.9rem}.activity-entry{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;border-left-width:4px;border-left-style:solid}.activity-entry-left{flex:1;min-width:0}.activity-team{font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.activity-div{font-size:.72rem;color:#888;margin-top:2px}.activity-time{font-size:.75rem;color:#aaa;margin-top:3px}.activity-num{border-radius:6px;padding:4px 8px;font-size:.75rem;font-weight:700;flex-shrink:0;color:#fff}.activity-del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 6px;flex-shrink:0}.activity-date-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888;padding:8px 4px 4px;margin-top:4px}.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:center;justify-content:center}.overlay.open{display:flex}.modal{background:#fff;border-radius:16px;width:92%;max-width:420px;max-height:78vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3)}.modal-hd{color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}.modal-hd h3{font-size:.95rem;font-weight:700}.modal-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;padding:0 4px}.modal-bd{overflow-y:auto;padding:14px 16px;flex:1}.modal-bd p{font-size:.82rem;color:#666;margin-bottom:10px}.log-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:.8rem;gap:8px}.log-row:last-child{border-bottom:none}.log-ts{color:#555;flex:1}.del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 6px}.empty{text-align:center;color:#aaa;padding:24px 0;font-size:.9rem}.confirm-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;align-items:center;justify-content:center}.confirm-wrap.open{display:flex}.confirm-box{background:#fff;border-radius:14px;padding:24px 20px;width:88%;max-width:340px;text-align:center}.confirm-box h3{color:#BF0D3E;margin-bottom:8px}.confirm-box p{font-size:.85rem;color:#666;margin-bottom:20px}.confirm-btns{display:flex;gap:12px;justify-content:center}.confirm-btns button{padding:10px 22px;border:none;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer}.cy{background:#BF0D3E;color:#fff}.cn{background:#e0e0e0;color:#333}.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(90px);background:#222;color:#fff;padding:10px 22px;border-radius:24px;font-size:.85rem;z-index:400;transition:transform.3s ease;white-space:nowrap;pointer-events:none}.toast.show{transform:translateX(-50%) translateY(0)}
+    /* ── Screens ── */.screen{display:none;min-height:100vh;flex-direction:column}.screen.active{display:flex}
+
+    /* ── Header ── */
+    header{color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+    header h1{font-size:1.1rem;font-weight:700}
+    header small{font-size:.75rem;opacity:.75}.header-back{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0 8px 0 0;line-height:1}
+
+    /* ── Home Screen ── */.home-wrap{padding:20px 16px;flex:1}.home-title{font-size:1.4rem;font-weight:800;color:#041E42;margin-bottom:4px}.home-sub{font-size:.85rem;color:#888;margin-bottom:24px}.mode-card{background:#fff;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.1);padding:20px;margin-bottom:16px;display:flex;align-items:center;gap:16px;cursor:pointer;border:2px solid transparent;transition:border-color.2s}.mode-card:active{opacity:.85}.mode-card.mlb{border-color:#041E42}.mode-card.custom{border-color:#2E7D32}.mode-icon{font-size:2.2rem;flex-shrink:0}.mode-info h2{font-size:1rem;font-weight:700;margin-bottom:4px}.mode-info p{font-size:.8rem;color:#888;line-height:1.4}
+
+    /* ── Session List Screen ── */.session-list-wrap{padding:16px;flex:1;overflow-y:auto}.session-card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);padding:14px 16px;margin-bottom:10px;border-left:4px solid #2E7D32}.session-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.session-card-name{font-size:.92rem;font-weight:700;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.session-card-date{font-size:.72rem;color:#aaa;flex-shrink:0;margin-left:8px}.session-card-meta{font-size:.78rem;color:#888;margin-bottom:10px}.session-card-btns{display:flex;gap:8px}.session-card-btns button{flex:1;padding:7px 4px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer}.scb-open{background:#2E7D32;color:#fff}.scb-export{background:#041E42;color:#fff}.scb-delete{background:#BF0D3E;color:#fff}.new-session-btn{width:100%;padding:14px;background:#2E7D32;color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;margin-bottom:16px}.clear-all-btn{width:100%;padding:12px;background:#BF0D3E;color:#fff;border:none;border-radius:12px;font-size:.88rem;font-weight:700;cursor:pointer;margin-top:8px}.empty-sessions{text-align:center;color:#aaa;padding:40px 20px;font-size:.9rem}
+
+    /* ── New Session Screen ── */.new-session-wrap{padding:16px;flex:1;overflow-y:auto}.field-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#888;margin-bottom:6px;margin-top:16px}.field-label:first-child{margin-top:0}.text-input{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:10px;font-size:.92rem;background:#fff;color:#1a1a1a;outline:none}.text-input:focus{border-color:#2E7D32}.add-item-row{display:flex;gap:8px;align-items:center;margin-bottom:12px}.add-item-row input[type="text"]{flex:1;padding:10px 12px;border:1.5px solid #ddd;border-radius:10px;font-size:.88rem;outline:none}.add-item-row input[type="text"]:focus{border-color:#2E7D32}.add-item-row input[type="color"]{width:42px;height:42px;border:1.5px solid #ddd;border-radius:10px;padding:2px;cursor:pointer;background:#fff;flex-shrink:0}.add-item-btn{background:#2E7D32;color:#fff;border:none;border-radius:10px;padding:10px 14px;font-size:1.2rem;font-weight:700;cursor:pointer;flex-shrink:0}.items-list{margin-bottom:16px}.item-row{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px;border-left:4px solid #ccc}.item-row-swatch{width:24px;height:24px;border-radius:6px;flex-shrink:0}.item-row-name{flex:1;font-size:.88rem;font-weight:600}.item-row-del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 4px}.start-session-btn{width:100%;padding:14px;background:#041E42;color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:8px}.start-session-btn:disabled{background:#ccc;cursor:not-allowed}
+
+    /* ── Tabs ── */.tabs{display:flex;background:#fff;border-bottom:2px solid #e0e0e0;position:sticky;top:49px;z-index:40}.tab{flex:1;padding:11px 4px;text-align:center;font-size:.72rem;font-weight:700;color:#888;cursor:pointer;border-bottom:3px solid transparent;transition:all.2s;-webkit-tap-highlight-color:transparent;user-select:none}.tab.active{color:#041E42;border-bottom-color:#041E42}.tab span{display:block;font-size:1.1rem;margin-bottom:2px}
+
+    /* ── Toolbar ── */.toolbar{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px;background:#fff;border-bottom:1px solid #ddd}.toolbar button{flex:1;min-width:100px;padding:9px 8px;border:none;border-radius:8px;font-size:.8rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.toolbar button:active{opacity:.7}.tb-export{background:#041E42;color:#fff}.tb-import{background:#2E7D32;color:#fff}.tb-sort{background:#e8e8e8;color:#333}.tb-reset{background:#BF0D3E;color:#fff}.tb-end{background:#7B1FA2;color:#fff}
+
+    /* ── Grand Total ── */.grand-total{text-align:center;padding:8px 12px;background:#fff;border-bottom:1px solid #eee;font-size:.85rem;color:#555}.grand-total b{color:#041E42;font-size:1rem}
+
+    /* ── Pages ── */.page{display:none}.page.active{display:block}
+
+    /* ── Team/Item Grid ── */.section-label{padding:12px 14px 4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;padding:0 12px 12px}.card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);overflow:hidden;display:flex;flex-direction:column;border-width:2px;border-style:solid;border-color:transparent}.card-head{padding:8px 10px;font-size:.75rem;font-weight:700;line-height:1.3;min-height:44px;display:flex;align-items:center}.card-body{display:flex;align-items:center;gap:6px;padding:8px 10px}.log-btn{flex:1;border:none;border-radius:8px;padding:10px 4px;font-size:.85rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.log-btn:active{opacity:.8}.badge{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:700;cursor:pointer;flex-shrink:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border:2px solid rgba(255,255,255,.3)}.badge.lit{border-color:transparent}
+
+    /* ── Rankings ── */.rankings-wrap{padding:12px}.rank-card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);margin-bottom:8px;display:flex;align-items:center;padding:12px 14px;gap:12px}.rank-pos{font-size:1.3rem;width:36px;text-align:center;flex-shrink:0}.rank-info{flex:1;min-width:0}.rank-name{font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rank-div{font-size:.72rem;color:#888;margin-top:2px}.rank-bar-wrap{width:90px;flex-shrink:0}.rank-bar-bg{background:#f0f0f0;border-radius:4px;height:8px;overflow:hidden}.rank-bar-fill{height:8px;border-radius:4px;transition:width.4s ease}.rank-count{font-size:1rem;font-weight:700;width:28px;text-align:right;flex-shrink:0}.rank-zero.rank-name{color:#bbb}.rank-zero.rank-count{color:#ccc}.rank-zero.rank-bar-fill{background:#ddd!important}.rank-divider{padding:8px 14px 4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888}
+
+    /* ── Activity Log ── */.activity-wrap{padding:12px}.activity-toolbar{display:flex;gap:8px;margin-bottom:12px}.activity-toolbar button{flex:1;padding:8px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent}.act-filter-btn{background:#e8e8e8;color:#333}.act-filter-btn.active{background:#041E42;color:#fff}.activity-empty{text-align:center;color:#aaa;padding:40px 20px;font-size:.9rem}.activity-entry{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;border-left-width:4px;border-left-style:solid}.activity-entry-left{flex:1;min-width:0}.activity-team{font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.activity-div{font-size:.72rem;color:#888;margin-top:2px}.activity-time{font-size:.75rem;color:#aaa;margin-top:3px}.activity-num{border-radius:6px;padding:4px 8px;font-size:.75rem;font-weight:700;flex-shrink:0;color:#fff}.activity-del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 6px;flex-shrink:0}.activity-date-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888;padding:8px 4px 4px;margin-top:4px}
+
+    /* ── Modals ── */.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:center;justify-content:center}.overlay.open{display:flex}.modal{background:#fff;border-radius:16px;width:92%;max-width:420px;max-height:78vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3)}.modal-hd{color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}.modal-hd h3{font-size:.95rem;font-weight:700}.modal-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;padding:0 4px}.modal-bd{overflow-y:auto;padding:14px 16px;flex:1}.modal-bd p{font-size:.82rem;color:#666;margin-bottom:10px}.log-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:.8rem;gap:8px}.log-row:last-child{border-bottom:none}.log-ts{color:#555;flex:1}.del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 6px}.empty{text-align:center;color:#aaa;padding:24px 0;font-size:.9rem}.confirm-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;align-items:center;justify-content:center}.confirm-wrap.open{display:flex}.confirm-box{background:#fff;border-radius:14px;padding:24px 20px;width:88%;max-width:340px;text-align:center}.confirm-box h3{color:#BF0D3E;margin-bottom:8px}.confirm-box p{font-size:.85rem;color:#666;margin-bottom:20px}.confirm-btns{display:flex;gap:12px;justify-content:center}.confirm-btns button{padding:10px 22px;border:none;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer}.cy{background:#BF0D3E;color:#fff}.cn{background:#e0e0e0;color:#333}
+
+    /* ── Toast ── */.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(90px);background:#222;color:#fff;padding:10px 22px;border-radius:24px;font-size:.85rem;z-index:500;transition:transform.3s ease;white-space:nowrap;pointer-events:none}.toast.show{transform:translateX(-50%) translateY(0)}
+
     footer{text-align:center;padding:16px;font-size:.72rem;color:#bbb}
   </style>
 </head>
 <body>
 
-<header>
-  <h1>⚾ MLB Merch Tracker</h1>
-  <small id="hdate"></small>
-</header>
+<!-- ════════════════════════════════════════════════════════
+     SCREEN 1 — HOME
+════════════════════════════════════════════════════════ -->
+<div class="screen active" id="screen-home">
+  <header style="background:#041E42">
+    <h1>⚾ Tracker App</h1>
+    <small id="hdate"></small>
+  </header>
+  <div class="home-wrap">
+    <div class="home-title">Welcome</div>
+    <div class="home-sub">Choose a tracking mode to get started</div>
 
-<div class="tabs">
-  <div class="tab active" id="tab-tracker" onclick="switchTab('tracker')"><span>⚾</span>TRACKER</div>
-  <div class="tab" id="tab-rankings" onclick="switchTab('rankings')"><span>🏆</span>RANKINGS</div>
-  <div class="tab" id="tab-log" onclick="switchTab('log')"><span>📋</span>ALL LOGS</div>
-</div>
-
-<div class="page active" id="page-tracker">
-  <div class="toolbar">
-    <button class="tb-export" onclick="exportCSV()">📥 Export CSV</button>
-    <button class="tb-sort" onclick="toggleSort()">🔃 Sort by Count</button>
-    <button class="tb-reset" onclick="openConfirm()">🗑 Reset All</button>
-  </div>
-  <div class="grand-total">Total sightings: <b id="gtotal">0</b></div>
-  <div id="app"></div>
-</div>
-
-<div class="page" id="page-rankings">
-  <div class="grand-total">Total sightings: <b id="gtotal-rank">0</b></div>
-  <div class="rankings-wrap" id="rankings-wrap"></div>
-</div>
-
-<div class="page" id="page-log">
-  <div class="grand-total">Total sightings: <b id="gtotal-log">0</b></div>
-  <div class="activity-wrap">
-    <div class="activity-toolbar">
-      <button class="act-filter-btn active" id="filter-all" onclick="setLogFilter('all')">All Teams</button>
-      <button class="act-filter-btn" id="filter-today" onclick="setLogFilter('today')">Today</button>
-      <button class="act-filter-btn" id="filter-week" onclick="setLogFilter('week')">This Week</button>
+    <div class="mode-card mlb" onclick="goMLB()">
+      <div class="mode-icon">⚾</div>
+      <div class="mode-info">
+        <h2>MLB Merch Tracker</h2>
+        <p>Track merchandise sightings across all 30 Major League Baseball teams</p>
+      </div>
     </div>
-    <div id="activity-list"></div>
+
+    <div class="mode-card custom" onclick="goCustomSessions()">
+      <div class="mode-icon">🔬</div>
+      <div class="mode-info">
+        <h2>Custom Session</h2>
+        <p>Create a bespoke tracker for user research, events, or any keyword set</p>
+      </div>
+    </div>
+  </div>
+  <footer>Data saved locally on your device</footer>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SCREEN 2 — MLB TRACKER
+════════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-mlb">
+  <header style="background:#041E42">
+    <div style="display:flex;align-items:center;gap:4px">
+      <button class="header-back" onclick="goHome()">‹</button>
+      <h1>⚾ MLB Merch Tracker</h1>
+    </div>
+    <small id="mlb-hdate"></small>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" id="mlb-tab-tracker" onclick="mlbSwitchTab('tracker')"><span>⚾</span>TRACKER</div>
+    <div class="tab" id="mlb-tab-rankings" onclick="mlbSwitchTab('rankings')"><span>🏆</span>RANKINGS</div>
+    <div class="tab" id="mlb-tab-log" onclick="mlbSwitchTab('log')"><span>📋</span>ALL LOGS</div>
+  </div>
+
+  <div class="page active" id="mlb-page-tracker">
+    <div class="toolbar">
+      <button class="tb-export" onclick="mlbExportCSV()">📥 Export</button>
+      <button class="tb-import" onclick="mlbTriggerImport()">📤 Import</button>
+      <button class="tb-sort"   onclick="mlbToggleSort()">🔃 Sort</button>
+      <button class="tb-reset"  onclick="mlbOpenConfirm()">🗑 Reset</button>
+    </div>
+    <div class="grand-total">Total sightings: <b id="mlb-gtotal">0</b></div>
+    <div id="mlb-app"></div>
+  </div>
+
+  <div class="page" id="mlb-page-rankings">
+    <div class="grand-total">Total sightings: <b id="mlb-gtotal-rank">0</b></div>
+    <div class="rankings-wrap" id="mlb-rankings-wrap"></div>
+  </div>
+
+  <div class="page" id="mlb-page-log">
+    <div class="grand-total">Total sightings: <b id="mlb-gtotal-log">0</b></div>
+    <div class="activity-wrap">
+      <div class="activity-toolbar">
+        <button class="act-filter-btn active" id="mlb-filter-all"   onclick="mlbSetLogFilter('all')">All</button>
+        <button class="act-filter-btn"        id="mlb-filter-today" onclick="mlbSetLogFilter('today')">Today</button>
+        <button class="act-filter-btn"        id="mlb-filter-week"  onclick="mlbSetLogFilter('week')">This Week</button>
+      </div>
+      <div id="mlb-activity-list"></div>
+    </div>
   </div>
 </div>
 
+<!-- ════════════════════════════════════════════════════════
+     SCREEN 3 — CUSTOM SESSION LIST
+════════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-sessions">
+  <header style="background:#2E7D32">
+    <div style="display:flex;align-items:center;gap:4px">
+      <button class="header-back" onclick="goHome()">‹</button>
+      <h1>🔬 Custom Sessions</h1>
+    </div>
+  </header>
+  <div class="session-list-wrap">
+    <button class="new-session-btn" onclick="goNewSession()">＋ New Session</button>
+    <div id="session-list"></div>
+    <button class="clear-all-btn" id="clear-all-sessions-btn" onclick="openClearAllSessions()" style="display:none">🗑 Clear All Sessions</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SCREEN 4 — NEW SESSION SETUP
+════════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-new-session">
+  <header style="background:#2E7D32">
+    <div style="display:flex;align-items:center;gap:4px">
+      <button class="header-back" onclick="goCustomSessions()">‹</button>
+      <h1>🔬 New Session</h1>
+    </div>
+  </header>
+  <div class="new-session-wrap">
+    <div class="field-label">Session Name</div>
+    <input class="text-input" type="text" id="session-name-input" placeholder="e.g. User Research Group A — March 2026"/>
+
+    <div class="field-label">Add Items to Track</div>
+    <div class="add-item-row">
+      <input type="color" id="item-colour-picker" value="#0E3386"/>
+      <input type="text"  id="item-name-input" placeholder="e.g. Confusion" onkeydown="handleItemKeydown(event)"/>
+      <button class="add-item-btn" onclick="addItem()">＋</button>
+    </div>
+
+    <div class="field-label">Items <span id="item-count-label" style="font-weight:400;text-transform:none;letter-spacing:0;color:#aaa">(0 added)</span></div>
+    <div class="items-list" id="items-list"></div>
+
+    <button class="start-session-btn" id="start-session-btn" onclick="startSession()" disabled>▶ Start Session</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SCREEN 5 — ACTIVE CUSTOM SESSION
+════════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-custom">
+  <header id="custom-header" style="background:#2E7D32">
+    <div style="display:flex;align-items:center;gap:4px;min-width:0;flex:1">
+      <h1 id="custom-session-title" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Session</h1>
+    </div>
+    <small id="custom-hdate"></small>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" id="cus-tab-tracker"  onclick="cusSwitchTab('tracker')"><span>🔬</span>TRACKER</div>
+    <div class="tab"        id="cus-tab-rankings" onclick="cusSwitchTab('rankings')"><span>🏆</span>RANKINGS</div>
+    <div class="tab"        id="cus-tab-log"      onclick="cusSwitchTab('log')"><span>📋</span>ALL LOGS</div>
+  </div>
+
+  <div class="page active" id="cus-page-tracker">
+    <div class="toolbar">
+      <button class="tb-export" onclick="cusExportCSV()">📥 Export</button>
+      <button class="tb-sort"   onclick="cusToggleSort()">🔃 Sort</button>
+      <button class="tb-reset"  onclick="cusOpenConfirm()">🗑 Reset</button>
+      <button class="tb-end"    onclick="openEndSession()">■ End</button>
+    </div>
+    <div class="grand-total">Total logged: <b id="cus-gtotal">0</b></div>
+    <div id="cus-app"></div>
+  </div>
+
+  <div class="page" id="cus-page-rankings">
+    <div class="grand-total">Total logged: <b id="cus-gtotal-rank">0</b></div>
+    <div class="rankings-wrap" id="cus-rankings-wrap"></div>
+  </div>
+
+  <div class="page" id="cus-page-log">
+    <div class="grand-total">Total logged: <b id="cus-gtotal-log">0</b></div>
+    <div class="activity-wrap">
+      <div class="activity-toolbar">
+        <button class="act-filter-btn active" id="cus-filter-all"   onclick="cusSetLogFilter('all')">All</button>
+        <button class="act-filter-btn"        id="cus-filter-today" onclick="cusSetLogFilter('today')">Today</button>
+        <button class="act-filter-btn"        id="cus-filter-week"  onclick="cusSetLogFilter('week')">This Week</button>
+      </div>
+      <div id="cus-activity-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SHARED MODALS
+════════════════════════════════════════════════════════ -->
+
+<!-- Team/Item Log Modal -->
 <div class="overlay" id="log-overlay" onclick="handleOverlayClick(event)">
   <div class="modal">
     <div class="modal-hd" id="modal-hd">
@@ -68,25 +231,137 @@
   </div>
 </div>
 
-<div class="confirm-wrap" id="confirm-wrap">
+<!-- MLB Confirm Reset -->
+<div class="confirm-wrap" id="mlb-confirm-wrap">
   <div class="confirm-box">
-    <h3>Reset All Data?</h3>
-    <p>This permanently deletes every logged sighting. This cannot be undone.</p>
+    <h3>Reset MLB Data?</h3>
+    <p>This permanently deletes every logged MLB sighting. This cannot be undone.</p>
     <div class="confirm-btns">
-      <button class="cy" onclick="doReset()">Yes, Reset</button>
-      <button class="cn" onclick="closeConfirm()">Cancel</button>
+      <button class="cy" onclick="mlbDoReset()">Yes, Reset</button>
+      <button class="cn" onclick="mlbCloseConfirm()">Cancel</button>
     </div>
   </div>
 </div>
 
+<!-- MLB Import Modal -->
+<div class="confirm-wrap" id="mlb-import-wrap">
+  <div class="confirm-box">
+    <h3 id="mlb-import-title">Import CSV</h3>
+    <p id="mlb-import-msg">Reading file...</p>
+    <div class="confirm-btns">
+      <button class="cy" id="mlb-import-confirm-btn" onclick="mlbConfirmImport()">Yes, Import</button>
+      <button class="cn" onclick="mlbCloseImport()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Custom Session Confirm Reset -->
+<div class="confirm-wrap" id="cus-confirm-wrap">
+  <div class="confirm-box">
+    <h3>Reset Session Data?</h3>
+    <p>This permanently deletes all logged entries for this session. This cannot be undone.</p>
+    <div class="confirm-btns">
+      <button class="cy" onclick="cusDoReset()">Yes, Reset</button>
+      <button class="cn" onclick="cusCloseConfirm()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- End Session Modal -->
+<div class="confirm-wrap" id="end-session-wrap">
+  <div class="confirm-box">
+    <h3>End Session?</h3>
+    <p>This will save the session to your history and return you to the sessions list. You can reopen it at any time.</p>
+    <div class="confirm-btns">
+      <button class="cy" style="background:#7B1FA2" onclick="endSession()">Save & End</button>
+      <button class="cn" onclick="closeEndSession()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Clear All Sessions Modal -->
+<div class="confirm-wrap" id="clear-sessions-wrap">
+  <div class="confirm-box">
+    <h3>Clear All Sessions?</h3>
+    <p>This permanently deletes all custom sessions and their data. Export any sessions you want to keep first.</p>
+    <div class="confirm-btns">
+      <button class="cy" onclick="doClearAllSessions()">Yes, Clear All</button>
+      <button class="cn" onclick="closeClearAllSessions()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Single Session Modal -->
+<div class="confirm-wrap" id="delete-session-wrap">
+  <div class="confirm-box">
+    <h3>Delete Session?</h3>
+    <p id="delete-session-msg">This will permanently delete this session and all its data.</p>
+    <div class="confirm-btns">
+      <button class="cy" onclick="doDeleteSession()">Yes, Delete</button>
+      <button class="cn" onclick="closeDeleteSession()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden inputs -->
+<input type="file" id="mlb-csv-import-input" accept=".csv" style="display:none"/>
+
 <div class="toast" id="toast"></div>
-<footer>Data saved on your device · Tap count badge to view team log</footer>
 
 <script>
 (function(){
 "use strict";
 
-var TEAMS=[
+// ══════════════════════════════════════════════════════════════════════════════
+// SHARED HELPERS
+// ══════════════════════════════════════════════════════════════════════════════
+function isLight(hex){
+  var r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  return(r*299+g*587+b*114)/1000>128;
+}
+function textOn(hex){return isLight(hex)?'#111111':'#ffffff';}
+
+var toastTimer;
+function showToast(msg){
+  var t=document.getElementById("toast");if(!t)return;
+  t.textContent=msg;t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(function(){t.classList.remove("show");},2500);
+}
+
+function showScreen(id){
+  document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active");});
+  var s=document.getElementById(id);if(s)s.classList.add("active");
+  window.scrollTo(0,0);
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════════════════════════════════════════════════
+function goHome(){showScreen("screen-home");}
+function goMLB(){
+  document.getElementById("mlb-hdate").textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+  showScreen("screen-mlb");
+  mlbRender();
+}
+function goCustomSessions(){
+  showScreen("screen-sessions");
+  renderSessionList();
+}
+function goNewSession(){
+  // Reset new session form
+  document.getElementById("session-name-input").value="";
+  document.getElementById("item-name-input").value="";
+  document.getElementById("item-colour-picker").value=defaultColours[0];
+  pendingItems=[];
+  renderPendingItems();
+  showScreen("screen-new-session");
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// MLB TRACKER
+// ══════════════════════════════════════════════════════════════════════════════
+var MLB_TEAMS=[
   {name:"Baltimore Orioles",    div:"AL East",    c1:"#DF4601",c2:"#27251F"},
   {name:"Boston Red Sox",       div:"AL East",    c1:"#BD3039",c2:"#0C2340"},
   {name:"New York Yankees",     div:"AL East",    c1:"#003087",c2:"#0C2340"},
@@ -119,338 +394,782 @@ var TEAMS=[
   {name:"San Francisco Giants", div:"NL West",    c1:"#FD5A1E",c2:"#27251F"}
 ];
 
-function isLight(hex){
-  var r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
-  return(r*299+g*587+b*114)/1000>128;
-}
-function textOn(hex){return isLight(hex)?'#111111':'#ffffff';}
+var mlbData={};
+var mlbSortOn=false;
+var mlbCurrentTab="tracker";
+var mlbLogFilter="all";
+var mlbPendingImport=null;
+var MLB_KEY="mlb_v3";
 
-var data={};
-var sortOn=false;
-var currentTab="tracker";
-var logFilter="all";
-var KEY="mlb_v3";
-
-function load(){
-  try{var r=localStorage.getItem(KEY);if(r)data=JSON.parse(r);}catch(e){data={};}
-  TEAMS.forEach(function(t){if(!data[t.name])data[t.name]=[];});
+function mlbLoad(){
+  try{var r=localStorage.getItem(MLB_KEY);if(r)mlbData=JSON.parse(r);}catch(e){mlbData={};}
+  MLB_TEAMS.forEach(function(t){if(!mlbData[t.name])mlbData[t.name]=[];});
 }
-function save(){try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){}}
+function mlbSave(){try{localStorage.setItem(MLB_KEY,JSON.stringify(mlbData));}catch(e){}}
 
-function grandTotal(){
-  var t=0;TEAMS.forEach(function(t2){t+=(data[t2.name]||[]).length;});return t;
+function mlbGrandTotal(){
+  var t=0;MLB_TEAMS.forEach(function(t2){t+=(mlbData[t2.name]||[]).length;});return t;
 }
-function updateTotals(){
-  var t=grandTotal();
-  ["gtotal","gtotal-rank","gtotal-log"].forEach(function(id){
+function mlbUpdateTotals(){
+  var t=mlbGrandTotal();
+  ["mlb-gtotal","mlb-gtotal-rank","mlb-gtotal-log"].forEach(function(id){
     var el=document.getElementById(id);if(el)el.textContent=t;
   });
 }
 
-function switchTab(tab){
-  currentTab=tab;
+function mlbSwitchTab(tab){
+  mlbCurrentTab=tab;
   ["tracker","rankings","log"].forEach(function(t){
-    document.getElementById("page-"+t).classList.toggle("active",t===tab);
-    document.getElementById("tab-"+t).classList.toggle("active",t===tab);
+    document.getElementById("mlb-page-"+t).classList.toggle("active",t===tab);
+    document.getElementById("mlb-tab-"+t).classList.toggle("active",t===tab);
   });
-  if(tab==="rankings")renderRankings();
-  if(tab==="log")renderActivityLog();
+  if(tab==="rankings")mlbRenderRankings();
+  if(tab==="log")mlbRenderActivityLog();
 }
 
-// ── TRACKER ───────────────────────────────────────────────────────────────────
-function render(){
-  var app=document.getElementById("app");if(!app)return;
+function mlbRender(){
+  var app=document.getElementById("mlb-app");if(!app)return;
   app.innerHTML="";
-  var list=TEAMS.slice();
-  if(sortOn){
-    list.sort(function(a,b){return(data[b.name]||[]).length-(data[a.name]||[]).length;});
+  var list=MLB_TEAMS.slice();
+  if(mlbSortOn){
+    list.sort(function(a,b){return(mlbData[b.name]||[]).length-(mlbData[a.name]||[]).length;});
     var lbl=document.createElement("div");lbl.className="section-label";
     lbl.textContent="All Teams — Sorted by Count";app.appendChild(lbl);
     var g=document.createElement("div");g.className="grid";
-    list.forEach(function(t){g.appendChild(makeCard(t));});app.appendChild(g);
+    list.forEach(function(t){g.appendChild(mlbMakeCard(t));});app.appendChild(g);
   } else {
     var divs=[];
-    TEAMS.forEach(function(t){if(divs.indexOf(t.div)<0)divs.push(t.div);});
+    MLB_TEAMS.forEach(function(t){if(divs.indexOf(t.div)<0)divs.push(t.div);});
     divs.forEach(function(div){
       var lbl=document.createElement("div");lbl.className="section-label";
       lbl.textContent=div;app.appendChild(lbl);
       var g=document.createElement("div");g.className="grid";
-      TEAMS.filter(function(t){return t.div===div;}).forEach(function(t){g.appendChild(makeCard(t));});
+      MLB_TEAMS.filter(function(t){return t.div===div;}).forEach(function(t){g.appendChild(mlbMakeCard(t));});
       app.appendChild(g);
     });
   }
-  updateTotals();
+  mlbUpdateTotals();
 }
 
-function makeCard(team){
-  var count=(data[team.name]||[]).length;
-  var card=document.createElement("div");
-  card.className="card";
-
-  // ── Thin secondary-colour border around the whole card ──
+function mlbMakeCard(team){
+  var count=(mlbData[team.name]||[]).length;
+  var card=document.createElement("div");card.className="card";
   card.style.borderColor=team.c2;
-
-  // Header — primary colour
   var head=document.createElement("div");head.className="card-head";
-  head.style.background=team.c1;
-  head.style.color=textOn(team.c1);
-  head.textContent=team.name;
-  card.appendChild(head);
-
+  head.style.background=team.c1;head.style.color=textOn(team.c1);
+  head.textContent=team.name;card.appendChild(head);
   var body=document.createElement("div");body.className="card-body";
-
-  // Log button — accent colour
   var btn=document.createElement("button");btn.className="log-btn";
-  btn.style.background=team.c2;
-  btn.style.color=textOn(team.c2);
+  btn.style.background=team.c2;btn.style.color=textOn(team.c2);
   btn.textContent="+ Log";
-  btn.addEventListener("click",function(e){e.stopPropagation();logSighting(team.name);});
+  btn.addEventListener("click",function(e){e.stopPropagation();mlbLogSighting(team.name);});
   body.appendChild(btn);
-
-  // Badge — flips from primary to accent when count > 0
   var badge=document.createElement("div");
   badge.className="badge"+(count>0?" lit":"");
   badge.style.background=count>0?team.c2:team.c1;
   badge.style.color=count>0?textOn(team.c2):textOn(team.c1);
   badge.textContent=count;
-  badge.addEventListener("click",function(e){e.stopPropagation();openModal(team.name);});
-  body.appendChild(badge);
-
-  card.appendChild(body);
+  badge.addEventListener("click",function(e){e.stopPropagation();openModal(team.name,"mlb");});
+  body.appendChild(badge);card.appendChild(body);
   return card;
 }
 
-// ── RANKINGS ──────────────────────────────────────────────────────────────────
-function renderRankings(){
-  var wrap=document.getElementById("rankings-wrap");if(!wrap)return;
-  wrap.innerHTML="";
-  var ranked=TEAMS.map(function(t){
-    return{name:t.name,div:t.div,count:(data[t.name]||[]).length,c1:t.c1,c2:t.c2};
-  }).sort(function(a,b){
-    if(b.count!==a.count)return b.count-a.count;
-    return a.name.localeCompare(b.name);
-  });
-  var max=ranked[0]?ranked[0].count:1;if(max===0)max=1;
-
-  function posLabel(i,count){
-    if(count===0)return"—";
-    if(i===0)return"🥇";if(i===1)return"🥈";if(i===2)return"🥉";
-    return""+(i+1);
-  }
-  var zeroDividerAdded=false;
-  ranked.forEach(function(item,i){
-    if(!zeroDividerAdded&&item.count===0){
-      zeroDividerAdded=true;
-      var d=document.createElement("div");d.className="rank-divider";
-      d.textContent="Not yet sighted";wrap.appendChild(d);
-    }
-    var card=document.createElement("div");
-    card.className="rank-card"+(item.count===0?" rank-zero":"");
-
-    // Secondary colour left accent border on ranking cards too
-    card.style.borderLeft="4px solid "+item.c2;
-
-    var pos=document.createElement("div");pos.className="rank-pos";
-    pos.textContent=posLabel(i,item.count);card.appendChild(pos);
-
-    var info=document.createElement("div");info.className="rank-info";
-    var name=document.createElement("div");name.className="rank-name";
-    name.textContent=item.name;info.appendChild(name);
-    var divLabel=document.createElement("div");divLabel.className="rank-div";
-    divLabel.textContent=item.div;info.appendChild(divLabel);
-    card.appendChild(info);
-
-    var barWrap=document.createElement("div");barWrap.className="rank-bar-wrap";
-    var barBg=document.createElement("div");barBg.className="rank-bar-bg";
-    var barFill=document.createElement("div");barFill.className="rank-bar-fill";
-    barFill.style.background=item.c1;
-    barFill.style.width=Math.round((item.count/max)*100)+"%";
-    barBg.appendChild(barFill);barWrap.appendChild(barBg);card.appendChild(barWrap);
-
-    var cnt=document.createElement("div");cnt.className="rank-count";
-    cnt.style.color=item.c1;cnt.textContent=item.count;card.appendChild(cnt);
-
-    wrap.appendChild(card);
-  });
-  updateTotals();
+function mlbLogSighting(name){
+  if(!mlbData[name])mlbData[name]=[];
+  mlbData[name].push(new Date().toISOString());
+  mlbSave();mlbRender();
+  if(mlbCurrentTab==="rankings")mlbRenderRankings();
+  if(mlbCurrentTab==="log")mlbRenderActivityLog();
+  showToast("✅ Logged: "+name);
 }
 
-// ── ACTIVITY LOG ──────────────────────────────────────────────────────────────
-function setLogFilter(f){
-  logFilter=f;
-  ["all","today","week"].forEach(function(x){
-    document.getElementById("filter-"+x).classList.toggle("active",x===f);
-  });
-  renderActivityLog();
+function mlbDeleteEntry(name,idx){
+  if(mlbData[name])mlbData[name].splice(idx,1);
+  mlbSave();mlbRender();mlbRenderRankings();mlbRenderActivityLog();
+  openModal(name,"mlb");
 }
 
-function getTeamColors(name){
-  for(var i=0;i<TEAMS.length;i++){if(TEAMS[i].name===name)return TEAMS[i];}
+function mlbGetTeamColors(name){
+  for(var i=0;i<MLB_TEAMS.length;i++){if(MLB_TEAMS[i].name===name)return MLB_TEAMS[i];}
   return{c1:"#041E42",c2:"#BF0D3E"};
 }
 
-function renderActivityLog(){
-  var list=document.getElementById("activity-list");if(!list)return;
+function mlbRenderRankings(){
+  var wrap=document.getElementById("mlb-rankings-wrap");if(!wrap)return;
+  wrap.innerHTML="";
+  var ranked=MLB_TEAMS.map(function(t){
+    return{name:t.name,div:t.div,count:(mlbData[t.name]||[]).length,c1:t.c1,c2:t.c2};
+  }).sort(function(a,b){return b.count!==a.count?b.count-a.count:a.name.localeCompare(b.name);});
+  var max=ranked[0]?ranked[0].count:1;if(max===0)max=1;
+  function posLabel(i,count){
+    if(count===0)return"—";if(i===0)return"🥇";if(i===1)return"🥈";if(i===2)return"🥉";return""+(i+1);
+  }
+  var zeroDone=false;
+  ranked.forEach(function(item,i){
+    if(!zeroDone&&item.count===0){
+      zeroDone=true;
+      var d=document.createElement("div");d.className="rank-divider";d.textContent="Not yet sighted";wrap.appendChild(d);
+    }
+    var card=document.createElement("div");card.className="rank-card"+(item.count===0?" rank-zero":"");
+    card.style.borderLeft="4px solid "+item.c2;
+    var pos=document.createElement("div");pos.className="rank-pos";pos.textContent=posLabel(i,item.count);card.appendChild(pos);
+    var info=document.createElement("div");info.className="rank-info";
+    var nm=document.createElement("div");nm.className="rank-name";nm.textContent=item.name;info.appendChild(nm);
+    var dv=document.createElement("div");dv.className="rank-div";dv.textContent=item.div;info.appendChild(dv);
+    card.appendChild(info);
+    var bw=document.createElement("div");bw.className="rank-bar-wrap";
+    var bb=document.createElement("div");bb.className="rank-bar-bg";
+    var bf=document.createElement("div");bf.className="rank-bar-fill";
+    bf.style.background=item.c1;bf.style.width=Math.round((item.count/max)*100)+"%";
+    bb.appendChild(bf);bw.appendChild(bb);card.appendChild(bw);
+    var cnt=document.createElement("div");cnt.className="rank-count";cnt.style.color=item.c1;cnt.textContent=item.count;card.appendChild(cnt);
+    wrap.appendChild(card);
+  });
+  mlbUpdateTotals();
+}
+
+function mlbSetLogFilter(f){
+  mlbLogFilter=f;
+  ["all","today","week"].forEach(function(x){
+    document.getElementById("mlb-filter-"+x).classList.toggle("active",x===f);
+  });
+  mlbRenderActivityLog();
+}
+
+function mlbRenderActivityLog(){
+  var list=document.getElementById("mlb-activity-list");if(!list)return;
   list.innerHTML="";
   var all=[];
-  TEAMS.forEach(function(t){
-    (data[t.name]||[]).forEach(function(ts,idx){
-      all.push({team:t.name,div:t.div,ts:ts,idx:idx});
-    });
+  MLB_TEAMS.forEach(function(t){
+    (mlbData[t.name]||[]).forEach(function(ts,idx){all.push({team:t.name,div:t.div,ts:ts,idx:idx});});
   });
-  var now=new Date();
-  var todayStr=now.toDateString();
-  var weekAgo=new Date(now.getTime()-7*24*60*60*1000);
-  if(logFilter==="today")all=all.filter(function(e){return new Date(e.ts).toDateString()===todayStr;});
-  else if(logFilter==="week")all=all.filter(function(e){return new Date(e.ts)>=weekAgo;});
+  var now=new Date();var todayStr=now.toDateString();var weekAgo=new Date(now.getTime()-7*24*60*60*1000);
+  if(mlbLogFilter==="today")all=all.filter(function(e){return new Date(e.ts).toDateString()===todayStr;});
+  else if(mlbLogFilter==="week")all=all.filter(function(e){return new Date(e.ts)>=weekAgo;});
   all.sort(function(a,b){return b.ts.localeCompare(a.ts);});
-
   if(all.length===0){
     var em=document.createElement("div");em.className="activity-empty";
-    em.textContent=logFilter==="today"?"No sightings logged today.":logFilter==="week"?"No sightings logged this week.":"No sightings logged yet. Start tapping + Log!";
-    list.appendChild(em);updateTotals();return;
+    em.textContent=mlbLogFilter==="today"?"No sightings today.":mlbLogFilter==="week"?"No sightings this week.":"No sightings logged yet.";
+    list.appendChild(em);mlbUpdateTotals();return;
   }
-
   var groups={};var groupOrder=[];
   all.forEach(function(e){
     var d=new Date(e.ts).toDateString();
-    if(!groups[d]){groups[d]=[];groupOrder.push(d);}
-    groups[d].push(e);
+    if(!groups[d]){groups[d]=[];groupOrder.push(d);}groups[d].push(e);
   });
-
   groupOrder.forEach(function(dateStr){
     var label=document.createElement("div");label.className="activity-date-label";
-    var d=new Date(dateStr);
-    label.textContent=d.toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+    label.textContent=new Date(dateStr).toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});
     list.appendChild(label);
-
     groups[dateStr].forEach(function(e){
-      var tc=getTeamColors(e.team);
-      var entry=document.createElement("div");entry.className="activity-entry";
-
-      // Secondary colour left border on activity entries
-      entry.style.borderLeftColor=tc.c2;
-
+      var tc=mlbGetTeamColors(e.team);
+      var entry=document.createElement("div");entry.className="activity-entry";entry.style.borderLeftColor=tc.c2;
       var left=document.createElement("div");left.className="activity-entry-left";
-      var teamEl=document.createElement("div");teamEl.className="activity-team";
-      teamEl.style.color=tc.c1;teamEl.textContent=e.team;left.appendChild(teamEl);
-      var divEl=document.createElement("div");divEl.className="activity-div";
-      divEl.textContent=e.div;left.appendChild(divEl);
-      var timeEl=document.createElement("div");timeEl.className="activity-time";
-      timeEl.textContent=new Date(e.ts).toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"});
-      left.appendChild(timeEl);entry.appendChild(left);
-
+      var tn=document.createElement("div");tn.className="activity-team";tn.style.color=tc.c1;tn.textContent=e.team;left.appendChild(tn);
+      var dv=document.createElement("div");dv.className="activity-div";dv.textContent=e.div;left.appendChild(dv);
+      var tm=document.createElement("div");tm.className="activity-time";
+      tm.textContent=new Date(e.ts).toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+      left.appendChild(tm);entry.appendChild(left);
       var num=document.createElement("div");num.className="activity-num";
-      num.style.background=tc.c1;num.style.color=textOn(tc.c1);
-      num.textContent="#"+(e.idx+1);entry.appendChild(num);
-
+      num.style.background=tc.c1;num.style.color=textOn(tc.c1);num.textContent="#"+(e.idx+1);entry.appendChild(num);
       var del=document.createElement("button");del.className="activity-del";del.textContent="🗑";
-      (function(tn,ti){del.addEventListener("click",function(){
-        data[tn].splice(ti,1);save();render();renderActivityLog();renderRankings();
-        showToast("🗑 Entry deleted");
+      (function(tn2,ti){del.addEventListener("click",function(){
+        mlbData[tn2].splice(ti,1);mlbSave();mlbRender();mlbRenderActivityLog();mlbRenderRankings();showToast("🗑 Entry deleted");
       });})(e.team,e.idx);
       entry.appendChild(del);list.appendChild(entry);
     });
   });
-  updateTotals();
+  mlbUpdateTotals();
 }
 
-// ── Logging ───────────────────────────────────────────────────────────────────
-function logSighting(name){
-  if(!data[name])data[name]=[];
-  data[name].push(new Date().toISOString());
-  save();render();
-  if(currentTab==="rankings")renderRankings();
-  if(currentTab==="log")renderActivityLog();
+function mlbToggleSort(){mlbSortOn=!mlbSortOn;mlbRender();}
+function mlbOpenConfirm(){document.getElementById("mlb-confirm-wrap").classList.add("open");}
+function mlbCloseConfirm(){document.getElementById("mlb-confirm-wrap").classList.remove("open");}
+function mlbDoReset(){
+  MLB_TEAMS.forEach(function(t){mlbData[t.name]=[];});
+  mlbSave();mlbCloseConfirm();mlbRender();mlbRenderRankings();mlbRenderActivityLog();
+  showToast("🗑 MLB data reset.");
+}
+
+function mlbExportCSV(){
+  var rows=[["Timestamp","Team","Division"]];
+  MLB_TEAMS.forEach(function(t){
+    (mlbData[t.name]||[]).forEach(function(ts){rows.push([ts,t.name,t.div]);});
+  });
+  var hdr=rows.shift();rows.sort(function(a,b){return a[0]<b[0]?-1:1;});rows.unshift(hdr);
+  downloadCSV(rows,"mlb_merch_"+new Date().toISOString().slice(0,10)+".csv");
+  showToast("📥 CSV exported!");
+}
+
+function mlbTriggerImport(){
+  document.getElementById("mlb-csv-import-input").value="";
+  document.getElementById("mlb-csv-import-input").click();
+}
+
+document.getElementById("mlb-csv-import-input").addEventListener("change",function(e){
+  var file=e.target.files[0];if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    var lines=ev.target.result.split(/\r?\n/).filter(function(l){return l.trim()!=="";});
+    if(!lines[0]||lines[0].indexOf("Timestamp")<0||lines[0].indexOf("Team")<0){showToast("⚠️ Invalid CSV.");return;}
+    var headers=parseCSVLine(lines[0]);
+    var tsIdx=-1;var teamIdx=-1;
+    headers.forEach(function(h,i){var c=h.trim().toLowerCase();if(c==="timestamp")tsIdx=i;if(c==="team")teamIdx=i;});
+    if(tsIdx<0||teamIdx<0){showToast("⚠️ Missing columns.");return;}
+    var imported={};MLB_TEAMS.forEach(function(t){imported[t.name]=[];});
+    var skipped=0;var loaded=0;
+    for(var i=1;i<lines.length;i++){
+      var cols=parseCSVLine(lines[i]);if(cols.length<2){skipped++;continue;}
+      var ts=cols[tsIdx]?cols[tsIdx].trim():"";var team=cols[teamIdx]?cols[teamIdx].trim():"";
+      if(!ts||isNaN(new Date(ts).getTime())){skipped++;continue;}
+      if(!imported.hasOwnProperty(team)){skipped++;continue;}
+      imported[team].push(ts);loaded++;
+    }
+    if(loaded===0){showToast("⚠️ No valid entries.");return;}
+    MLB_TEAMS.forEach(function(t){imported[t.name].sort(function(a,b){return a.localeCompare(b);});});
+    mlbPendingImport=imported;
+    var existing=mlbGrandTotal();
+    document.getElementById("mlb-import-title").textContent="Import "+loaded+" Sightings";
+    document.getElementById("mlb-import-msg").textContent=existing>0
+      ?"You have "+existing+" existing sightings. Importing will replace all data."+(skipped>0?" "+skipped+" rows skipped.":"")
+      :"Found "+loaded+" valid sightings."+(skipped>0?" "+skipped+" rows skipped.":"")+" Ready to import?";
+    document.getElementById("mlb-import-confirm-btn").textContent=existing>0?"Replace & Import":"Yes, Import";
+    document.getElementById("mlb-import-wrap").classList.add("open");
+  };
+  reader.readAsText(file);
+});
+
+function mlbConfirmImport(){
+  if(!mlbPendingImport)return;
+  mlbData=mlbPendingImport;mlbPendingImport=null;
+  mlbSave();mlbCloseImport();mlbRender();mlbRenderRankings();mlbRenderActivityLog();
+  showToast("✅ CSV imported!");
+}
+function mlbCloseImport(){document.getElementById("mlb-import-wrap").classList.remove("open");mlbPendingImport=null;}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// CUSTOM SESSIONS
+// ══════════════════════════════════════════════════════════════════════════════
+var SESSIONS_KEY="custom_sessions_v1";
+var ACTIVE_SESSION_KEY="active_session_v1";
+
+var sessions=[];          // array of saved session objects
+var activeSession=null;   // currently running session
+var pendingItems=[];       // items being built in new session form
+var cusCurrentTab="tracker";
+var cusSortOn=false;
+var cusLogFilter="all";
+var sessionToDelete=null;
+
+var defaultColours=[
+  "#0E3386","#C41E3A","#2E7D32","#E65100","#6A1B9A",
+  "#00838F","#AD1457","#558B2F","#4527A0","#F57F17"
+];
+
+function loadSessions(){
+  try{var r=localStorage.getItem(SESSIONS_KEY);if(r)sessions=JSON.parse(r);}catch(e){sessions=[];}
+}
+function saveSessions(){try{localStorage.setItem(SESSIONS_KEY,JSON.stringify(sessions));}catch(e){}}
+
+function loadActiveSession(){
+  try{var r=localStorage.getItem(ACTIVE_SESSION_KEY);if(r)activeSession=JSON.parse(r);}catch(e){activeSession=null;}
+}
+function saveActiveSession(){
+  try{
+    if(activeSession)localStorage.setItem(ACTIVE_SESSION_KEY,JSON.stringify(activeSession));
+    else localStorage.removeItem(ACTIVE_SESSION_KEY);
+  }catch(e){}
+}
+
+// ── New Session Form ──────────────────────────────────────────────────────────
+function handleItemKeydown(e){if(e.key==="Enter")addItem();}
+
+function addItem(){
+  var nameEl=document.getElementById("item-name-input");
+  var colourEl=document.getElementById("item-colour-picker");
+  var name=nameEl.value.trim();
+  if(!name){showToast("⚠️ Please enter an item name.");return;}
+  pendingItems.push({name:name,colour:colourEl.value});
+  nameEl.value="";
+  // Cycle to next default colour
+  colourEl.value=defaultColours[pendingItems.length%defaultColours.length];
+  renderPendingItems();
+  nameEl.focus();
+}
+
+function renderPendingItems(){
+  var list=document.getElementById("items-list");
+  var countLabel=document.getElementById("item-count-label");
+  var startBtn=document.getElementById("start-session-btn");
+  if(!list)return;
+  list.innerHTML="";
+  countLabel.textContent="("+pendingItems.length+" added)";
+  startBtn.disabled=pendingItems.length===0;
+
+  pendingItems.forEach(function(item,i){
+    var row=document.createElement("div");row.className="item-row";
+    row.style.borderLeftColor=item.colour;
+    var swatch=document.createElement("div");swatch.className="item-row-swatch";
+    swatch.style.background=item.colour;row.appendChild(swatch);
+    var nm=document.createElement("div");nm.className="item-row-name";nm.textContent=item.name;row.appendChild(nm);
+    var del=document.createElement("button");del.className="item-row-del";del.textContent="✕";
+    (function(idx){del.addEventListener("click",function(){pendingItems.splice(idx,1);renderPendingItems();});})(i);
+    row.appendChild(del);list.appendChild(row);
+  });
+}
+
+function startSession(){
+  var nameEl=document.getElementById("session-name-input");
+  var sessionName=nameEl.value.trim()||"Session "+new Date().toLocaleDateString();
+  if(pendingItems.length===0){showToast("⚠️ Add at least one item.");return;}
+
+  // Build data object
+  var sessionData={};
+  pendingItems.forEach(function(item){sessionData[item.name]=[];});
+
+  activeSession={
+    id:"session_"+Date.now(),
+    name:sessionName,
+    items:pendingItems.slice(),
+    data:sessionData,
+    created:new Date().toISOString(),
+    lastModified:new Date().toISOString()
+  };
+  saveActiveSession();
+  launchCustomSession();
+}
+
+function launchCustomSession(){
+  if(!activeSession)return;
+  document.getElementById("custom-session-title").textContent=activeSession.name;
+  document.getElementById("custom-hdate").textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+  // Reset tabs
+  cusSwitchTab("tracker");
+  cusLogFilter="all";
+  cusSortOn=false;
+  showScreen("screen-custom");
+  cusRender();
+}
+
+// ── Session List ──────────────────────────────────────────────────────────────
+function renderSessionList(){
+  loadSessions();
+  var list=document.getElementById("session-list");
+  var clearBtn=document.getElementById("clear-all-sessions-btn");
+  if(!list)return;
+  list.innerHTML="";
+  clearBtn.style.display=sessions.length>0?"block":"none";
+
+  if(sessions.length===0){
+    var em=document.createElement("div");em.className="empty-sessions";
+    em.textContent="No saved sessions yet. Tap '+ New Session' to get started.";
+    list.appendChild(em);return;
+  }
+
+  sessions.slice().reverse().forEach(function(session){
+    var total=0;session.items.forEach(function(item){total+=(session.data[item.name]||[]).length;});
+
+    var card=document.createElement("div");card.className="session-card";
+
+    var top=document.createElement("div");top.className="session-card-top";
+    var nm=document.createElement("div");nm.className="session-card-name";nm.textContent=session.name;top.appendChild(nm);
+    var dt=document.createElement("div");dt.className="session-card-date";
+    dt.textContent=new Date(session.created).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"});
+    top.appendChild(dt);card.appendChild(top);
+
+    var meta=document.createElement("div");meta.className="session-card-meta";
+    meta.textContent=session.items.length+" item"+(session.items.length!==1?"s":"")+" · "+total+" log"+(total!==1?"s":"");
+    card.appendChild(meta);
+
+    // Colour swatches
+    var swatches=document.createElement("div");swatches.style.cssText="display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap";
+    session.items.forEach(function(item){
+      var sw=document.createElement("div");
+      sw.style.cssText="width:16px;height:16px;border-radius:4px;background:"+item.colour+";flex-shrink:0";
+      sw.title=item.name;swatches.appendChild(sw);
+    });
+    card.appendChild(swatches);
+
+    var btns=document.createElement("div");btns.className="session-card-btns";
+
+    var openBtn=document.createElement("button");openBtn.className="scb-open";openBtn.textContent="▶ Open";
+    (function(s){openBtn.addEventListener("click",function(){
+      activeSession=JSON.parse(JSON.stringify(s));
+      saveActiveSession();launchCustomSession();
+    });})(session);
+    btns.appendChild(openBtn);
+
+    var expBtn=document.createElement("button");expBtn.className="scb-export";expBtn.textContent="📥 Export";
+    (function(s){expBtn.addEventListener("click",function(){exportSessionCSV(s);});})(session);
+    btns.appendChild(expBtn);
+
+    var delBtn=document.createElement("button");delBtn.className="scb-delete";delBtn.textContent="🗑 Delete";
+    (function(s){delBtn.addEventListener("click",function(){openDeleteSession(s.id,s.name);});})(session);
+    btns.appendChild(delBtn);
+
+    card.appendChild(btns);list.appendChild(card);
+  });
+}
+
+// ── Custom Tracker Render ─────────────────────────────────────────────────────
+function cusRender(){
+  var app=document.getElementById("cus-app");if(!app||!activeSession)return;
+  app.innerHTML="";
+  var items=activeSession.items.slice();
+  if(cusSortOn){
+    items.sort(function(a,b){return(activeSession.data[b.name]||[]).length-(activeSession.data[a.name]||[]).length;});
+    var lbl=document.createElement("div");lbl.className="section-label";
+    lbl.textContent="All Items — Sorted by Count";app.appendChild(lbl);
+    var g=document.createElement("div");g.className="grid";
+    items.forEach(function(item){g.appendChild(cusMakeCard(item));});app.appendChild(g);
+  } else {
+    var lbl2=document.createElement("div");lbl2.className="section-label";
+    lbl2.textContent=activeSession.name;app.appendChild(lbl2);
+    var g2=document.createElement("div");g2.className="grid";
+    items.forEach(function(item){g2.appendChild(cusMakeCard(item));});app.appendChild(g2);
+  }
+  cusUpdateTotals();
+}
+
+function cusMakeCard(item){
+  var count=(activeSession.data[item.name]||[]).length;
+  var c1=item.colour;
+  var c2=adjustColour(item.colour);
+  var card=document.createElement("div");card.className="card";
+  card.style.borderColor=c2;
+  var head=document.createElement("div");head.className="card-head";
+  head.style.background=c1;head.style.color=textOn(c1);
+  head.textContent=item.name;card.appendChild(head);
+  var body=document.createElement("div");body.className="card-body";
+  var btn=document.createElement("button");btn.className="log-btn";
+  btn.style.background=c2;btn.style.color=textOn(c2);
+  btn.textContent="+ Log";
+  btn.addEventListener("click",function(e){e.stopPropagation();cusLogEntry(item.name);});
+  body.appendChild(btn);
+  var badge=document.createElement("div");
+  badge.className="badge"+(count>0?" lit":"");
+  badge.style.background=count>0?c2:c1;
+  badge.style.color=count>0?textOn(c2):textOn(c1);
+  badge.textContent=count;
+  badge.addEventListener("click",function(e){e.stopPropagation();openModal(item.name,"custom");});
+  body.appendChild(badge);card.appendChild(body);
+  return card;
+}
+
+// Generate a complementary shade for the secondary colour
+function adjustColour(hex){
+  var r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  // Darken light colours, lighten dark colours
+  var factor=isLight(hex)?0.65:1.4;
+  r=Math.min(255,Math.round(r*factor));
+  g=Math.min(255,Math.round(g*factor));
+  b=Math.min(255,Math.round(b*factor));
+  return"#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");
+}
+
+function cusLogEntry(name){
+  if(!activeSession)return;
+  if(!activeSession.data[name])activeSession.data[name]=[];
+  activeSession.data[name].push(new Date().toISOString());
+  activeSession.lastModified=new Date().toISOString();
+  saveActiveSession();
+  cusRender();
+  if(cusCurrentTab==="rankings")cusRenderRankings();
+  if(cusCurrentTab==="log")cusRenderActivityLog();
   showToast("✅ Logged: "+name);
 }
 
-function deleteEntry(name,idx){
-  if(data[name])data[name].splice(idx,1);
-  save();render();renderRankings();renderActivityLog();openModal(name);
+function cusDeleteEntry(name,idx){
+  if(!activeSession)return;
+  if(activeSession.data[name])activeSession.data[name].splice(idx,1);
+  activeSession.lastModified=new Date().toISOString();
+  saveActiveSession();
+  cusRender();cusRenderRankings();cusRenderActivityLog();
+  openModal(name,"custom");
 }
 
-// ── Modal ─────────────────────────────────────────────────────────────────────
-function openModal(name){
-  var tc=getTeamColors(name);
-  var entries=data[name]||[];
+function cusGrandTotal(){
+  if(!activeSession)return 0;
+  var t=0;activeSession.items.forEach(function(item){t+=(activeSession.data[item.name]||[]).length;});return t;
+}
+function cusUpdateTotals(){
+  var t=cusGrandTotal();
+  ["cus-gtotal","cus-gtotal-rank","cus-gtotal-log"].forEach(function(id){
+    var el=document.getElementById(id);if(el)el.textContent=t;
+  });
+}
+
+function cusSwitchTab(tab){
+  cusCurrentTab=tab;
+  ["tracker","rankings","log"].forEach(function(t){
+    document.getElementById("cus-page-"+t).classList.toggle("active",t===tab);
+    document.getElementById("cus-tab-"+t).classList.toggle("active",t===tab);
+  });
+  if(tab==="rankings")cusRenderRankings();
+  if(tab==="log")cusRenderActivityLog();
+}
+
+function cusRenderRankings(){
+  var wrap=document.getElementById("cus-rankings-wrap");if(!wrap||!activeSession)return;
+  wrap.innerHTML="";
+  var ranked=activeSession.items.map(function(item){
+    return{name:item.name,count:(activeSession.data[item.name]||[]).length,colour:item.colour};
+  }).sort(function(a,b){return b.count!==a.count?b.count-a.count:a.name.localeCompare(b.name);});
+  var max=ranked[0]?ranked[0].count:1;if(max===0)max=1;
+  function posLabel(i,count){
+    if(count===0)return"—";if(i===0)return"🥇";if(i===1)return"🥈";if(i===2)return"🥉";return""+(i+1);
+  }
+  var zeroDone=false;
+  ranked.forEach(function(item,i){
+    if(!zeroDone&&item.count===0){
+      zeroDone=true;
+      var d=document.createElement("div");d.className="rank-divider";d.textContent="Not yet logged";wrap.appendChild(d);
+    }
+    var c2=adjustColour(item.colour);
+    var card=document.createElement("div");card.className="rank-card"+(item.count===0?" rank-zero":"");
+    card.style.borderLeft="4px solid "+c2;
+    var pos=document.createElement("div");pos.className="rank-pos";pos.textContent=posLabel(i,item.count);card.appendChild(pos);
+    var info=document.createElement("div");info.className="rank-info";
+    var nm=document.createElement("div");nm.className="rank-name";nm.textContent=item.name;info.appendChild(nm);
+    card.appendChild(info);
+    var bw=document.createElement("div");bw.className="rank-bar-wrap";
+    var bb=document.createElement("div");bb.className="rank-bar-bg";
+    var bf=document.createElement("div");bf.className="rank-bar-fill";
+    bf.style.background=item.colour;bf.style.width=Math.round((item.count/max)*100)+"%";
+    bb.appendChild(bf);bw.appendChild(bb);card.appendChild(bw);
+    var cnt=document.createElement("div");cnt.className="rank-count";cnt.style.color=item.colour;cnt.textContent=item.count;card.appendChild(cnt);
+    wrap.appendChild(card);
+  });
+  cusUpdateTotals();
+}
+
+function cusSetLogFilter(f){
+  cusLogFilter=f;
+  ["all","today","week"].forEach(function(x){
+    document.getElementById("cus-filter-"+x).classList.toggle("active",x===f);
+  });
+  cusRenderActivityLog();
+}
+
+function cusRenderActivityLog(){
+  var list=document.getElementById("cus-activity-list");if(!list||!activeSession)return;
+  list.innerHTML="";
+  var all=[];
+  activeSession.items.forEach(function(item){
+    (activeSession.data[item.name]||[]).forEach(function(ts,idx){
+      all.push({team:item.name,colour:item.colour,ts:ts,idx:idx});
+    });
+  });
+  var now=new Date();var todayStr=now.toDateString();var weekAgo=new Date(now.getTime()-7*24*60*60*1000);
+  if(cusLogFilter==="today")all=all.filter(function(e){return new Date(e.ts).toDateString()===todayStr;});
+  else if(cusLogFilter==="week")all=all.filter(function(e){return new Date(e.ts)>=weekAgo;});
+  all.sort(function(a,b){return b.ts.localeCompare(a.ts);});
+  if(all.length===0){
+    var em=document.createElement("div");em.className="activity-empty";
+    em.textContent=cusLogFilter==="today"?"Nothing logged today.":cusLogFilter==="week"?"Nothing logged this week.":"Nothing logged yet.";
+    list.appendChild(em);cusUpdateTotals();return;
+  }
+  var groups={};var groupOrder=[];
+  all.forEach(function(e){
+    var d=new Date(e.ts).toDateString();
+    if(!groups[d]){groups[d]=[];groupOrder.push(d);}groups[d].push(e);
+  });
+  groupOrder.forEach(function(dateStr){
+    var label=document.createElement("div");label.className="activity-date-label";
+    label.textContent=new Date(dateStr).toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+    list.appendChild(label);
+    groups[dateStr].forEach(function(e){
+      var c2=adjustColour(e.colour);
+      var entry=document.createElement("div");entry.className="activity-entry";entry.style.borderLeftColor=c2;
+      var left=document.createElement("div");left.className="activity-entry-left";
+      var tn=document.createElement("div");tn.className="activity-team";tn.style.color=e.colour;tn.textContent=e.team;left.appendChild(tn);
+      var tm=document.createElement("div");tm.className="activity-time";
+      tm.textContent=new Date(e.ts).toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+      left.appendChild(tm);entry.appendChild(left);
+      var num=document.createElement("div");num.className="activity-num";
+      num.style.background=e.colour;num.style.color=textOn(e.colour);num.textContent="#"+(e.idx+1);entry.appendChild(num);
+      var del=document.createElement("button");del.className="activity-del";del.textContent="🗑";
+      (function(tn2,ti){del.addEventListener("click",function(){cusDeleteEntry(tn2,ti);});})(e.team,e.idx);
+      entry.appendChild(del);list.appendChild(entry);
+    });
+  });
+  cusUpdateTotals();
+}
+
+function cusToggleSort(){cusSortOn=!cusSortOn;cusRender();}
+function cusOpenConfirm(){document.getElementById("cus-confirm-wrap").classList.add("open");}
+function cusCloseConfirm(){document.getElementById("cus-confirm-wrap").classList.remove("open");}
+function cusDoReset(){
+  if(!activeSession)return;
+  activeSession.items.forEach(function(item){activeSession.data[item.name]=[];});
+  activeSession.lastModified=new Date().toISOString();
+  saveActiveSession();cusCloseConfirm();cusRender();cusRenderRankings();cusRenderActivityLog();
+  showToast("🗑 Session data reset.");
+}
+
+function cusExportCSV(){
+  if(!activeSession)return;
+  var rows=[["Timestamp","Item","Session"]];
+  activeSession.items.forEach(function(item){
+    (activeSession.data[item.name]||[]).forEach(function(ts){rows.push([ts,item.name,activeSession.name]);});
+  });
+  var hdr=rows.shift();rows.sort(function(a,b){return a[0]<b[0]?-1:1;});rows.unshift(hdr);
+  downloadCSV(rows,sanitiseFilename(activeSession.name)+"_"+new Date().toISOString().slice(0,10)+".csv");
+  showToast("📥 CSV exported!");
+}
+
+function exportSessionCSV(session){
+  var rows=[["Timestamp","Item","Session"]];
+  session.items.forEach(function(item){
+    (session.data[item.name]||[]).forEach(function(ts){rows.push([ts,item.name,session.name]);});
+  });
+  var hdr=rows.shift();rows.sort(function(a,b){return a[0]<b[0]?-1:1;});rows.unshift(hdr);
+  downloadCSV(rows,sanitiseFilename(session.name)+"_"+new Date().toISOString().slice(0,10)+".csv");
+  showToast("📥 Exported: "+session.name);
+}
+
+// ── End Session ───────────────────────────────────────────────────────────────
+function openEndSession(){document.getElementById("end-session-wrap").classList.add("open");}
+function closeEndSession(){document.getElementById("end-session-wrap").classList.remove("open");}
+
+function endSession(){
+  if(!activeSession)return;
+  activeSession.lastModified=new Date().toISOString();
+  // Update or add to sessions list
+  var idx=-1;
+  for(var i=0;i<sessions.length;i++){if(sessions[i].id===activeSession.id){idx=i;break;}}
+  if(idx>=0)sessions[idx]=JSON.parse(JSON.stringify(activeSession));
+  else sessions.push(JSON.parse(JSON.stringify(activeSession)));
+  saveSessions();
+  activeSession=null;saveActiveSession();
+  closeEndSession();
+  goCustomSessions();
+  showToast("✅ Session saved.");
+}
+
+// ── Delete Session ────────────────────────────────────────────────────────────
+function openDeleteSession(id,name){
+  sessionToDelete=id;
+  document.getElementById("delete-session-msg").textContent="This will permanently delete \""+name+"\" and all its data.";
+  document.getElementById("delete-session-wrap").classList.add("open");
+}
+function closeDeleteSession(){document.getElementById("delete-session-wrap").classList.remove("open");sessionToDelete=null;}
+function doDeleteSession(){
+  if(!sessionToDelete)return;
+  sessions=sessions.filter(function(s){return s.id!==sessionToDelete;});
+  saveSessions();closeDeleteSession();renderSessionList();
+  showToast("🗑 Session deleted.");
+}
+
+// ── Clear All Sessions ────────────────────────────────────────────────────────
+function openClearAllSessions(){document.getElementById("clear-sessions-wrap").classList.add("open");}
+function closeClearAllSessions(){document.getElementById("clear-sessions-wrap").classList.remove("open");}
+function doClearAllSessions(){
+  sessions=[];saveSessions();closeClearAllSessions();renderSessionList();
+  showToast("🗑 All sessions cleared.");
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// SHARED MODAL (used by both MLB and Custom)
+// ══════════════════════════════════════════════════════════════════════════════
+var modalMode="mlb";
+
+function openModal(name,mode){
+  modalMode=mode||"mlb";
+  var entries=mode==="mlb"?(mlbData[name]||[]):(activeSession?activeSession.data[name]||[]:[]);
+  var tc=mode==="mlb"?mlbGetTeamColors(name):{c1:getCusItemColour(name),c2:adjustColour(getCusItemColour(name))};
   var hd=document.getElementById("modal-hd");
   hd.style.background=tc.c1;hd.style.color=textOn(tc.c1);
   document.getElementById("modal-title").textContent="📋 "+name;
   var bd=document.getElementById("modal-bd");bd.innerHTML="";
   if(entries.length===0){
-    var em=document.createElement("div");em.className="empty";
-    em.textContent="No sightings logged yet.";bd.appendChild(em);
+    var em=document.createElement("div");em.className="empty";em.textContent="No entries logged yet.";bd.appendChild(em);
   } else {
     var info=document.createElement("p");
-    info.textContent=entries.length+" sighting"+(entries.length!==1?"s":"")+" logged:";
-    bd.appendChild(info);
+    info.textContent=entries.length+" entr"+(entries.length!==1?"ies":"y")+" logged:";bd.appendChild(info);
     entries.slice().reverse().forEach(function(ts,ri){
       var realIdx=entries.length-1-ri;
       var fmt=new Date(ts).toLocaleString(undefined,{year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit"});
       var row=document.createElement("div");row.className="log-row";
-      var span=document.createElement("span");span.className="log-ts";
-      span.textContent="#"+(realIdx+1)+"  "+fmt;row.appendChild(span);
+      var span=document.createElement("span");span.className="log-ts";span.textContent="#"+(realIdx+1)+"  "+fmt;row.appendChild(span);
       var del=document.createElement("button");del.className="del";del.textContent="🗑";
-      (function(n,i){del.addEventListener("click",function(){deleteEntry(n,i);});})(name,realIdx);
+      (function(n,i,m){del.addEventListener("click",function(){
+        if(m==="mlb")mlbDeleteEntry(n,i);else cusDeleteEntry(n,i);
+      });})(name,realIdx,mode);
       row.appendChild(del);bd.appendChild(row);
     });
   }
   document.getElementById("log-overlay").classList.add("open");
 }
 
+function getCusItemColour(name){
+  if(!activeSession)return"#2E7D32";
+  for(var i=0;i<activeSession.items.length;i++){if(activeSession.items[i].name===name)return activeSession.items[i].colour;}
+  return"#2E7D32";
+}
+
 function closeModal(){document.getElementById("log-overlay").classList.remove("open");}
 function handleOverlayClick(e){if(e.target===document.getElementById("log-overlay"))closeModal();}
 
-// ── Sort / Reset ──────────────────────────────────────────────────────────────
-function toggleSort(){sortOn=!sortOn;render();}
-function openConfirm(){document.getElementById("confirm-wrap").classList.add("open");}
-function closeConfirm(){document.getElementById("confirm-wrap").classList.remove("open");}
-function doReset(){
-  TEAMS.forEach(function(t){data[t.name]=[];});
-  save();closeConfirm();render();renderRankings();renderActivityLog();
-  showToast("🗑 All data reset.");
+// ══════════════════════════════════════════════════════════════════════════════
+// UTILITIES
+// ══════════════════════════════════════════════════════════════════════════════
+function parseCSVLine(line){
+  var result=[];var current="";var inQuotes=false;
+  for(var i=0;i<line.length;i++){
+    var ch=line[i];
+    if(ch==='"'){inQuotes=!inQuotes;}
+    else if(ch===","&&!inQuotes){result.push(current);current="";}
+    else{current+=ch;}
+  }
+  result.push(current);return result;
 }
 
-// ── CSV Export ────────────────────────────────────────────────────────────────
-function exportCSV(){
-  var rows=[["Timestamp","Team","Division"]];
-  TEAMS.forEach(function(t){
-    (data[t.name]||[]).forEach(function(ts){rows.push([ts,t.name,t.div]);});
-  });
-  var hdr=rows.shift();
-  rows.sort(function(a,b){return a[0]<b[0]?-1:1;});
-  rows.unshift(hdr);
-  var csv=rows.map(function(r){return r.map(function(c){return'"'+c+'"';}).join(",");}).join("\n");
+function downloadCSV(rows,filename){
+  var csv=rows.map(function(r){return r.map(function(c){return'"'+String(c).replace(/"/g,'""')+'"';}).join(",");}).join("\n");
   var blob=new Blob([csv],{type:"text/csv"});
   var url=URL.createObjectURL(blob);
-  var a=document.createElement("a");a.href=url;
-  a.download="mlb_merch_"+new Date().toISOString().slice(0,10)+".csv";
+  var a=document.createElement("a");a.href=url;a.download=filename;
   document.body.appendChild(a);a.click();document.body.removeChild(a);
-  URL.revokeObjectURL(url);showToast("📥 CSV exported!");
+  URL.revokeObjectURL(url);
 }
 
-// ── Toast ─────────────────────────────────────────────────────────────────────
-var toastTimer;
-function showToast(msg){
-  var t=document.getElementById("toast");if(!t)return;
-  t.textContent=msg;t.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer=setTimeout(function(){t.classList.remove("show");},2500);
+function sanitiseFilename(name){
+  return name.replace(/[^a-z0-9_\-]/gi,"_").toLowerCase().slice(0,40);
 }
 
-// ── Globals ───────────────────────────────────────────────────────────────────
-window.switchTab=switchTab;window.exportCSV=exportCSV;window.toggleSort=toggleSort;
-window.openConfirm=openConfirm;window.closeConfirm=closeConfirm;window.doReset=doReset;
-window.closeModal=closeModal;window.handleOverlayClick=handleOverlayClick;
-window.setLogFilter=setLogFilter;
+// ══════════════════════════════════════════════════════════════════════════════
+// EXPOSE GLOBALS
+// ══════════════════════════════════════════════════════════════════════════════
+window.goHome=goHome;window.goMLB=goMLB;window.goCustomSessions=goCustomSessions;window.goNewSession=goNewSession;
+window.mlbSwitchTab=mlbSwitchTab;window.mlbExportCSV=mlbExportCSV;window.mlbTriggerImport=mlbTriggerImport;
+window.mlbToggleSort=mlbToggleSort;window.mlbOpenConfirm=mlbOpenConfirm;window.mlbCloseConfirm=mlbCloseConfirm;
+window.mlbDoReset=mlbDoReset;window.mlbConfirmImport=mlbConfirmImport;window.mlbCloseImport=mlbCloseImport;
+window.mlbSetLogFilter=mlbSetLogFilter;
+window.cusSwitchTab=cusSwitchTab;window.cusExportCSV=cusExportCSV;window.cusToggleSort=cusToggleSort;
+window.cusOpenConfirm=cusOpenConfirm;window.cusCloseConfirm=cusCloseConfirm;window.cusDoReset=cusDoReset;
+window.cusSetLogFilter=cusSetLogFilter;window.openEndSession=openEndSession;window.closeEndSession=closeEndSession;
+window.endSession=endSession;window.closeDeleteSession=closeDeleteSession;window.doDeleteSession=doDeleteSession;
+window.openClearAllSessions=openClearAllSessions;window.closeClearAllSessions=closeClearAllSessions;
+window.doClearAllSessions=doClearAllSessions;window.addItem=addItem;window.startSession=startSession;
+window.handleItemKeydown=handleItemKeydown;window.closeModal=closeModal;window.handleOverlayClick=handleOverlayClick;
 
-// ── Init ──────────────────────────────────────────────────────────────────────
+// ══════════════════════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════════════════════
 function init(){
-  var hd=document.getElementById("hdate");
-  if(hd)hd.textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
-  load();render();
+  document.getElementById("hdate").textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+  mlbLoad();
+  loadSessions();
+  loadActiveSession();
+  // If there was an active session when app was last closed, resume it
+  if(activeSession){
+    launchCustomSession();
+  } else {
+    showScreen("screen-home");
+  }
 }
+
 if(document.readyState==="complete"||document.readyState==="interactive"){init();}
 else{document.addEventListener("DOMContentLoaded",init);window.addEventListener("load",init);}
 
