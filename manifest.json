@@ -1,0 +1,17 @@
+{
+  "name": "MLB Merch Tracker",
+  "short_name": "MLB Tracker",
+  "description": "Track MLB merchandise sightings across all 30 teams",
+  "start_url": "/mlb-tracker/",
+  "display": "standalone",
+  "background_color": "#002D62",
+  "theme_color": "#002D62",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://em-content.zobj.net/source/apple/391/baseball_26be.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
