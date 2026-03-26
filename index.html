@@ -15,30 +15,40 @@
 
     /* ── Header ── */
     header{color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;box-shadow:0 2px 6px rgba(0,0,0,.4)}
-    header h1{font-size:1.1rem;font-weight:700}
-    header small{font-size:.75rem;opacity:.75}.header-back{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0 8px 0 0;line-height:1}
+    header h1{font-size:1.1rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    header small{font-size:.75rem;opacity:.75;flex-shrink:0;margin-left:8px}.header-back{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0 8px 0 0;line-height:1;flex-shrink:0}
 
-    /* ── Home Screen ── */.home-wrap{padding:20px 16px;flex:1}.home-title{font-size:1.4rem;font-weight:800;color:#041E42;margin-bottom:4px}.home-sub{font-size:.85rem;color:#888;margin-bottom:24px}.mode-card{background:#fff;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.1);padding:20px;margin-bottom:16px;display:flex;align-items:center;gap:16px;cursor:pointer;border:2px solid transparent;transition:border-color.2s}.mode-card:active{opacity:.85}.mode-card.mlb{border-color:#041E42}.mode-card.custom{border-color:#2E7D32}.mode-icon{font-size:2.2rem;flex-shrink:0}.mode-info h2{font-size:1rem;font-weight:700;margin-bottom:4px}.mode-info p{font-size:.8rem;color:#888;line-height:1.4}
+    /* ── Home ── */.home-wrap{padding:20px 16px;flex:1}.home-title{font-size:1.4rem;font-weight:800;color:#041E42;margin-bottom:4px}.home-sub{font-size:.85rem;color:#888;margin-bottom:24px}.mode-card{background:#fff;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.1);padding:20px;margin-bottom:16px;display:flex;align-items:center;gap:16px;cursor:pointer;border:2px solid transparent;transition:border-color.2s;-webkit-tap-highlight-color:transparent}.mode-card:active{opacity:.85}.mode-card.mlb{border-color:#041E42}.mode-card.custom{border-color:#2E7D32}.mode-card.softball{border-color:#B71C1C}.mode-icon{font-size:2.2rem;flex-shrink:0}.mode-info h2{font-size:1rem;font-weight:700;margin-bottom:4px}.mode-info p{font-size:.8rem;color:#888;line-height:1.4}
 
-    /* ── Session List Screen ── */.session-list-wrap{padding:16px;flex:1;overflow-y:auto}.session-card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);padding:14px 16px;margin-bottom:10px;border-left:4px solid #2E7D32}.session-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.session-card-name{font-size:.92rem;font-weight:700;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.session-card-date{font-size:.72rem;color:#aaa;flex-shrink:0;margin-left:8px}.session-card-meta{font-size:.78rem;color:#888;margin-bottom:10px}.session-card-btns{display:flex;gap:8px}.session-card-btns button{flex:1;padding:7px 4px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer}.scb-open{background:#2E7D32;color:#fff}.scb-export{background:#041E42;color:#fff}.scb-delete{background:#BF0D3E;color:#fff}.new-session-btn{width:100%;padding:14px;background:#2E7D32;color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;margin-bottom:16px}.clear-all-btn{width:100%;padding:12px;background:#BF0D3E;color:#fff;border:none;border-radius:12px;font-size:.88rem;font-weight:700;cursor:pointer;margin-top:8px}.empty-sessions{text-align:center;color:#aaa;padding:40px 20px;font-size:.9rem}
+    /* ── Session List ── */.session-list-wrap{padding:16px;flex:1;overflow-y:auto}.session-card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);padding:14px 16px;margin-bottom:10px}.session-card.custom-session{border-left:4px solid #2E7D32}.session-card.softball-game{border-left:4px solid #B71C1C}.session-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.session-card-name{font-size:.92rem;font-weight:700;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.session-card-date{font-size:.72rem;color:#aaa;flex-shrink:0;margin-left:8px}.session-card-meta{font-size:.78rem;color:#888;margin-bottom:10px}.session-card-btns{display:flex;gap:8px}.session-card-btns button{flex:1;padding:7px 4px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent}.scb-open{background:#2E7D32;color:#fff}.scb-open.softball{background:#B71C1C}.scb-export{background:#041E42;color:#fff}.scb-delete{background:#BF0D3E;color:#fff}.new-session-btn{width:100%;padding:14px;color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;margin-bottom:16px;-webkit-tap-highlight-color:transparent}.new-session-btn.green{background:#2E7D32}.new-session-btn.red{background:#B71C1C}.clear-all-btn{width:100%;padding:12px;background:#BF0D3E;color:#fff;border:none;border-radius:12px;font-size:.88rem;font-weight:700;cursor:pointer;margin-top:8px}.empty-sessions{text-align:center;color:#aaa;padding:40px 20px;font-size:.9rem}
 
-    /* ── New Session Screen ── */.new-session-wrap{padding:16px;flex:1;overflow-y:auto}.field-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#888;margin-bottom:6px;margin-top:16px}.field-label:first-child{margin-top:0}.text-input{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:10px;font-size:.92rem;background:#fff;color:#1a1a1a;outline:none}.text-input:focus{border-color:#2E7D32}.add-item-row{display:flex;gap:8px;align-items:center;margin-bottom:12px}.add-item-row input[type="text"]{flex:1;padding:10px 12px;border:1.5px solid #ddd;border-radius:10px;font-size:.88rem;outline:none}.add-item-row input[type="text"]:focus{border-color:#2E7D32}.add-item-row input[type="color"]{width:42px;height:42px;border:1.5px solid #ddd;border-radius:10px;padding:2px;cursor:pointer;background:#fff;flex-shrink:0}.add-item-btn{background:#2E7D32;color:#fff;border:none;border-radius:10px;padding:10px 14px;font-size:1.2rem;font-weight:700;cursor:pointer;flex-shrink:0}.items-list{margin-bottom:16px}.item-row{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px;border-left:4px solid #ccc}.item-row-swatch{width:24px;height:24px;border-radius:6px;flex-shrink:0}.item-row-name{flex:1;font-size:.88rem;font-weight:600}.item-row-del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 4px}.start-session-btn{width:100%;padding:14px;background:#041E42;color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:8px}.start-session-btn:disabled{background:#ccc;cursor:not-allowed}
+    /* ── New Session / Game Setup ── */.new-session-wrap{padding:16px;flex:1;overflow-y:auto}.field-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#888;margin-bottom:6px;margin-top:16px}.field-label:first-child{margin-top:0}.text-input{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:10px;font-size:.92rem;background:#fff;color:#1a1a1a;outline:none}.text-input:focus{border-color:#2E7D32}.text-input.softball:focus{border-color:#B71C1C}.select-input{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:10px;font-size:.92rem;background:#fff;color:#1a1a1a;outline:none;appearance:none}.add-item-row{display:flex;gap:8px;align-items:center;margin-bottom:12px}.add-item-row input[type="text"]{flex:1;padding:10px 12px;border:1.5px solid #ddd;border-radius:10px;font-size:.88rem;outline:none}.add-item-row input[type="text"]:focus{border-color:#2E7D32}.add-item-row input[type="color"]{width:42px;height:42px;border:1.5px solid #ddd;border-radius:10px;padding:2px;cursor:pointer;background:#fff;flex-shrink:0}.add-item-btn{color:#fff;border:none;border-radius:10px;padding:10px 14px;font-size:1.2rem;font-weight:700;cursor:pointer;flex-shrink:0}.add-item-btn.green{background:#2E7D32}.add-item-btn.red{background:#B71C1C}.items-list{margin-bottom:16px}.item-row{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px;border-left:4px solid #ccc}.item-row-swatch{width:24px;height:24px;border-radius:6px;flex-shrink:0}.item-row-name{flex:1;font-size:.88rem;font-weight:600}.item-row-pos{font-size:.75rem;color:#888;margin-left:4px}.item-row-del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 4px}.item-row-up,.item-row-dn{background:none;border:none;color:#888;font-size:1rem;cursor:pointer;padding:2px 4px}.start-session-btn{width:100%;padding:14px;color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:8px}.start-session-btn.green{background:#2E7D32}.start-session-btn.red{background:#B71C1C}.start-session-btn:disabled{background:#ccc;cursor:not-allowed}
 
-    /* ── Tabs ── */.tabs{display:flex;background:#fff;border-bottom:2px solid #e0e0e0;position:sticky;top:49px;z-index:40}.tab{flex:1;padding:11px 4px;text-align:center;font-size:.72rem;font-weight:700;color:#888;cursor:pointer;border-bottom:3px solid transparent;transition:all.2s;-webkit-tap-highlight-color:transparent;user-select:none}.tab.active{color:#041E42;border-bottom-color:#041E42}.tab span{display:block;font-size:1.1rem;margin-bottom:2px}
+    /* ── Tabs ── */.tabs{display:flex;background:#fff;border-bottom:2px solid #e0e0e0;position:sticky;top:49px;z-index:40}.tab{flex:1;padding:11px 4px;text-align:center;font-size:.68rem;font-weight:700;color:#888;cursor:pointer;border-bottom:3px solid transparent;transition:all.2s;-webkit-tap-highlight-color:transparent;user-select:none}.tab.active{color:#041E42;border-bottom-color:#041E42}.tab.active.softball{color:#B71C1C;border-bottom-color:#B71C1C}.tab span{display:block;font-size:1rem;margin-bottom:2px}
 
-    /* ── Toolbar ── */.toolbar{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px;background:#fff;border-bottom:1px solid #ddd}.toolbar button{flex:1;min-width:100px;padding:9px 8px;border:none;border-radius:8px;font-size:.8rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.toolbar button:active{opacity:.7}.tb-export{background:#041E42;color:#fff}.tb-import{background:#2E7D32;color:#fff}.tb-sort{background:#e8e8e8;color:#333}.tb-reset{background:#BF0D3E;color:#fff}.tb-end{background:#7B1FA2;color:#fff}
+    /* ── Toolbar ── */.toolbar{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px;background:#fff;border-bottom:1px solid #ddd}.toolbar button{flex:1;min-width:80px;padding:9px 6px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.toolbar button:active{opacity:.7}.tb-export{background:#041E42;color:#fff}.tb-import{background:#2E7D32;color:#fff}.tb-sort{background:#e8e8e8;color:#333}.tb-reset{background:#BF0D3E;color:#fff}.tb-end{background:#7B1FA2;color:#fff}.tb-inning{background:#B71C1C;color:#fff}
 
-    /* ── Grand Total ── */.grand-total{text-align:center;padding:8px 12px;background:#fff;border-bottom:1px solid #eee;font-size:.85rem;color:#555}.grand-total b{color:#041E42;font-size:1rem}
+    /* ── Grand Total / Score Banner ── */.grand-total{text-align:center;padding:8px 12px;background:#fff;border-bottom:1px solid #eee;font-size:.85rem;color:#555}.grand-total b{color:#041E42;font-size:1rem}.score-banner{background:#B71C1C;color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:49px;z-index:39}.score-team{flex:1;text-align:center}.score-team-name{font-size:.7rem;font-weight:700;opacity:.8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}.score-team-runs{font-size:2rem;font-weight:800;line-height:1}.score-divider{font-size:1.2rem;font-weight:700;opacity:.6;padding:0 8px}.score-inning{text-align:center;flex-shrink:0}.score-inning-num{font-size:1.1rem;font-weight:800}.score-inning-label{font-size:.65rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}.score-outs{font-size:.7rem;opacity:.8;margin-top:2px}
 
     /* ── Pages ── */.page{display:none}.page.active{display:block}
 
-    /* ── Team/Item Grid ── */.section-label{padding:12px 14px 4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;padding:0 12px 12px}.card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);overflow:hidden;display:flex;flex-direction:column;border-width:2px;border-style:solid;border-color:transparent}.card-head{padding:8px 10px;font-size:.75rem;font-weight:700;line-height:1.3;min-height:44px;display:flex;align-items:center}.card-body{display:flex;align-items:center;gap:6px;padding:8px 10px}.log-btn{flex:1;border:none;border-radius:8px;padding:10px 4px;font-size:.85rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.log-btn:active{opacity:.8}.badge{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:700;cursor:pointer;flex-shrink:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border:2px solid rgba(255,255,255,.3)}.badge.lit{border-color:transparent}
+    /* ── MLB/Custom Grid ── */.section-label{padding:12px 14px 4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;padding:0 12px 12px}.card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);overflow:hidden;display:flex;flex-direction:column;border-width:2px;border-style:solid;border-color:transparent}.card-head{padding:8px 10px;font-size:.75rem;font-weight:700;line-height:1.3;min-height:44px;display:flex;align-items:center}.card-body{display:flex;align-items:center;gap:6px;padding:8px 10px}.log-btn{flex:1;border:none;border-radius:8px;padding:10px 4px;font-size:.85rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.log-btn:active{opacity:.8}.badge{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:700;cursor:pointer;flex-shrink:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border:2px solid rgba(255,255,255,.3)}.badge.lit{border-color:transparent}
 
     /* ── Rankings ── */.rankings-wrap{padding:12px}.rank-card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);margin-bottom:8px;display:flex;align-items:center;padding:12px 14px;gap:12px}.rank-pos{font-size:1.3rem;width:36px;text-align:center;flex-shrink:0}.rank-info{flex:1;min-width:0}.rank-name{font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rank-div{font-size:.72rem;color:#888;margin-top:2px}.rank-bar-wrap{width:90px;flex-shrink:0}.rank-bar-bg{background:#f0f0f0;border-radius:4px;height:8px;overflow:hidden}.rank-bar-fill{height:8px;border-radius:4px;transition:width.4s ease}.rank-count{font-size:1rem;font-weight:700;width:28px;text-align:right;flex-shrink:0}.rank-zero.rank-name{color:#bbb}.rank-zero.rank-count{color:#ccc}.rank-zero.rank-bar-fill{background:#ddd!important}.rank-divider{padding:8px 14px 4px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888}
 
-    /* ── Activity Log ── */.activity-wrap{padding:12px}.activity-toolbar{display:flex;gap:8px;margin-bottom:12px}.activity-toolbar button{flex:1;padding:8px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent}.act-filter-btn{background:#e8e8e8;color:#333}.act-filter-btn.active{background:#041E42;color:#fff}.activity-empty{text-align:center;color:#aaa;padding:40px 20px;font-size:.9rem}.activity-entry{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;border-left-width:4px;border-left-style:solid}.activity-entry-left{flex:1;min-width:0}.activity-team{font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.activity-div{font-size:.72rem;color:#888;margin-top:2px}.activity-time{font-size:.75rem;color:#aaa;margin-top:3px}.activity-num{border-radius:6px;padding:4px 8px;font-size:.75rem;font-weight:700;flex-shrink:0;color:#fff}.activity-del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 6px;flex-shrink:0}.activity-date-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888;padding:8px 4px 4px;margin-top:4px}
+    /* ── Activity Log ── */.activity-wrap{padding:12px}.activity-toolbar{display:flex;gap:8px;margin-bottom:12px}.activity-toolbar button{flex:1;padding:8px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer}.act-filter-btn{background:#e8e8e8;color:#333}.act-filter-btn.active{background:#041E42;color:#fff}.activity-empty{text-align:center;color:#aaa;padding:40px 20px;font-size:.9rem}.activity-entry{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;border-left-width:4px;border-left-style:solid}.activity-entry-left{flex:1;min-width:0}.activity-team{font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.activity-div{font-size:.72rem;color:#888;margin-top:2px}.activity-time{font-size:.75rem;color:#aaa;margin-top:3px}.activity-num{border-radius:6px;padding:4px 8px;font-size:.75rem;font-weight:700;flex-shrink:0;color:#fff}.activity-del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 6px;flex-shrink:0}.activity-date-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888;padding:8px 4px 4px;margin-top:4px}
 
-    /* ── Modals ── */.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:center;justify-content:center}.overlay.open{display:flex}.modal{background:#fff;border-radius:16px;width:92%;max-width:420px;max-height:78vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3)}.modal-hd{color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}.modal-hd h3{font-size:.95rem;font-weight:700}.modal-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;padding:0 4px}.modal-bd{overflow-y:auto;padding:14px 16px;flex:1}.modal-bd p{font-size:.82rem;color:#666;margin-bottom:10px}.log-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:.8rem;gap:8px}.log-row:last-child{border-bottom:none}.log-ts{color:#555;flex:1}.del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 6px}.empty{text-align:center;color:#aaa;padding:24px 0;font-size:.9rem}.confirm-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;align-items:center;justify-content:center}.confirm-wrap.open{display:flex}.confirm-box{background:#fff;border-radius:14px;padding:24px 20px;width:88%;max-width:340px;text-align:center}.confirm-box h3{color:#BF0D3E;margin-bottom:8px}.confirm-box p{font-size:.85rem;color:#666;margin-bottom:20px}.confirm-btns{display:flex;gap:12px;justify-content:center}.confirm-btns button{padding:10px 22px;border:none;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer}.cy{background:#BF0D3E;color:#fff}.cn{background:#e0e0e0;color:#333}
+    /* ── Softball Lineup ── */.softball-wrap{padding:12px}.lineup-card{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);margin-bottom:8px;display:flex;align-items:center;padding:12px 14px;gap:12px;cursor:pointer;border:2px solid transparent;-webkit-tap-highlight-color:transparent}.lineup-card.at-bat{border-color:#B71C1C;background:#fff9f9}.lineup-card:active{opacity:.85}.lineup-num{width:28px;height:28px;border-radius:50%;background:#B71C1C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0}.lineup-info{flex:1;min-width:0}.lineup-name{font-size:.92rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lineup-pos{font-size:.72rem;color:#888;margin-top:2px}.lineup-stats{display:flex;gap:8px;flex-shrink:0}.lineup-stat{text-align:center}.lineup-stat-val{font-size:.9rem;font-weight:700;color:#B71C1C}.lineup-stat-lbl{font-size:.6rem;color:#aaa;text-transform:uppercase}.at-bat-badge{background:#B71C1C;color:#fff;border-radius:6px;padding:3px 7px;font-size:.65rem;font-weight:700;flex-shrink:0}.team-section-header{background:#f8f8f8;border-radius:10px;padding:8px 12px;margin-bottom:8px;font-size:.78rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.5px}
+
+    /* ── Softball Field Graphic ── */.atbat-wrap{padding:12px;overflow-y:auto}.atbat-batter-info{background:#fff;border-radius:12px;padding:12px 16px;margin-bottom:12px;display:flex;align-items:center;gap:12px;box-shadow:0 1px 4px rgba(0,0,0,.1)}.atbat-batter-num{width:36px;height:36px;border-radius:50%;background:#B71C1C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;flex-shrink:0}.atbat-batter-name{font-size:1rem;font-weight:700}.atbat-batter-pos{font-size:.78rem;color:#888}.field-wrap{position:relative;width:100%;max-width:340px;margin:0 auto 12px}.field-svg{width:100%;height:auto;display:block}.field-zone{cursor:pointer;transition:opacity.15s;-webkit-tap-highlight-color:transparent}.field-zone:active{opacity:.7}.field-zone.selected{opacity:1}.field-zone.unselected{opacity:.5}.outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}.outcome-btn{padding:10px 4px;border:none;border-radius:10px;font-size:.78rem;font-weight:700;cursor:pointer;color:#fff;-webkit-tap-highlight-color:transparent;border:2px solid transparent}.outcome-btn:active{opacity:.8}.outcome-btn.selected{border-color:#fff;box-shadow:0 0 0 2px #333}.ob-single{background:#2E7D32}.ob-double{background:#1565C0}.ob-triple{background:#6A1B9A}.ob-hr{background:#E65100}.ob-walk{background:#00838F}.ob-out{background:#546E7A}.ob-k{background:#27251F}.ob-sac{background:#795548}.rbi-wrap{background:#fff;border-radius:12px;padding:12px 16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.1)}.rbi-label{font-size:.78rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}.rbi-btns{display:flex;gap:8px}.rbi-btn{flex:1;padding:10px;border:2px solid #ddd;border-radius:10px;background:#fff;font-size:.95rem;font-weight:700;cursor:pointer;color:#555;-webkit-tap-highlight-color:transparent}.rbi-btn.selected{background:#B71C1C;color:#fff;border-color:#B71C1C}.record-btn{width:100%;padding:14px;background:#B71C1C;color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;margin-bottom:8px}.record-btn:disabled{background:#ccc;cursor:not-allowed}.no-batter-msg{text-align:center;color:#aaa;padding:40px 20px;font-size:.9rem}
+
+    /* ── Box Score ── */.boxscore-wrap{padding:12px;overflow-x:auto}.boxscore-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);margin-bottom:16px;font-size:.75rem}.boxscore-table th{background:#B71C1C;color:#fff;padding:8px 6px;text-align:center;font-weight:700;white-space:nowrap}.boxscore-table th.left{text-align:left;padding-left:10px}.boxscore-table td{padding:7px 6px;text-align:center;border-bottom:1px solid #f0f0f0}.boxscore-table td.left{text-align:left;padding-left:10px;font-weight:600}.boxscore-table tr:last-child td{border-bottom:none}.boxscore-table tr.totals-row td{background:#f8f8f8;font-weight:700;border-top:2px solid #ddd}.boxscore-table tr.team-header td{background:#fce4e4;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:#B71C1C}.inning-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);margin-bottom:16px;font-size:.78rem}.inning-table th{background:#041E42;color:#fff;padding:8px 10px;text-align:center;font-weight:700}.inning-table th.left{text-align:left}.inning-table td{padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:600}.inning-table td.left{text-align:left}.inning-table tr:last-child td{border-bottom:none}.section-title{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#888;margin:16px 0 8px}
+
+    /* ── Game Log ── */.game-log-wrap{padding:12px}.game-log-entry{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:10px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px}.game-log-outcome{border-radius:6px;padding:4px 8px;font-size:.72rem;font-weight:700;color:#fff;flex-shrink:0;min-width:48px;text-align:center}.game-log-info{flex:1;min-width:0}.game-log-player{font-size:.85rem;font-weight:700}.game-log-detail{font-size:.72rem;color:#888;margin-top:2px}.game-log-rbi{font-size:.72rem;font-weight:700;color:#B71C1C;flex-shrink:0}.game-log-del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 6px;flex-shrink:0}.inning-group-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888;padding:8px 4px 4px;margin-top:4px}
+
+    /* ── Modals ── */.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:center;justify-content:center}.overlay.open{display:flex}.modal{background:#fff;border-radius:16px;width:92%;max-width:420px;max-height:78vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3)}.modal-hd{color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}.modal-hd h3{font-size:.95rem;font-weight:700}.modal-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;padding:0 4px}.modal-bd{overflow-y:auto;padding:14px 16px;flex:1}.modal-bd p{font-size:.82rem;color:#666;margin-bottom:10px}.log-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:.8rem;gap:8px}.log-row:last-child{border-bottom:none}.log-ts{color:#555;flex:1}.del{background:none;border:none;color:#BF0D3E;font-size:1rem;cursor:pointer;padding:2px 6px}.empty{text-align:center;color:#aaa;padding:24px 0;font-size:.9rem}.confirm-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;align-items:center;justify-content:center}.confirm-wrap.open{display:flex}.confirm-box{background:#fff;border-radius:14px;padding:24px 20px;width:88%;max-width:340px;text-align:center}.confirm-box h3{color:#BF0D3E;margin-bottom:8px}.confirm-box p{font-size:.85rem;color:#666;margin-bottom:20px}.confirm-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.confirm-btns button{padding:10px 18px;border:none;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer}.cy{background:#BF0D3E;color:#fff}.cn{background:#e0e0e0;color:#333}.cp{background:#B71C1C;color:#fff}
+
+    /* ── Runs Modal ── */.runs-modal-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;align-items:center;justify-content:center}.runs-modal-wrap.open{display:flex}.runs-modal-box{background:#fff;border-radius:14px;padding:24px 20px;width:88%;max-width:340px;text-align:center}.runs-modal-box h3{color:#B71C1C;margin-bottom:8px;font-size:1rem}.runs-modal-box p{font-size:.85rem;color:#666;margin-bottom:16px}.runs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}.runs-btn{padding:12px 4px;border:2px solid #ddd;border-radius:10px;background:#fff;font-size:1rem;font-weight:700;cursor:pointer;color:#555}.runs-btn.selected{background:#B71C1C;color:#fff;border-color:#B71C1C}
 
     /* ── Toast ── */.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(90px);background:#222;color:#fff;padding:10px 22px;border-radius:24px;font-size:.85rem;z-index:500;transition:transform.3s ease;white-space:nowrap;pointer-events:none}.toast.show{transform:translateX(-50%) translateY(0)}
 
@@ -47,9 +57,9 @@
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════════════════
-     SCREEN 1 — HOME
-════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SCREEN: HOME
+══════════════════════════════════════════════════ -->
 <div class="screen active" id="screen-home">
   <header style="background:#041E42">
     <h1>⚾ Tracker App</h1>
@@ -58,76 +68,68 @@
   <div class="home-wrap">
     <div class="home-title">Welcome</div>
     <div class="home-sub">Choose a tracking mode to get started</div>
-
     <div class="mode-card mlb" onclick="goMLB()">
       <div class="mode-icon">⚾</div>
-      <div class="mode-info">
-        <h2>MLB Merch Tracker</h2>
-        <p>Track merchandise sightings across all 30 Major League Baseball teams</p>
-      </div>
+      <div class="mode-info"><h2>MLB Merch Tracker</h2><p>Track merchandise sightings across all 30 Major League Baseball teams</p></div>
     </div>
-
     <div class="mode-card custom" onclick="goCustomSessions()">
       <div class="mode-icon">🔬</div>
-      <div class="mode-info">
-        <h2>Custom Session</h2>
-        <p>Create a bespoke tracker for user research, events, or any keyword set</p>
-      </div>
+      <div class="mode-info"><h2>Custom Session</h2><p>Create a bespoke tracker for user research, events, or any keyword set</p></div>
+    </div>
+    <div class="mode-card softball" onclick="goSoftballGames()">
+      <div class="mode-icon">🥎</div>
+      <div class="mode-info"><h2>Softball Scorer</h2><p>Score co-ed softball games with full box score, lineup and at-bat tracking</p></div>
     </div>
   </div>
   <footer>Data saved locally on your device</footer>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
-     SCREEN 2 — MLB TRACKER
-════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SCREEN: MLB TRACKER
+══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-mlb">
   <header style="background:#041E42">
-    <div style="display:flex;align-items:center;gap:4px">
+    <div style="display:flex;align-items:center;gap:4px;flex:1;min-width:0">
       <button class="header-back" onclick="goHome()">‹</button>
       <h1>⚾ MLB Merch Tracker</h1>
     </div>
     <small id="mlb-hdate"></small>
   </header>
-
   <div class="tabs">
     <div class="tab active" id="mlb-tab-tracker" onclick="mlbSwitchTab('tracker')"><span>⚾</span>TRACKER</div>
     <div class="tab" id="mlb-tab-rankings" onclick="mlbSwitchTab('rankings')"><span>🏆</span>RANKINGS</div>
     <div class="tab" id="mlb-tab-log" onclick="mlbSwitchTab('log')"><span>📋</span>ALL LOGS</div>
   </div>
-
   <div class="page active" id="mlb-page-tracker">
     <div class="toolbar">
       <button class="tb-export" onclick="mlbExportCSV()">📥 Export</button>
       <button class="tb-import" onclick="mlbTriggerImport()">📤 Import</button>
-      <button class="tb-sort"   onclick="mlbToggleSort()">🔃 Sort</button>
-      <button class="tb-reset"  onclick="mlbOpenConfirm()">🗑 Reset</button>
+      <button class="tb-sort" onclick="mlbToggleSort()">🔃 Sort</button>
+      <button class="tb-reset" onclick="mlbOpenConfirm()">🗑 Reset</button>
     </div>
     <div class="grand-total">Total sightings: <b id="mlb-gtotal">0</b></div>
     <div id="mlb-app"></div>
   </div>
-
   <div class="page" id="mlb-page-rankings">
     <div class="grand-total">Total sightings: <b id="mlb-gtotal-rank">0</b></div>
     <div class="rankings-wrap" id="mlb-rankings-wrap"></div>
   </div>
-
   <div class="page" id="mlb-page-log">
     <div class="grand-total">Total sightings: <b id="mlb-gtotal-log">0</b></div>
     <div class="activity-wrap">
       <div class="activity-toolbar">
-        <button class="act-filter-btn active" id="mlb-filter-all"   onclick="mlbSetLogFilter('all')">All</button>
-        <button class="act-filter-btn"        id="mlb-filter-today" onclick="mlbSetLogFilter('today')">Today</button>
-        <button class="act-filter-btn"        id="mlb-filter-week"  onclick="mlbSetLogFilter('week')">This Week</button>
+        <button class="act-filter-btn active" id="mlb-filter-all" onclick="mlbSetLogFilter('all')">All</button>
+        <button class="act-filter-btn" id="mlb-filter-today" onclick="mlbSetLogFilter('today')">Today</button>
+        <button class="act-filter-btn" id="mlb-filter-week" onclick="mlbSetLogFilter('week')">This Week</button>
       </div>
       <div id="mlb-activity-list"></div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
-     SCREEN 3 — CUSTOM SESSION LIST
-════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SCREEN: CUSTOM SESSION LIST
+══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-sessions">
   <header style="background:#2E7D32">
     <div style="display:flex;align-items:center;gap:4px">
@@ -136,15 +138,15 @@
     </div>
   </header>
   <div class="session-list-wrap">
-    <button class="new-session-btn" onclick="goNewSession()">＋ New Session</button>
+    <button class="new-session-btn green" onclick="goNewSession()">＋ New Session</button>
     <div id="session-list"></div>
     <button class="clear-all-btn" id="clear-all-sessions-btn" onclick="openClearAllSessions()" style="display:none">🗑 Clear All Sessions</button>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
-     SCREEN 4 — NEW SESSION SETUP
-════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SCREEN: NEW CUSTOM SESSION
+══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-new-session">
   <header style="background:#2E7D32">
     <div style="display:flex;align-items:center;gap:4px">
@@ -154,73 +156,188 @@
   </header>
   <div class="new-session-wrap">
     <div class="field-label">Session Name</div>
-    <input class="text-input" type="text" id="session-name-input" placeholder="e.g. User Research Group A — March 2026"/>
-
+    <input class="text-input" type="text" id="session-name-input" placeholder="e.g. User Research Group A"/>
     <div class="field-label">Add Items to Track</div>
     <div class="add-item-row">
       <input type="color" id="item-colour-picker" value="#0E3386"/>
-      <input type="text"  id="item-name-input" placeholder="e.g. Confusion" onkeydown="handleItemKeydown(event)"/>
-      <button class="add-item-btn" onclick="addItem()">＋</button>
+      <input type="text" id="item-name-input" placeholder="e.g. Confusion" onkeydown="handleItemKeydown(event)"/>
+      <button class="add-item-btn green" onclick="addItem()">＋</button>
     </div>
-
     <div class="field-label">Items <span id="item-count-label" style="font-weight:400;text-transform:none;letter-spacing:0;color:#aaa">(0 added)</span></div>
     <div class="items-list" id="items-list"></div>
-
-    <button class="start-session-btn" id="start-session-btn" onclick="startSession()" disabled>▶ Start Session</button>
+    <button class="start-session-btn green" id="start-session-btn" onclick="startSession()" disabled>▶ Start Session</button>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
-     SCREEN 5 — ACTIVE CUSTOM SESSION
-════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SCREEN: ACTIVE CUSTOM SESSION
+══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-custom">
   <header id="custom-header" style="background:#2E7D32">
-    <div style="display:flex;align-items:center;gap:4px;min-width:0;flex:1">
-      <h1 id="custom-session-title" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Session</h1>
+    <div style="display:flex;align-items:center;gap:4px;flex:1;min-width:0">
+      <h1 id="custom-session-title">Session</h1>
     </div>
     <small id="custom-hdate"></small>
   </header>
-
   <div class="tabs">
-    <div class="tab active" id="cus-tab-tracker"  onclick="cusSwitchTab('tracker')"><span>🔬</span>TRACKER</div>
-    <div class="tab"        id="cus-tab-rankings" onclick="cusSwitchTab('rankings')"><span>🏆</span>RANKINGS</div>
-    <div class="tab"        id="cus-tab-log"      onclick="cusSwitchTab('log')"><span>📋</span>ALL LOGS</div>
+    <div class="tab active" id="cus-tab-tracker" onclick="cusSwitchTab('tracker')"><span>🔬</span>TRACKER</div>
+    <div class="tab" id="cus-tab-rankings" onclick="cusSwitchTab('rankings')"><span>🏆</span>RANKINGS</div>
+    <div class="tab" id="cus-tab-log" onclick="cusSwitchTab('log')"><span>📋</span>ALL LOGS</div>
   </div>
-
   <div class="page active" id="cus-page-tracker">
     <div class="toolbar">
       <button class="tb-export" onclick="cusExportCSV()">📥 Export</button>
-      <button class="tb-sort"   onclick="cusToggleSort()">🔃 Sort</button>
-      <button class="tb-reset"  onclick="cusOpenConfirm()">🗑 Reset</button>
-      <button class="tb-end"    onclick="openEndSession()">■ End</button>
+      <button class="tb-sort" onclick="cusToggleSort()">🔃 Sort</button>
+      <button class="tb-reset" onclick="cusOpenConfirm()">🗑 Reset</button>
+      <button class="tb-end" onclick="openEndSession()">■ End</button>
     </div>
     <div class="grand-total">Total logged: <b id="cus-gtotal">0</b></div>
     <div id="cus-app"></div>
   </div>
-
   <div class="page" id="cus-page-rankings">
     <div class="grand-total">Total logged: <b id="cus-gtotal-rank">0</b></div>
     <div class="rankings-wrap" id="cus-rankings-wrap"></div>
   </div>
-
   <div class="page" id="cus-page-log">
     <div class="grand-total">Total logged: <b id="cus-gtotal-log">0</b></div>
     <div class="activity-wrap">
       <div class="activity-toolbar">
-        <button class="act-filter-btn active" id="cus-filter-all"   onclick="cusSetLogFilter('all')">All</button>
-        <button class="act-filter-btn"        id="cus-filter-today" onclick="cusSetLogFilter('today')">Today</button>
-        <button class="act-filter-btn"        id="cus-filter-week"  onclick="cusSetLogFilter('week')">This Week</button>
+        <button class="act-filter-btn active" id="cus-filter-all" onclick="cusSetLogFilter('all')">All</button>
+        <button class="act-filter-btn" id="cus-filter-today" onclick="cusSetLogFilter('today')">Today</button>
+        <button class="act-filter-btn" id="cus-filter-week" onclick="cusSetLogFilter('week')">This Week</button>
       </div>
       <div id="cus-activity-list"></div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
-     SHARED MODALS
-════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     SCREEN: SOFTBALL GAME LIST
+══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-softball-games">
+  <header style="background:#B71C1C">
+    <div style="display:flex;align-items:center;gap:4px">
+      <button class="header-back" onclick="goHome()">‹</button>
+      <h1>🥎 Softball Scorer</h1>
+    </div>
+  </header>
+  <div class="session-list-wrap">
+    <button class="new-session-btn red" onclick="goNewGame()">＋ New Game</button>
+    <div id="game-list"></div>
+    <button class="clear-all-btn" id="clear-all-games-btn" onclick="openClearAllGames()" style="display:none">🗑 Clear All Games</button>
+  </div>
+</div>
 
-<!-- Team/Item Log Modal -->
+<!-- ══════════════════════════════════════════════════
+     SCREEN: NEW GAME SETUP
+══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-new-game">
+  <header style="background:#B71C1C">
+    <div style="display:flex;align-items:center;gap:4px">
+      <button class="header-back" onclick="goSoftballGames()">‹</button>
+      <h1>🥎 New Game</h1>
+    </div>
+  </header>
+  <div class="new-session-wrap">
+    <div class="field-label">Game Name</div>
+    <input class="text-input softball" type="text" id="game-name-input" placeholder="e.g. Tuesday League — Game 4"/>
+    <div class="field-label">Your Team Name</div>
+    <input class="text-input softball" type="text" id="home-team-input" placeholder="e.g. The Sluggers"/>
+    <div class="field-label">Opponent Team Name</div>
+    <input class="text-input softball" type="text" id="away-team-input" placeholder="e.g. Diamond Dogs"/>
+    <div class="field-label">Add Players — Your Team</div>
+    <div class="add-item-row">
+      <select id="player-pos-select" class="select-input" style="flex:0 0 80px;padding:10px 6px">
+        <option>P</option><option>C</option><option>1B</option><option>2B</option>
+        <option>3B</option><option>SS</option><option>LF</option><option>LC</option>
+        <option>RC</option><option>RF</option><option>DH</option>
+      </select>
+      <input type="text" id="home-player-input" placeholder="Player name" onkeydown="handleHomePlayerKeydown(event)"/>
+      <button class="add-item-btn red" onclick="addHomePlayer()">＋</button>
+    </div>
+    <div class="items-list" id="home-players-list"></div>
+    <div class="field-label">Add Players — Opponent Team</div>
+    <div class="add-item-row">
+      <select id="away-player-pos-select" class="select-input" style="flex:0 0 80px;padding:10px 6px">
+        <option>P</option><option>C</option><option>1B</option><option>2B</option>
+        <option>3B</option><option>SS</option><option>LF</option><option>LC</option>
+        <option>RC</option><option>RF</option><option>DH</option>
+      </select>
+      <input type="text" id="away-player-input" placeholder="Player name" onkeydown="handleAwayPlayerKeydown(event)"/>
+      <button class="add-item-btn red" onclick="addAwayPlayer()">＋</button>
+    </div>
+    <div class="items-list" id="away-players-list"></div>
+    <button class="start-session-btn red" id="start-game-btn" onclick="startGame()" disabled>▶ Start Game</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN: ACTIVE SOFTBALL GAME
+══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-softball">
+  <header style="background:#B71C1C">
+    <div style="display:flex;align-items:center;gap:4px;flex:1;min-width:0">
+      <h1 id="softball-game-title">Game</h1>
+    </div>
+    <small id="softball-hdate"></small>
+  </header>
+
+  <!-- Score Banner -->
+  <div class="score-banner" id="score-banner">
+    <div class="score-team">
+      <div class="score-team-name" id="banner-home-name">Home</div>
+      <div class="score-team-runs" id="banner-home-runs">0</div>
+    </div>
+    <div class="score-inning">
+      <div class="score-inning-num" id="banner-inning">1</div>
+      <div class="score-inning-label" id="banner-half">Top</div>
+      <div class="score-outs" id="banner-outs">0 outs</div>
+    </div>
+    <div class="score-divider">—</div>
+    <div class="score-team">
+      <div class="score-team-name" id="banner-away-name">Away</div>
+      <div class="score-team-runs" id="banner-away-runs">0</div>
+    </div>
+  </div>
+
+  <div class="tabs" style="top:calc(49px + 80px)">
+    <div class="tab active softball" id="sf-tab-lineup" onclick="sfSwitchTab('lineup')"><span>📋</span>LINEUP</div>
+    <div class="tab" id="sf-tab-atbat" onclick="sfSwitchTab('atbat')"><span>⚾</span>AT BAT</div>
+    <div class="tab" id="sf-tab-boxscore" onclick="sfSwitchTab('boxscore')"><span>📊</span>BOX SCORE</div>
+    <div class="tab" id="sf-tab-log" onclick="sfSwitchTab('log')"><span>📝</span>GAME LOG</div>
+  </div>
+
+  <!-- LINEUP TAB -->
+  <div class="page active" id="sf-page-lineup">
+    <div class="toolbar">
+      <button class="tb-inning" onclick="openEndInning()">⟳ End Half-Inning</button>
+      <button class="tb-end" onclick="openEndGame()">■ End Game</button>
+    </div>
+    <div class="softball-wrap" id="sf-lineup-wrap"></div>
+  </div>
+
+  <!-- AT BAT TAB -->
+  <div class="page" id="sf-page-atbat">
+    <div class="atbat-wrap" id="sf-atbat-wrap">
+      <div class="no-batter-msg">← Select a batter from the Lineup tab first</div>
+    </div>
+  </div>
+
+  <!-- BOX SCORE TAB -->
+  <div class="page" id="sf-page-boxscore">
+    <div class="boxscore-wrap" id="sf-boxscore-wrap"></div>
+  </div>
+
+  <!-- GAME LOG TAB -->
+  <div class="page" id="sf-page-log">
+    <div class="game-log-wrap" id="sf-game-log-wrap"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SHARED MODALS
+══════════════════════════════════════════════════ -->
+<!-- Log Modal (MLB/Custom) -->
 <div class="overlay" id="log-overlay" onclick="handleOverlayClick(event)">
   <div class="modal">
     <div class="modal-hd" id="modal-hd">
@@ -233,73 +350,77 @@
 
 <!-- MLB Confirm Reset -->
 <div class="confirm-wrap" id="mlb-confirm-wrap">
-  <div class="confirm-box">
-    <h3>Reset MLB Data?</h3>
-    <p>This permanently deletes every logged MLB sighting. This cannot be undone.</p>
-    <div class="confirm-btns">
-      <button class="cy" onclick="mlbDoReset()">Yes, Reset</button>
-      <button class="cn" onclick="mlbCloseConfirm()">Cancel</button>
-    </div>
+  <div class="confirm-box"><h3>Reset MLB Data?</h3><p>This permanently deletes every logged MLB sighting.</p>
+    <div class="confirm-btns"><button class="cy" onclick="mlbDoReset()">Yes, Reset</button><button class="cn" onclick="mlbCloseConfirm()">Cancel</button></div>
   </div>
 </div>
 
 <!-- MLB Import Modal -->
 <div class="confirm-wrap" id="mlb-import-wrap">
-  <div class="confirm-box">
-    <h3 id="mlb-import-title">Import CSV</h3>
-    <p id="mlb-import-msg">Reading file...</p>
-    <div class="confirm-btns">
-      <button class="cy" id="mlb-import-confirm-btn" onclick="mlbConfirmImport()">Yes, Import</button>
-      <button class="cn" onclick="mlbCloseImport()">Cancel</button>
-    </div>
+  <div class="confirm-box"><h3 id="mlb-import-title">Import CSV</h3><p id="mlb-import-msg"></p>
+    <div class="confirm-btns"><button class="cy" id="mlb-import-confirm-btn" onclick="mlbConfirmImport()">Yes, Import</button><button class="cn" onclick="mlbCloseImport()">Cancel</button></div>
   </div>
 </div>
 
-<!-- Custom Session Confirm Reset -->
+<!-- Custom Confirm Reset -->
 <div class="confirm-wrap" id="cus-confirm-wrap">
-  <div class="confirm-box">
-    <h3>Reset Session Data?</h3>
-    <p>This permanently deletes all logged entries for this session. This cannot be undone.</p>
-    <div class="confirm-btns">
-      <button class="cy" onclick="cusDoReset()">Yes, Reset</button>
-      <button class="cn" onclick="cusCloseConfirm()">Cancel</button>
-    </div>
+  <div class="confirm-box"><h3>Reset Session Data?</h3><p>This permanently deletes all logged entries for this session.</p>
+    <div class="confirm-btns"><button class="cy" onclick="cusDoReset()">Yes, Reset</button><button class="cn" onclick="cusCloseConfirm()">Cancel</button></div>
   </div>
 </div>
 
-<!-- End Session Modal -->
+<!-- End Custom Session -->
 <div class="confirm-wrap" id="end-session-wrap">
-  <div class="confirm-box">
-    <h3>End Session?</h3>
-    <p>This will save the session to your history and return you to the sessions list. You can reopen it at any time.</p>
-    <div class="confirm-btns">
-      <button class="cy" style="background:#7B1FA2" onclick="endSession()">Save & End</button>
-      <button class="cn" onclick="closeEndSession()">Cancel</button>
-    </div>
+  <div class="confirm-box"><h3>End Session?</h3><p>This will save the session to your history.</p>
+    <div class="confirm-btns"><button class="cy" style="background:#7B1FA2" onclick="endSession()">Save & End</button><button class="cn" onclick="closeEndSession()">Cancel</button></div>
   </div>
 </div>
 
-<!-- Clear All Sessions Modal -->
+<!-- Clear All Sessions -->
 <div class="confirm-wrap" id="clear-sessions-wrap">
-  <div class="confirm-box">
-    <h3>Clear All Sessions?</h3>
-    <p>This permanently deletes all custom sessions and their data. Export any sessions you want to keep first.</p>
+  <div class="confirm-box"><h3>Clear All Sessions?</h3><p>This permanently deletes all custom sessions and their data.</p>
+    <div class="confirm-btns"><button class="cy" onclick="doClearAllSessions()">Yes, Clear All</button><button class="cn" onclick="closeClearAllSessions()">Cancel</button></div>
+  </div>
+</div>
+
+<!-- Delete Single Session -->
+<div class="confirm-wrap" id="delete-session-wrap">
+  <div class="confirm-box"><h3>Delete Session?</h3><p id="delete-session-msg"></p>
+    <div class="confirm-btns"><button class="cy" onclick="doDeleteSession()">Yes, Delete</button><button class="cn" onclick="closeDeleteSession()">Cancel</button></div>
+  </div>
+</div>
+
+<!-- Softball: End Half-Inning / Runs Modal -->
+<div class="runs-modal-wrap" id="runs-modal-wrap">
+  <div class="runs-modal-box">
+    <h3 id="runs-modal-title">End of Half-Inning</h3>
+    <p id="runs-modal-desc">How many runs scored this half-inning?</p>
+    <div class="runs-grid" id="runs-grid"></div>
     <div class="confirm-btns">
-      <button class="cy" onclick="doClearAllSessions()">Yes, Clear All</button>
-      <button class="cn" onclick="closeClearAllSessions()">Cancel</button>
+      <button class="cp" onclick="confirmEndInning()">Confirm</button>
+      <button class="cn" onclick="closeEndInning()">Cancel</button>
     </div>
   </div>
 </div>
 
-<!-- Delete Single Session Modal -->
-<div class="confirm-wrap" id="delete-session-wrap">
-  <div class="confirm-box">
-    <h3>Delete Session?</h3>
-    <p id="delete-session-msg">This will permanently delete this session and all its data.</p>
-    <div class="confirm-btns">
-      <button class="cy" onclick="doDeleteSession()">Yes, Delete</button>
-      <button class="cn" onclick="closeDeleteSession()">Cancel</button>
-    </div>
+<!-- Softball: End Game -->
+<div class="confirm-wrap" id="end-game-wrap">
+  <div class="confirm-box"><h3>End Game?</h3><p>This will save the game to your history. You can reopen it at any time.</p>
+    <div class="confirm-btns"><button class="cp" onclick="endGame()">Save & End</button><button class="cn" onclick="closeEndGame()">Cancel</button></div>
+  </div>
+</div>
+
+<!-- Softball: Clear All Games -->
+<div class="confirm-wrap" id="clear-games-wrap">
+  <div class="confirm-box"><h3>Clear All Games?</h3><p>This permanently deletes all saved games and their data.</p>
+    <div class="confirm-btns"><button class="cy" onclick="doClearAllGames()">Yes, Clear All</button><button class="cn" onclick="closeClearAllGames()">Cancel</button></div>
+  </div>
+</div>
+
+<!-- Softball: Delete Single Game -->
+<div class="confirm-wrap" id="delete-game-wrap">
+  <div class="confirm-box"><h3>Delete Game?</h3><p id="delete-game-msg"></p>
+    <div class="confirm-btns"><button class="cy" onclick="doDeleteGame()">Yes, Delete</button><button class="cn" onclick="closeDeleteGame()">Cancel</button></div>
   </div>
 </div>
 
@@ -335,785 +456,6 @@ function showScreen(id){
   window.scrollTo(0,0);
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// NAVIGATION
-// ══════════════════════════════════════════════════════════════════════════════
-function goHome(){showScreen("screen-home");}
-function goMLB(){
-  document.getElementById("mlb-hdate").textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
-  showScreen("screen-mlb");
-  mlbRender();
-}
-function goCustomSessions(){
-  showScreen("screen-sessions");
-  renderSessionList();
-}
-function goNewSession(){
-  // Reset new session form
-  document.getElementById("session-name-input").value="";
-  document.getElementById("item-name-input").value="";
-  document.getElementById("item-colour-picker").value=defaultColours[0];
-  pendingItems=[];
-  renderPendingItems();
-  showScreen("screen-new-session");
-}
-
-// ══════════════════════════════════════════════════════════════════════════════
-// MLB TRACKER
-// ══════════════════════════════════════════════════════════════════════════════
-var MLB_TEAMS=[
-  {name:"Baltimore Orioles",    div:"AL East",    c1:"#DF4601",c2:"#27251F"},
-  {name:"Boston Red Sox",       div:"AL East",    c1:"#BD3039",c2:"#0C2340"},
-  {name:"New York Yankees",     div:"AL East",    c1:"#003087",c2:"#0C2340"},
-  {name:"Tampa Bay Rays",       div:"AL East",    c1:"#092C5C",c2:"#8FBCE6"},
-  {name:"Toronto Blue Jays",    div:"AL East",    c1:"#134A8E",c2:"#1D2D5C"},
-  {name:"Chicago White Sox",    div:"AL Central", c1:"#27251F",c2:"#C4CED4"},
-  {name:"Cleveland Guardians",  div:"AL Central", c1:"#00385D",c2:"#E50022"},
-  {name:"Detroit Tigers",       div:"AL Central", c1:"#0C2340",c2:"#FA4616"},
-  {name:"Kansas City Royals",   div:"AL Central", c1:"#004687",c2:"#BD9B60"},
-  {name:"Minnesota Twins",      div:"AL Central", c1:"#002B5C",c2:"#D31145"},
-  {name:"Houston Astros",       div:"AL West",    c1:"#002D62",c2:"#EB6E1F"},
-  {name:"Los Angeles Angels",   div:"AL West",    c1:"#003263",c2:"#BA0021"},
-  {name:"Athletics",            div:"AL West",    c1:"#003831",c2:"#EFB21E"},
-  {name:"Seattle Mariners",     div:"AL West",    c1:"#0C2C56",c2:"#005C5C"},
-  {name:"Texas Rangers",        div:"AL West",    c1:"#003278",c2:"#C0111F"},
-  {name:"Atlanta Braves",       div:"NL East",    c1:"#13274F",c2:"#CE1141"},
-  {name:"Miami Marlins",        div:"NL East",    c1:"#00A3E0",c2:"#EF3340"},
-  {name:"New York Mets",        div:"NL East",    c1:"#002D72",c2:"#FF5910"},
-  {name:"Philadelphia Phillies",div:"NL East",    c1:"#E81828",c2:"#002D72"},
-  {name:"Washington Nationals", div:"NL East",    c1:"#AB0003",c2:"#14225A"},
-  {name:"Chicago Cubs",         div:"NL Central", c1:"#0E3386",c2:"#CC3433"},
-  {name:"Cincinnati Reds",      div:"NL Central", c1:"#C6011F",c2:"#000000"},
-  {name:"Milwaukee Brewers",    div:"NL Central", c1:"#12284B",c2:"#FFC52F"},
-  {name:"Pittsburgh Pirates",   div:"NL Central", c1:"#27251F",c2:"#FDB827"},
-  {name:"St. Louis Cardinals",  div:"NL Central", c1:"#C41E3A",c2:"#0C2340"},
-  {name:"Arizona Diamondbacks", div:"NL West",    c1:"#A71930",c2:"#E3D4AD"},
-  {name:"Colorado Rockies",     div:"NL West",    c1:"#333366",c2:"#C4CED4"},
-  {name:"Los Angeles Dodgers",  div:"NL West",    c1:"#005A9C",c2:"#EF3E42"},
-  {name:"San Diego Padres",     div:"NL West",    c1:"#2F241D",c2:"#FFC425"},
-  {name:"San Francisco Giants", div:"NL West",    c1:"#FD5A1E",c2:"#27251F"}
-];
-
-var mlbData={};
-var mlbSortOn=false;
-var mlbCurrentTab="tracker";
-var mlbLogFilter="all";
-var mlbPendingImport=null;
-var MLB_KEY="mlb_v3";
-
-function mlbLoad(){
-  try{var r=localStorage.getItem(MLB_KEY);if(r)mlbData=JSON.parse(r);}catch(e){mlbData={};}
-  MLB_TEAMS.forEach(function(t){if(!mlbData[t.name])mlbData[t.name]=[];});
-}
-function mlbSave(){try{localStorage.setItem(MLB_KEY,JSON.stringify(mlbData));}catch(e){}}
-
-function mlbGrandTotal(){
-  var t=0;MLB_TEAMS.forEach(function(t2){t+=(mlbData[t2.name]||[]).length;});return t;
-}
-function mlbUpdateTotals(){
-  var t=mlbGrandTotal();
-  ["mlb-gtotal","mlb-gtotal-rank","mlb-gtotal-log"].forEach(function(id){
-    var el=document.getElementById(id);if(el)el.textContent=t;
-  });
-}
-
-function mlbSwitchTab(tab){
-  mlbCurrentTab=tab;
-  ["tracker","rankings","log"].forEach(function(t){
-    document.getElementById("mlb-page-"+t).classList.toggle("active",t===tab);
-    document.getElementById("mlb-tab-"+t).classList.toggle("active",t===tab);
-  });
-  if(tab==="rankings")mlbRenderRankings();
-  if(tab==="log")mlbRenderActivityLog();
-}
-
-function mlbRender(){
-  var app=document.getElementById("mlb-app");if(!app)return;
-  app.innerHTML="";
-  var list=MLB_TEAMS.slice();
-  if(mlbSortOn){
-    list.sort(function(a,b){return(mlbData[b.name]||[]).length-(mlbData[a.name]||[]).length;});
-    var lbl=document.createElement("div");lbl.className="section-label";
-    lbl.textContent="All Teams — Sorted by Count";app.appendChild(lbl);
-    var g=document.createElement("div");g.className="grid";
-    list.forEach(function(t){g.appendChild(mlbMakeCard(t));});app.appendChild(g);
-  } else {
-    var divs=[];
-    MLB_TEAMS.forEach(function(t){if(divs.indexOf(t.div)<0)divs.push(t.div);});
-    divs.forEach(function(div){
-      var lbl=document.createElement("div");lbl.className="section-label";
-      lbl.textContent=div;app.appendChild(lbl);
-      var g=document.createElement("div");g.className="grid";
-      MLB_TEAMS.filter(function(t){return t.div===div;}).forEach(function(t){g.appendChild(mlbMakeCard(t));});
-      app.appendChild(g);
-    });
-  }
-  mlbUpdateTotals();
-}
-
-function mlbMakeCard(team){
-  var count=(mlbData[team.name]||[]).length;
-  var card=document.createElement("div");card.className="card";
-  card.style.borderColor=team.c2;
-  var head=document.createElement("div");head.className="card-head";
-  head.style.background=team.c1;head.style.color=textOn(team.c1);
-  head.textContent=team.name;card.appendChild(head);
-  var body=document.createElement("div");body.className="card-body";
-  var btn=document.createElement("button");btn.className="log-btn";
-  btn.style.background=team.c2;btn.style.color=textOn(team.c2);
-  btn.textContent="+ Log";
-  btn.addEventListener("click",function(e){e.stopPropagation();mlbLogSighting(team.name);});
-  body.appendChild(btn);
-  var badge=document.createElement("div");
-  badge.className="badge"+(count>0?" lit":"");
-  badge.style.background=count>0?team.c2:team.c1;
-  badge.style.color=count>0?textOn(team.c2):textOn(team.c1);
-  badge.textContent=count;
-  badge.addEventListener("click",function(e){e.stopPropagation();openModal(team.name,"mlb");});
-  body.appendChild(badge);card.appendChild(body);
-  return card;
-}
-
-function mlbLogSighting(name){
-  if(!mlbData[name])mlbData[name]=[];
-  mlbData[name].push(new Date().toISOString());
-  mlbSave();mlbRender();
-  if(mlbCurrentTab==="rankings")mlbRenderRankings();
-  if(mlbCurrentTab==="log")mlbRenderActivityLog();
-  showToast("✅ Logged: "+name);
-}
-
-function mlbDeleteEntry(name,idx){
-  if(mlbData[name])mlbData[name].splice(idx,1);
-  mlbSave();mlbRender();mlbRenderRankings();mlbRenderActivityLog();
-  openModal(name,"mlb");
-}
-
-function mlbGetTeamColors(name){
-  for(var i=0;i<MLB_TEAMS.length;i++){if(MLB_TEAMS[i].name===name)return MLB_TEAMS[i];}
-  return{c1:"#041E42",c2:"#BF0D3E"};
-}
-
-function mlbRenderRankings(){
-  var wrap=document.getElementById("mlb-rankings-wrap");if(!wrap)return;
-  wrap.innerHTML="";
-  var ranked=MLB_TEAMS.map(function(t){
-    return{name:t.name,div:t.div,count:(mlbData[t.name]||[]).length,c1:t.c1,c2:t.c2};
-  }).sort(function(a,b){return b.count!==a.count?b.count-a.count:a.name.localeCompare(b.name);});
-  var max=ranked[0]?ranked[0].count:1;if(max===0)max=1;
-  function posLabel(i,count){
-    if(count===0)return"—";if(i===0)return"🥇";if(i===1)return"🥈";if(i===2)return"🥉";return""+(i+1);
-  }
-  var zeroDone=false;
-  ranked.forEach(function(item,i){
-    if(!zeroDone&&item.count===0){
-      zeroDone=true;
-      var d=document.createElement("div");d.className="rank-divider";d.textContent="Not yet sighted";wrap.appendChild(d);
-    }
-    var card=document.createElement("div");card.className="rank-card"+(item.count===0?" rank-zero":"");
-    card.style.borderLeft="4px solid "+item.c2;
-    var pos=document.createElement("div");pos.className="rank-pos";pos.textContent=posLabel(i,item.count);card.appendChild(pos);
-    var info=document.createElement("div");info.className="rank-info";
-    var nm=document.createElement("div");nm.className="rank-name";nm.textContent=item.name;info.appendChild(nm);
-    var dv=document.createElement("div");dv.className="rank-div";dv.textContent=item.div;info.appendChild(dv);
-    card.appendChild(info);
-    var bw=document.createElement("div");bw.className="rank-bar-wrap";
-    var bb=document.createElement("div");bb.className="rank-bar-bg";
-    var bf=document.createElement("div");bf.className="rank-bar-fill";
-    bf.style.background=item.c1;bf.style.width=Math.round((item.count/max)*100)+"%";
-    bb.appendChild(bf);bw.appendChild(bb);card.appendChild(bw);
-    var cnt=document.createElement("div");cnt.className="rank-count";cnt.style.color=item.c1;cnt.textContent=item.count;card.appendChild(cnt);
-    wrap.appendChild(card);
-  });
-  mlbUpdateTotals();
-}
-
-function mlbSetLogFilter(f){
-  mlbLogFilter=f;
-  ["all","today","week"].forEach(function(x){
-    document.getElementById("mlb-filter-"+x).classList.toggle("active",x===f);
-  });
-  mlbRenderActivityLog();
-}
-
-function mlbRenderActivityLog(){
-  var list=document.getElementById("mlb-activity-list");if(!list)return;
-  list.innerHTML="";
-  var all=[];
-  MLB_TEAMS.forEach(function(t){
-    (mlbData[t.name]||[]).forEach(function(ts,idx){all.push({team:t.name,div:t.div,ts:ts,idx:idx});});
-  });
-  var now=new Date();var todayStr=now.toDateString();var weekAgo=new Date(now.getTime()-7*24*60*60*1000);
-  if(mlbLogFilter==="today")all=all.filter(function(e){return new Date(e.ts).toDateString()===todayStr;});
-  else if(mlbLogFilter==="week")all=all.filter(function(e){return new Date(e.ts)>=weekAgo;});
-  all.sort(function(a,b){return b.ts.localeCompare(a.ts);});
-  if(all.length===0){
-    var em=document.createElement("div");em.className="activity-empty";
-    em.textContent=mlbLogFilter==="today"?"No sightings today.":mlbLogFilter==="week"?"No sightings this week.":"No sightings logged yet.";
-    list.appendChild(em);mlbUpdateTotals();return;
-  }
-  var groups={};var groupOrder=[];
-  all.forEach(function(e){
-    var d=new Date(e.ts).toDateString();
-    if(!groups[d]){groups[d]=[];groupOrder.push(d);}groups[d].push(e);
-  });
-  groupOrder.forEach(function(dateStr){
-    var label=document.createElement("div");label.className="activity-date-label";
-    label.textContent=new Date(dateStr).toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});
-    list.appendChild(label);
-    groups[dateStr].forEach(function(e){
-      var tc=mlbGetTeamColors(e.team);
-      var entry=document.createElement("div");entry.className="activity-entry";entry.style.borderLeftColor=tc.c2;
-      var left=document.createElement("div");left.className="activity-entry-left";
-      var tn=document.createElement("div");tn.className="activity-team";tn.style.color=tc.c1;tn.textContent=e.team;left.appendChild(tn);
-      var dv=document.createElement("div");dv.className="activity-div";dv.textContent=e.div;left.appendChild(dv);
-      var tm=document.createElement("div");tm.className="activity-time";
-      tm.textContent=new Date(e.ts).toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"});
-      left.appendChild(tm);entry.appendChild(left);
-      var num=document.createElement("div");num.className="activity-num";
-      num.style.background=tc.c1;num.style.color=textOn(tc.c1);num.textContent="#"+(e.idx+1);entry.appendChild(num);
-      var del=document.createElement("button");del.className="activity-del";del.textContent="🗑";
-      (function(tn2,ti){del.addEventListener("click",function(){
-        mlbData[tn2].splice(ti,1);mlbSave();mlbRender();mlbRenderActivityLog();mlbRenderRankings();showToast("🗑 Entry deleted");
-      });})(e.team,e.idx);
-      entry.appendChild(del);list.appendChild(entry);
-    });
-  });
-  mlbUpdateTotals();
-}
-
-function mlbToggleSort(){mlbSortOn=!mlbSortOn;mlbRender();}
-function mlbOpenConfirm(){document.getElementById("mlb-confirm-wrap").classList.add("open");}
-function mlbCloseConfirm(){document.getElementById("mlb-confirm-wrap").classList.remove("open");}
-function mlbDoReset(){
-  MLB_TEAMS.forEach(function(t){mlbData[t.name]=[];});
-  mlbSave();mlbCloseConfirm();mlbRender();mlbRenderRankings();mlbRenderActivityLog();
-  showToast("🗑 MLB data reset.");
-}
-
-function mlbExportCSV(){
-  var rows=[["Timestamp","Team","Division"]];
-  MLB_TEAMS.forEach(function(t){
-    (mlbData[t.name]||[]).forEach(function(ts){rows.push([ts,t.name,t.div]);});
-  });
-  var hdr=rows.shift();rows.sort(function(a,b){return a[0]<b[0]?-1:1;});rows.unshift(hdr);
-  downloadCSV(rows,"mlb_merch_"+new Date().toISOString().slice(0,10)+".csv");
-  showToast("📥 CSV exported!");
-}
-
-function mlbTriggerImport(){
-  document.getElementById("mlb-csv-import-input").value="";
-  document.getElementById("mlb-csv-import-input").click();
-}
-
-document.getElementById("mlb-csv-import-input").addEventListener("change",function(e){
-  var file=e.target.files[0];if(!file)return;
-  var reader=new FileReader();
-  reader.onload=function(ev){
-    var lines=ev.target.result.split(/\r?\n/).filter(function(l){return l.trim()!=="";});
-    if(!lines[0]||lines[0].indexOf("Timestamp")<0||lines[0].indexOf("Team")<0){showToast("⚠️ Invalid CSV.");return;}
-    var headers=parseCSVLine(lines[0]);
-    var tsIdx=-1;var teamIdx=-1;
-    headers.forEach(function(h,i){var c=h.trim().toLowerCase();if(c==="timestamp")tsIdx=i;if(c==="team")teamIdx=i;});
-    if(tsIdx<0||teamIdx<0){showToast("⚠️ Missing columns.");return;}
-    var imported={};MLB_TEAMS.forEach(function(t){imported[t.name]=[];});
-    var skipped=0;var loaded=0;
-    for(var i=1;i<lines.length;i++){
-      var cols=parseCSVLine(lines[i]);if(cols.length<2){skipped++;continue;}
-      var ts=cols[tsIdx]?cols[tsIdx].trim():"";var team=cols[teamIdx]?cols[teamIdx].trim():"";
-      if(!ts||isNaN(new Date(ts).getTime())){skipped++;continue;}
-      if(!imported.hasOwnProperty(team)){skipped++;continue;}
-      imported[team].push(ts);loaded++;
-    }
-    if(loaded===0){showToast("⚠️ No valid entries.");return;}
-    MLB_TEAMS.forEach(function(t){imported[t.name].sort(function(a,b){return a.localeCompare(b);});});
-    mlbPendingImport=imported;
-    var existing=mlbGrandTotal();
-    document.getElementById("mlb-import-title").textContent="Import "+loaded+" Sightings";
-    document.getElementById("mlb-import-msg").textContent=existing>0
-      ?"You have "+existing+" existing sightings. Importing will replace all data."+(skipped>0?" "+skipped+" rows skipped.":"")
-      :"Found "+loaded+" valid sightings."+(skipped>0?" "+skipped+" rows skipped.":"")+" Ready to import?";
-    document.getElementById("mlb-import-confirm-btn").textContent=existing>0?"Replace & Import":"Yes, Import";
-    document.getElementById("mlb-import-wrap").classList.add("open");
-  };
-  reader.readAsText(file);
-});
-
-function mlbConfirmImport(){
-  if(!mlbPendingImport)return;
-  mlbData=mlbPendingImport;mlbPendingImport=null;
-  mlbSave();mlbCloseImport();mlbRender();mlbRenderRankings();mlbRenderActivityLog();
-  showToast("✅ CSV imported!");
-}
-function mlbCloseImport(){document.getElementById("mlb-import-wrap").classList.remove("open");mlbPendingImport=null;}
-
-// ══════════════════════════════════════════════════════════════════════════════
-// CUSTOM SESSIONS
-// ══════════════════════════════════════════════════════════════════════════════
-var SESSIONS_KEY="custom_sessions_v1";
-var ACTIVE_SESSION_KEY="active_session_v1";
-
-var sessions=[];          // array of saved session objects
-var activeSession=null;   // currently running session
-var pendingItems=[];       // items being built in new session form
-var cusCurrentTab="tracker";
-var cusSortOn=false;
-var cusLogFilter="all";
-var sessionToDelete=null;
-
-var defaultColours=[
-  "#0E3386","#C41E3A","#2E7D32","#E65100","#6A1B9A",
-  "#00838F","#AD1457","#558B2F","#4527A0","#F57F17"
-];
-
-function loadSessions(){
-  try{var r=localStorage.getItem(SESSIONS_KEY);if(r)sessions=JSON.parse(r);}catch(e){sessions=[];}
-}
-function saveSessions(){try{localStorage.setItem(SESSIONS_KEY,JSON.stringify(sessions));}catch(e){}}
-
-function loadActiveSession(){
-  try{var r=localStorage.getItem(ACTIVE_SESSION_KEY);if(r)activeSession=JSON.parse(r);}catch(e){activeSession=null;}
-}
-function saveActiveSession(){
-  try{
-    if(activeSession)localStorage.setItem(ACTIVE_SESSION_KEY,JSON.stringify(activeSession));
-    else localStorage.removeItem(ACTIVE_SESSION_KEY);
-  }catch(e){}
-}
-
-// ── New Session Form ──────────────────────────────────────────────────────────
-function handleItemKeydown(e){if(e.key==="Enter")addItem();}
-
-function addItem(){
-  var nameEl=document.getElementById("item-name-input");
-  var colourEl=document.getElementById("item-colour-picker");
-  var name=nameEl.value.trim();
-  if(!name){showToast("⚠️ Please enter an item name.");return;}
-  pendingItems.push({name:name,colour:colourEl.value});
-  nameEl.value="";
-  // Cycle to next default colour
-  colourEl.value=defaultColours[pendingItems.length%defaultColours.length];
-  renderPendingItems();
-  nameEl.focus();
-}
-
-function renderPendingItems(){
-  var list=document.getElementById("items-list");
-  var countLabel=document.getElementById("item-count-label");
-  var startBtn=document.getElementById("start-session-btn");
-  if(!list)return;
-  list.innerHTML="";
-  countLabel.textContent="("+pendingItems.length+" added)";
-  startBtn.disabled=pendingItems.length===0;
-
-  pendingItems.forEach(function(item,i){
-    var row=document.createElement("div");row.className="item-row";
-    row.style.borderLeftColor=item.colour;
-    var swatch=document.createElement("div");swatch.className="item-row-swatch";
-    swatch.style.background=item.colour;row.appendChild(swatch);
-    var nm=document.createElement("div");nm.className="item-row-name";nm.textContent=item.name;row.appendChild(nm);
-    var del=document.createElement("button");del.className="item-row-del";del.textContent="✕";
-    (function(idx){del.addEventListener("click",function(){pendingItems.splice(idx,1);renderPendingItems();});})(i);
-    row.appendChild(del);list.appendChild(row);
-  });
-}
-
-function startSession(){
-  var nameEl=document.getElementById("session-name-input");
-  var sessionName=nameEl.value.trim()||"Session "+new Date().toLocaleDateString();
-  if(pendingItems.length===0){showToast("⚠️ Add at least one item.");return;}
-
-  // Build data object
-  var sessionData={};
-  pendingItems.forEach(function(item){sessionData[item.name]=[];});
-
-  activeSession={
-    id:"session_"+Date.now(),
-    name:sessionName,
-    items:pendingItems.slice(),
-    data:sessionData,
-    created:new Date().toISOString(),
-    lastModified:new Date().toISOString()
-  };
-  saveActiveSession();
-  launchCustomSession();
-}
-
-function launchCustomSession(){
-  if(!activeSession)return;
-  document.getElementById("custom-session-title").textContent=activeSession.name;
-  document.getElementById("custom-hdate").textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
-  // Reset tabs
-  cusSwitchTab("tracker");
-  cusLogFilter="all";
-  cusSortOn=false;
-  showScreen("screen-custom");
-  cusRender();
-}
-
-// ── Session List ──────────────────────────────────────────────────────────────
-function renderSessionList(){
-  loadSessions();
-  var list=document.getElementById("session-list");
-  var clearBtn=document.getElementById("clear-all-sessions-btn");
-  if(!list)return;
-  list.innerHTML="";
-  clearBtn.style.display=sessions.length>0?"block":"none";
-
-  if(sessions.length===0){
-    var em=document.createElement("div");em.className="empty-sessions";
-    em.textContent="No saved sessions yet. Tap '+ New Session' to get started.";
-    list.appendChild(em);return;
-  }
-
-  sessions.slice().reverse().forEach(function(session){
-    var total=0;session.items.forEach(function(item){total+=(session.data[item.name]||[]).length;});
-
-    var card=document.createElement("div");card.className="session-card";
-
-    var top=document.createElement("div");top.className="session-card-top";
-    var nm=document.createElement("div");nm.className="session-card-name";nm.textContent=session.name;top.appendChild(nm);
-    var dt=document.createElement("div");dt.className="session-card-date";
-    dt.textContent=new Date(session.created).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"});
-    top.appendChild(dt);card.appendChild(top);
-
-    var meta=document.createElement("div");meta.className="session-card-meta";
-    meta.textContent=session.items.length+" item"+(session.items.length!==1?"s":"")+" · "+total+" log"+(total!==1?"s":"");
-    card.appendChild(meta);
-
-    // Colour swatches
-    var swatches=document.createElement("div");swatches.style.cssText="display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap";
-    session.items.forEach(function(item){
-      var sw=document.createElement("div");
-      sw.style.cssText="width:16px;height:16px;border-radius:4px;background:"+item.colour+";flex-shrink:0";
-      sw.title=item.name;swatches.appendChild(sw);
-    });
-    card.appendChild(swatches);
-
-    var btns=document.createElement("div");btns.className="session-card-btns";
-
-    var openBtn=document.createElement("button");openBtn.className="scb-open";openBtn.textContent="▶ Open";
-    (function(s){openBtn.addEventListener("click",function(){
-      activeSession=JSON.parse(JSON.stringify(s));
-      saveActiveSession();launchCustomSession();
-    });})(session);
-    btns.appendChild(openBtn);
-
-    var expBtn=document.createElement("button");expBtn.className="scb-export";expBtn.textContent="📥 Export";
-    (function(s){expBtn.addEventListener("click",function(){exportSessionCSV(s);});})(session);
-    btns.appendChild(expBtn);
-
-    var delBtn=document.createElement("button");delBtn.className="scb-delete";delBtn.textContent="🗑 Delete";
-    (function(s){delBtn.addEventListener("click",function(){openDeleteSession(s.id,s.name);});})(session);
-    btns.appendChild(delBtn);
-
-    card.appendChild(btns);list.appendChild(card);
-  });
-}
-
-// ── Custom Tracker Render ─────────────────────────────────────────────────────
-function cusRender(){
-  var app=document.getElementById("cus-app");if(!app||!activeSession)return;
-  app.innerHTML="";
-  var items=activeSession.items.slice();
-  if(cusSortOn){
-    items.sort(function(a,b){return(activeSession.data[b.name]||[]).length-(activeSession.data[a.name]||[]).length;});
-    var lbl=document.createElement("div");lbl.className="section-label";
-    lbl.textContent="All Items — Sorted by Count";app.appendChild(lbl);
-    var g=document.createElement("div");g.className="grid";
-    items.forEach(function(item){g.appendChild(cusMakeCard(item));});app.appendChild(g);
-  } else {
-    var lbl2=document.createElement("div");lbl2.className="section-label";
-    lbl2.textContent=activeSession.name;app.appendChild(lbl2);
-    var g2=document.createElement("div");g2.className="grid";
-    items.forEach(function(item){g2.appendChild(cusMakeCard(item));});app.appendChild(g2);
-  }
-  cusUpdateTotals();
-}
-
-function cusMakeCard(item){
-  var count=(activeSession.data[item.name]||[]).length;
-  var c1=item.colour;
-  var c2=adjustColour(item.colour);
-  var card=document.createElement("div");card.className="card";
-  card.style.borderColor=c2;
-  var head=document.createElement("div");head.className="card-head";
-  head.style.background=c1;head.style.color=textOn(c1);
-  head.textContent=item.name;card.appendChild(head);
-  var body=document.createElement("div");body.className="card-body";
-  var btn=document.createElement("button");btn.className="log-btn";
-  btn.style.background=c2;btn.style.color=textOn(c2);
-  btn.textContent="+ Log";
-  btn.addEventListener("click",function(e){e.stopPropagation();cusLogEntry(item.name);});
-  body.appendChild(btn);
-  var badge=document.createElement("div");
-  badge.className="badge"+(count>0?" lit":"");
-  badge.style.background=count>0?c2:c1;
-  badge.style.color=count>0?textOn(c2):textOn(c1);
-  badge.textContent=count;
-  badge.addEventListener("click",function(e){e.stopPropagation();openModal(item.name,"custom");});
-  body.appendChild(badge);card.appendChild(body);
-  return card;
-}
-
-// Generate a complementary shade for the secondary colour
-function adjustColour(hex){
-  var r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
-  // Darken light colours, lighten dark colours
-  var factor=isLight(hex)?0.65:1.4;
-  r=Math.min(255,Math.round(r*factor));
-  g=Math.min(255,Math.round(g*factor));
-  b=Math.min(255,Math.round(b*factor));
-  return"#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");
-}
-
-function cusLogEntry(name){
-  if(!activeSession)return;
-  if(!activeSession.data[name])activeSession.data[name]=[];
-  activeSession.data[name].push(new Date().toISOString());
-  activeSession.lastModified=new Date().toISOString();
-  saveActiveSession();
-  cusRender();
-  if(cusCurrentTab==="rankings")cusRenderRankings();
-  if(cusCurrentTab==="log")cusRenderActivityLog();
-  showToast("✅ Logged: "+name);
-}
-
-function cusDeleteEntry(name,idx){
-  if(!activeSession)return;
-  if(activeSession.data[name])activeSession.data[name].splice(idx,1);
-  activeSession.lastModified=new Date().toISOString();
-  saveActiveSession();
-  cusRender();cusRenderRankings();cusRenderActivityLog();
-  openModal(name,"custom");
-}
-
-function cusGrandTotal(){
-  if(!activeSession)return 0;
-  var t=0;activeSession.items.forEach(function(item){t+=(activeSession.data[item.name]||[]).length;});return t;
-}
-function cusUpdateTotals(){
-  var t=cusGrandTotal();
-  ["cus-gtotal","cus-gtotal-rank","cus-gtotal-log"].forEach(function(id){
-    var el=document.getElementById(id);if(el)el.textContent=t;
-  });
-}
-
-function cusSwitchTab(tab){
-  cusCurrentTab=tab;
-  ["tracker","rankings","log"].forEach(function(t){
-    document.getElementById("cus-page-"+t).classList.toggle("active",t===tab);
-    document.getElementById("cus-tab-"+t).classList.toggle("active",t===tab);
-  });
-  if(tab==="rankings")cusRenderRankings();
-  if(tab==="log")cusRenderActivityLog();
-}
-
-function cusRenderRankings(){
-  var wrap=document.getElementById("cus-rankings-wrap");if(!wrap||!activeSession)return;
-  wrap.innerHTML="";
-  var ranked=activeSession.items.map(function(item){
-    return{name:item.name,count:(activeSession.data[item.name]||[]).length,colour:item.colour};
-  }).sort(function(a,b){return b.count!==a.count?b.count-a.count:a.name.localeCompare(b.name);});
-  var max=ranked[0]?ranked[0].count:1;if(max===0)max=1;
-  function posLabel(i,count){
-    if(count===0)return"—";if(i===0)return"🥇";if(i===1)return"🥈";if(i===2)return"🥉";return""+(i+1);
-  }
-  var zeroDone=false;
-  ranked.forEach(function(item,i){
-    if(!zeroDone&&item.count===0){
-      zeroDone=true;
-      var d=document.createElement("div");d.className="rank-divider";d.textContent="Not yet logged";wrap.appendChild(d);
-    }
-    var c2=adjustColour(item.colour);
-    var card=document.createElement("div");card.className="rank-card"+(item.count===0?" rank-zero":"");
-    card.style.borderLeft="4px solid "+c2;
-    var pos=document.createElement("div");pos.className="rank-pos";pos.textContent=posLabel(i,item.count);card.appendChild(pos);
-    var info=document.createElement("div");info.className="rank-info";
-    var nm=document.createElement("div");nm.className="rank-name";nm.textContent=item.name;info.appendChild(nm);
-    card.appendChild(info);
-    var bw=document.createElement("div");bw.className="rank-bar-wrap";
-    var bb=document.createElement("div");bb.className="rank-bar-bg";
-    var bf=document.createElement("div");bf.className="rank-bar-fill";
-    bf.style.background=item.colour;bf.style.width=Math.round((item.count/max)*100)+"%";
-    bb.appendChild(bf);bw.appendChild(bb);card.appendChild(bw);
-    var cnt=document.createElement("div");cnt.className="rank-count";cnt.style.color=item.colour;cnt.textContent=item.count;card.appendChild(cnt);
-    wrap.appendChild(card);
-  });
-  cusUpdateTotals();
-}
-
-function cusSetLogFilter(f){
-  cusLogFilter=f;
-  ["all","today","week"].forEach(function(x){
-    document.getElementById("cus-filter-"+x).classList.toggle("active",x===f);
-  });
-  cusRenderActivityLog();
-}
-
-function cusRenderActivityLog(){
-  var list=document.getElementById("cus-activity-list");if(!list||!activeSession)return;
-  list.innerHTML="";
-  var all=[];
-  activeSession.items.forEach(function(item){
-    (activeSession.data[item.name]||[]).forEach(function(ts,idx){
-      all.push({team:item.name,colour:item.colour,ts:ts,idx:idx});
-    });
-  });
-  var now=new Date();var todayStr=now.toDateString();var weekAgo=new Date(now.getTime()-7*24*60*60*1000);
-  if(cusLogFilter==="today")all=all.filter(function(e){return new Date(e.ts).toDateString()===todayStr;});
-  else if(cusLogFilter==="week")all=all.filter(function(e){return new Date(e.ts)>=weekAgo;});
-  all.sort(function(a,b){return b.ts.localeCompare(a.ts);});
-  if(all.length===0){
-    var em=document.createElement("div");em.className="activity-empty";
-    em.textContent=cusLogFilter==="today"?"Nothing logged today.":cusLogFilter==="week"?"Nothing logged this week.":"Nothing logged yet.";
-    list.appendChild(em);cusUpdateTotals();return;
-  }
-  var groups={};var groupOrder=[];
-  all.forEach(function(e){
-    var d=new Date(e.ts).toDateString();
-    if(!groups[d]){groups[d]=[];groupOrder.push(d);}groups[d].push(e);
-  });
-  groupOrder.forEach(function(dateStr){
-    var label=document.createElement("div");label.className="activity-date-label";
-    label.textContent=new Date(dateStr).toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});
-    list.appendChild(label);
-    groups[dateStr].forEach(function(e){
-      var c2=adjustColour(e.colour);
-      var entry=document.createElement("div");entry.className="activity-entry";entry.style.borderLeftColor=c2;
-      var left=document.createElement("div");left.className="activity-entry-left";
-      var tn=document.createElement("div");tn.className="activity-team";tn.style.color=e.colour;tn.textContent=e.team;left.appendChild(tn);
-      var tm=document.createElement("div");tm.className="activity-time";
-      tm.textContent=new Date(e.ts).toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"});
-      left.appendChild(tm);entry.appendChild(left);
-      var num=document.createElement("div");num.className="activity-num";
-      num.style.background=e.colour;num.style.color=textOn(e.colour);num.textContent="#"+(e.idx+1);entry.appendChild(num);
-      var del=document.createElement("button");del.className="activity-del";del.textContent="🗑";
-      (function(tn2,ti){del.addEventListener("click",function(){cusDeleteEntry(tn2,ti);});})(e.team,e.idx);
-      entry.appendChild(del);list.appendChild(entry);
-    });
-  });
-  cusUpdateTotals();
-}
-
-function cusToggleSort(){cusSortOn=!cusSortOn;cusRender();}
-function cusOpenConfirm(){document.getElementById("cus-confirm-wrap").classList.add("open");}
-function cusCloseConfirm(){document.getElementById("cus-confirm-wrap").classList.remove("open");}
-function cusDoReset(){
-  if(!activeSession)return;
-  activeSession.items.forEach(function(item){activeSession.data[item.name]=[];});
-  activeSession.lastModified=new Date().toISOString();
-  saveActiveSession();cusCloseConfirm();cusRender();cusRenderRankings();cusRenderActivityLog();
-  showToast("🗑 Session data reset.");
-}
-
-function cusExportCSV(){
-  if(!activeSession)return;
-  var rows=[["Timestamp","Item","Session"]];
-  activeSession.items.forEach(function(item){
-    (activeSession.data[item.name]||[]).forEach(function(ts){rows.push([ts,item.name,activeSession.name]);});
-  });
-  var hdr=rows.shift();rows.sort(function(a,b){return a[0]<b[0]?-1:1;});rows.unshift(hdr);
-  downloadCSV(rows,sanitiseFilename(activeSession.name)+"_"+new Date().toISOString().slice(0,10)+".csv");
-  showToast("📥 CSV exported!");
-}
-
-function exportSessionCSV(session){
-  var rows=[["Timestamp","Item","Session"]];
-  session.items.forEach(function(item){
-    (session.data[item.name]||[]).forEach(function(ts){rows.push([ts,item.name,session.name]);});
-  });
-  var hdr=rows.shift();rows.sort(function(a,b){return a[0]<b[0]?-1:1;});rows.unshift(hdr);
-  downloadCSV(rows,sanitiseFilename(session.name)+"_"+new Date().toISOString().slice(0,10)+".csv");
-  showToast("📥 Exported: "+session.name);
-}
-
-// ── End Session ───────────────────────────────────────────────────────────────
-function openEndSession(){document.getElementById("end-session-wrap").classList.add("open");}
-function closeEndSession(){document.getElementById("end-session-wrap").classList.remove("open");}
-
-function endSession(){
-  if(!activeSession)return;
-  activeSession.lastModified=new Date().toISOString();
-  // Update or add to sessions list
-  var idx=-1;
-  for(var i=0;i<sessions.length;i++){if(sessions[i].id===activeSession.id){idx=i;break;}}
-  if(idx>=0)sessions[idx]=JSON.parse(JSON.stringify(activeSession));
-  else sessions.push(JSON.parse(JSON.stringify(activeSession)));
-  saveSessions();
-  activeSession=null;saveActiveSession();
-  closeEndSession();
-  goCustomSessions();
-  showToast("✅ Session saved.");
-}
-
-// ── Delete Session ────────────────────────────────────────────────────────────
-function openDeleteSession(id,name){
-  sessionToDelete=id;
-  document.getElementById("delete-session-msg").textContent="This will permanently delete \""+name+"\" and all its data.";
-  document.getElementById("delete-session-wrap").classList.add("open");
-}
-function closeDeleteSession(){document.getElementById("delete-session-wrap").classList.remove("open");sessionToDelete=null;}
-function doDeleteSession(){
-  if(!sessionToDelete)return;
-  sessions=sessions.filter(function(s){return s.id!==sessionToDelete;});
-  saveSessions();closeDeleteSession();renderSessionList();
-  showToast("🗑 Session deleted.");
-}
-
-// ── Clear All Sessions ────────────────────────────────────────────────────────
-function openClearAllSessions(){document.getElementById("clear-sessions-wrap").classList.add("open");}
-function closeClearAllSessions(){document.getElementById("clear-sessions-wrap").classList.remove("open");}
-function doClearAllSessions(){
-  sessions=[];saveSessions();closeClearAllSessions();renderSessionList();
-  showToast("🗑 All sessions cleared.");
-}
-
-// ══════════════════════════════════════════════════════════════════════════════
-// SHARED MODAL (used by both MLB and Custom)
-// ══════════════════════════════════════════════════════════════════════════════
-var modalMode="mlb";
-
-function openModal(name,mode){
-  modalMode=mode||"mlb";
-  var entries=mode==="mlb"?(mlbData[name]||[]):(activeSession?activeSession.data[name]||[]:[]);
-  var tc=mode==="mlb"?mlbGetTeamColors(name):{c1:getCusItemColour(name),c2:adjustColour(getCusItemColour(name))};
-  var hd=document.getElementById("modal-hd");
-  hd.style.background=tc.c1;hd.style.color=textOn(tc.c1);
-  document.getElementById("modal-title").textContent="📋 "+name;
-  var bd=document.getElementById("modal-bd");bd.innerHTML="";
-  if(entries.length===0){
-    var em=document.createElement("div");em.className="empty";em.textContent="No entries logged yet.";bd.appendChild(em);
-  } else {
-    var info=document.createElement("p");
-    info.textContent=entries.length+" entr"+(entries.length!==1?"ies":"y")+" logged:";bd.appendChild(info);
-    entries.slice().reverse().forEach(function(ts,ri){
-      var realIdx=entries.length-1-ri;
-      var fmt=new Date(ts).toLocaleString(undefined,{year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit"});
-      var row=document.createElement("div");row.className="log-row";
-      var span=document.createElement("span");span.className="log-ts";span.textContent="#"+(realIdx+1)+"  "+fmt;row.appendChild(span);
-      var del=document.createElement("button");del.className="del";del.textContent="🗑";
-      (function(n,i,m){del.addEventListener("click",function(){
-        if(m==="mlb")mlbDeleteEntry(n,i);else cusDeleteEntry(n,i);
-      });})(name,realIdx,mode);
-      row.appendChild(del);bd.appendChild(row);
-    });
-  }
-  document.getElementById("log-overlay").classList.add("open");
-}
-
-function getCusItemColour(name){
-  if(!activeSession)return"#2E7D32";
-  for(var i=0;i<activeSession.items.length;i++){if(activeSession.items[i].name===name)return activeSession.items[i].colour;}
-  return"#2E7D32";
-}
-
-function closeModal(){document.getElementById("log-overlay").classList.remove("open");}
-function handleOverlayClick(e){if(e.target===document.getElementById("log-overlay"))closeModal();}
-
-// ══════════════════════════════════════════════════════════════════════════════
-// UTILITIES
-// ══════════════════════════════════════════════════════════════════════════════
 function parseCSVLine(line){
   var result=[];var current="";var inQuotes=false;
   for(var i=0;i<line.length;i++){
@@ -1139,35 +481,1090 @@ function sanitiseFilename(name){
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════════════════════════════════════════════════
+function goHome(){showScreen("screen-home");}
+
+function goMLB(){
+  document.getElementById("mlb-hdate").textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+  showScreen("screen-mlb");mlbRender();
+}
+
+function goCustomSessions(){showScreen("screen-sessions");renderSessionList();}
+
+function goNewSession(){
+  document.getElementById("session-name-input").value="";
+  document.getElementById("item-name-input").value="";
+  document.getElementById("item-colour-picker").value=defaultColours[0];
+  pendingItems=[];renderPendingItems();
+  showScreen("screen-new-session");
+}
+
+function goSoftballGames(){showScreen("screen-softball-games");renderGameList();}
+
+function goNewGame(){
+  document.getElementById("game-name-input").value="";
+  document.getElementById("home-team-input").value="";
+  document.getElementById("away-team-input").value="";
+  document.getElementById("home-player-input").value="";
+  document.getElementById("away-player-input").value="";
+  pendingHomePlayers=[];pendingAwayPlayers=[];
+  renderHomePlayers();renderAwayPlayers();
+  showScreen("screen-new-game");
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// MLB TRACKER (unchanged from previous version)
+// ══════════════════════════════════════════════════════════════════════════════
+var MLB_TEAMS=[
+  {name:"Baltimore Orioles",div:"AL East",c1:"#DF4601",c2:"#27251F"},
+  {name:"Boston Red Sox",div:"AL East",c1:"#BD3039",c2:"#0C2340"},
+  {name:"New York Yankees",div:"AL East",c1:"#003087",c2:"#0C2340"},
+  {name:"Tampa Bay Rays",div:"AL East",c1:"#092C5C",c2:"#8FBCE6"},
+  {name:"Toronto Blue Jays",div:"AL East",c1:"#134A8E",c2:"#1D2D5C"},
+  {name:"Chicago White Sox",div:"AL Central",c1:"#27251F",c2:"#C4CED4"},
+  {name:"Cleveland Guardians",div:"AL Central",c1:"#00385D",c2:"#E50022"},
+  {name:"Detroit Tigers",div:"AL Central",c1:"#0C2340",c2:"#FA4616"},
+  {name:"Kansas City Royals",div:"AL Central",c1:"#004687",c2:"#BD9B60"},
+  {name:"Minnesota Twins",div:"AL Central",c1:"#002B5C",c2:"#D31145"},
+  {name:"Houston Astros",div:"AL West",c1:"#002D62",c2:"#EB6E1F"},
+  {name:"Los Angeles Angels",div:"AL West",c1:"#003263",c2:"#BA0021"},
+  {name:"Athletics",div:"AL West",c1:"#003831",c2:"#EFB21E"},
+  {name:"Seattle Mariners",div:"AL West",c1:"#0C2C56",c2:"#005C5C"},
+  {name:"Texas Rangers",div:"AL West",c1:"#003278",c2:"#C0111F"},
+  {name:"Atlanta Braves",div:"NL East",c1:"#13274F",c2:"#CE1141"},
+  {name:"Miami Marlins",div:"NL East",c1:"#00A3E0",c2:"#EF3340"},
+  {name:"New York Mets",div:"NL East",c1:"#002D72",c2:"#FF5910"},
+  {name:"Philadelphia Phillies",div:"NL East",c1:"#E81828",c2:"#002D72"},
+  {name:"Washington Nationals",div:"NL East",c1:"#AB0003",c2:"#14225A"},
+  {name:"Chicago Cubs",div:"NL Central",c1:"#0E3386",c2:"#CC3433"},
+  {name:"Cincinnati Reds",div:"NL Central",c1:"#C6011F",c2:"#000000"},
+  {name:"Milwaukee Brewers",div:"NL Central",c1:"#12284B",c2:"#FFC52F"},
+  {name:"Pittsburgh Pirates",div:"NL Central",c1:"#27251F",c2:"#FDB827"},
+  {name:"St. Louis Cardinals",div:"NL Central",c1:"#C41E3A",c2:"#0C2340"},
+  {name:"Arizona Diamondbacks",div:"NL West",c1:"#A71930",c2:"#E3D4AD"},
+  {name:"Colorado Rockies",div:"NL West",c1:"#333366",c2:"#C4CED4"},
+  {name:"Los Angeles Dodgers",div:"NL West",c1:"#005A9C",c2:"#EF3E42"},
+  {name:"San Diego Padres",div:"NL West",c1:"#2F241D",c2:"#FFC425"},
+  {name:"San Francisco Giants",div:"NL West",c1:"#FD5A1E",c2:"#27251F"}
+];
+
+var mlbData={};var mlbSortOn=false;var mlbCurrentTab="tracker";var mlbLogFilter="all";var mlbPendingImport=null;
+var MLB_KEY="mlb_v3";
+
+function mlbLoad(){
+  try{var r=localStorage.getItem(MLB_KEY);if(r)mlbData=JSON.parse(r);}catch(e){mlbData={};}
+  MLB_TEAMS.forEach(function(t){if(!mlbData[t.name])mlbData[t.name]=[];});
+}
+function mlbSave(){try{localStorage.setItem(MLB_KEY,JSON.stringify(mlbData));}catch(e){}}
+function mlbGrandTotal(){var t=0;MLB_TEAMS.forEach(function(t2){t+=(mlbData[t2.name]||[]).length;});return t;}
+function mlbUpdateTotals(){
+  var t=mlbGrandTotal();
+  ["mlb-gtotal","mlb-gtotal-rank","mlb-gtotal-log"].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t;});
+}
+function mlbSwitchTab(tab){
+  mlbCurrentTab=tab;
+  ["tracker","rankings","log"].forEach(function(t){
+    document.getElementById("mlb-page-"+t).classList.toggle("active",t===tab);
+    document.getElementById("mlb-tab-"+t).classList.toggle("active",t===tab);
+  });
+  if(tab==="rankings")mlbRenderRankings();
+  if(tab==="log")mlbRenderActivityLog();
+}
+function mlbRender(){
+  var app=document.getElementById("mlb-app");if(!app)return;
+  app.innerHTML="";
+  var list=MLB_TEAMS.slice();
+  if(mlbSortOn){
+    list.sort(function(a,b){return(mlbData[b.name]||[]).length-(mlbData[a.name]||[]).length;});
+    var lbl=document.createElement("div");lbl.className="section-label";lbl.textContent="All Teams — Sorted by Count";app.appendChild(lbl);
+    var g=document.createElement("div");g.className="grid";list.forEach(function(t){g.appendChild(mlbMakeCard(t));});app.appendChild(g);
+  } else {
+    var divs=[];MLB_TEAMS.forEach(function(t){if(divs.indexOf(t.div)<0)divs.push(t.div);});
+    divs.forEach(function(div){
+      var lbl=document.createElement("div");lbl.className="section-label";lbl.textContent=div;app.appendChild(lbl);
+      var g=document.createElement("div");g.className="grid";
+      MLB_TEAMS.filter(function(t){return t.div===div;}).forEach(function(t){g.appendChild(mlbMakeCard(t));});
+      app.appendChild(g);
+    });
+  }
+  mlbUpdateTotals();
+}
+function mlbMakeCard(team){
+  var count=(mlbData[team.name]||[]).length;
+  var card=document.createElement("div");card.className="card";card.style.borderColor=team.c2;
+  var head=document.createElement("div");head.className="card-head";head.style.background=team.c1;head.style.color=textOn(team.c1);head.textContent=team.name;card.appendChild(head);
+  var body=document.createElement("div");body.className="card-body";
+  var btn=document.createElement("button");btn.className="log-btn";btn.style.background=team.c2;btn.style.color=textOn(team.c2);btn.textContent="+ Log";
+  btn.addEventListener("click",function(e){e.stopPropagation();mlbLogSighting(team.name);});body.appendChild(btn);
+  var badge=document.createElement("div");badge.className="badge"+(count>0?" lit":"");
+  badge.style.background=count>0?team.c2:team.c1;badge.style.color=count>0?textOn(team.c2):textOn(team.c1);badge.textContent=count;
+  badge.addEventListener("click",function(e){e.stopPropagation();openModal(team.name,"mlb");});body.appendChild(badge);
+  card.appendChild(body);return card;
+}
+function mlbLogSighting(name){
+  if(!mlbData[name])mlbData[name]=[];mlbData[name].push(new Date().toISOString());
+  mlbSave();mlbRender();if(mlbCurrentTab==="rankings")mlbRenderRankings();if(mlbCurrentTab==="log")mlbRenderActivityLog();
+  showToast("✅ Logged: "+name);
+}
+function mlbDeleteEntry(name,idx){
+  if(mlbData[name])mlbData[name].splice(idx,1);
+  mlbSave();mlbRender();mlbRenderRankings();mlbRenderActivityLog();openModal(name,"mlb");
+}
+function mlbGetTeamColors(name){
+  for(var i=0;i<MLB_TEAMS.length;i++){if(MLB_TEAMS[i].name===name)return MLB_TEAMS[i];}
+  return{c1:"#041E42",c2:"#BF0D3E"};
+}
+function mlbRenderRankings(){
+  var wrap=document.getElementById("mlb-rankings-wrap");if(!wrap)return;wrap.innerHTML="";
+  var ranked=MLB_TEAMS.map(function(t){return{name:t.name,div:t.div,count:(mlbData[t.name]||[]).length,c1:t.c1,c2:t.c2};}).sort(function(a,b){return b.count!==a.count?b.count-a.count:a.name.localeCompare(b.name);});
+  var max=ranked[0]?ranked[0].count:1;if(max===0)max=1;
+  function posLabel(i,count){if(count===0)return"—";if(i===0)return"🥇";if(i===1)return"🥈";if(i===2)return"🥉";return""+(i+1);}
+  var zeroDone=false;
+  ranked.forEach(function(item,i){
+    if(!zeroDone&&item.count===0){zeroDone=true;var d=document.createElement("div");d.className="rank-divider";d.textContent="Not yet sighted";wrap.appendChild(d);}
+    var card=document.createElement("div");card.className="rank-card"+(item.count===0?" rank-zero":"");card.style.borderLeft="4px solid "+item.c2;
+    var pos=document.createElement("div");pos.className="rank-pos";pos.textContent=posLabel(i,item.count);card.appendChild(pos);
+    var info=document.createElement("div");info.className="rank-info";
+    var nm=document.createElement("div");nm.className="rank-name";nm.textContent=item.name;info.appendChild(nm);
+    var dv=document.createElement("div");dv.className="rank-div";dv.textContent=item.div;info.appendChild(dv);card.appendChild(info);
+    var bw=document.createElement("div");bw.className="rank-bar-wrap";var bb=document.createElement("div");bb.className="rank-bar-bg";
+    var bf=document.createElement("div");bf.className="rank-bar-fill";bf.style.background=item.c1;bf.style.width=Math.round((item.count/max)*100)+"%";
+    bb.appendChild(bf);bw.appendChild(bb);card.appendChild(bw);
+    var cnt=document.createElement("div");cnt.className="rank-count";cnt.style.color=item.c1;cnt.textContent=item.count;card.appendChild(cnt);
+    wrap.appendChild(card);
+  });
+  mlbUpdateTotals();
+}
+function mlbSetLogFilter(f){
+  mlbLogFilter=f;["all","today","week"].forEach(function(x){document.getElementById("mlb-filter-"+x).classList.toggle("active",x===f);});
+  mlbRenderActivityLog();
+}
+function mlbRenderActivityLog(){
+  var list=document.getElementById("mlb-activity-list");if(!list)return;list.innerHTML="";
+  var all=[];MLB_TEAMS.forEach(function(t){(mlbData[t.name]||[]).forEach(function(ts,idx){all.push({team:t.name,div:t.div,ts:ts,idx:idx});});});
+  var now=new Date();var todayStr=now.toDateString();var weekAgo=new Date(now.getTime()-7*24*60*60*1000);
+  if(mlbLogFilter==="today")all=all.filter(function(e){return new Date(e.ts).toDateString()===todayStr;});
+  else if(mlbLogFilter==="week")all=all.filter(function(e){return new Date(e.ts)>=weekAgo;});
+  all.sort(function(a,b){return b.ts.localeCompare(a.ts);});
+  if(all.length===0){var em=document.createElement("div");em.className="activity-empty";em.textContent="No sightings logged yet.";list.appendChild(em);mlbUpdateTotals();return;}
+  var groups={};var groupOrder=[];
+  all.forEach(function(e){var d=new Date(e.ts).toDateString();if(!groups[d]){groups[d]=[];groupOrder.push(d);}groups[d].push(e);});
+  groupOrder.forEach(function(dateStr){
+    var label=document.createElement("div");label.className="activity-date-label";
+    label.textContent=new Date(dateStr).toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});list.appendChild(label);
+    groups[dateStr].forEach(function(e){
+      var tc=mlbGetTeamColors(e.team);
+      var entry=document.createElement("div");entry.className="activity-entry";entry.style.borderLeftColor=tc.c2;
+      var left=document.createElement("div");left.className="activity-entry-left";
+      var tn=document.createElement("div");tn.className="activity-team";tn.style.color=tc.c1;tn.textContent=e.team;left.appendChild(tn);
+      var dv=document.createElement("div");dv.className="activity-div";dv.textContent=e.div;left.appendChild(dv);
+      var tm=document.createElement("div");tm.className="activity-time";tm.textContent=new Date(e.ts).toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"});left.appendChild(tm);entry.appendChild(left);
+      var num=document.createElement("div");num.className="activity-num";num.style.background=tc.c1;num.style.color=textOn(tc.c1);num.textContent="#"+(e.idx+1);entry.appendChild(num);
+      var del=document.createElement("button");del.className="activity-del";del.textContent="🗑";
+      (function(tn2,ti){del.addEventListener("click",function(){mlbData[tn2].splice(ti,1);mlbSave();mlbRender();mlbRenderActivityLog();mlbRenderRankings();showToast("🗑 Entry deleted");});})(e.team,e.idx);
+      entry.appendChild(del);list.appendChild(entry);
+    });
+  });
+  mlbUpdateTotals();
+}
+function mlbToggleSort(){mlbSortOn=!mlbSortOn;mlbRender();}
+function mlbOpenConfirm(){document.getElementById("mlb-confirm-wrap").classList.add("open");}
+function mlbCloseConfirm(){document.getElementById("mlb-confirm-wrap").classList.remove("open");}
+function mlbDoReset(){MLB_TEAMS.forEach(function(t){mlbData[t.name]=[];});mlbSave();mlbCloseConfirm();mlbRender();mlbRenderRankings();mlbRenderActivityLog();showToast("🗑 MLB data reset.");}
+function mlbExportCSV(){
+  var rows=[["Timestamp","Team","Division"]];
+  MLB_TEAMS.forEach(function(t){(mlbData[t.name]||[]).forEach(function(ts){rows.push([ts,t.name,t.div]);});});
+  var hdr=rows.shift();rows.sort(function(a,b){return a[0]<b[0]?-1:1;});rows.unshift(hdr);
+  downloadCSV(rows,"mlb_merch_"+new Date().toISOString().slice(0,10)+".csv");showToast("📥 CSV exported!");
+}
+function mlbTriggerImport(){document.getElementById("mlb-csv-import-input").value="";document.getElementById("mlb-csv-import-input").click();}
+document.getElementById("mlb-csv-import-input").addEventListener("change",function(e){
+  var file=e.target.files[0];if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    var lines=ev.target.result.split(/\r?\n/).filter(function(l){return l.trim()!=="";});
+    if(!lines[0]||lines[0].indexOf("Timestamp")<0||lines[0].indexOf("Team")<0){showToast("⚠️ Invalid CSV.");return;}
+    var headers=parseCSVLine(lines[0]);var tsIdx=-1;var teamIdx=-1;
+    headers.forEach(function(h,i){var c=h.trim().toLowerCase();if(c==="timestamp")tsIdx=i;if(c==="team")teamIdx=i;});
+    if(tsIdx<0||teamIdx<0){showToast("⚠️ Missing columns.");return;}
+    var imported={};MLB_TEAMS.forEach(function(t){imported[t.name]=[];});
+    var skipped=0;var loaded=0;
+    for(var i=1;i<lines.length;i++){
+      var cols=parseCSVLine(lines[i]);if(cols.length<2){skipped++;continue;}
+      var ts=cols[tsIdx]?cols[tsIdx].trim():"";var team=cols[teamIdx]?cols[teamIdx].trim():"";
+      if(!ts||isNaN(new Date(ts).getTime())){skipped++;continue;}
+      if(!imported.hasOwnProperty(team)){skipped++;continue;}
+      imported[team].push(ts);loaded++;
+    }
+    if(loaded===0){showToast("⚠️ No valid entries.");return;}
+    MLB_TEAMS.forEach(function(t){imported[t.name].sort(function(a,b){return a.localeCompare(b);});});
+    mlbPendingImport=imported;
+    var existing=mlbGrandTotal();
+    document.getElementById("mlb-import-title").textContent="Import "+loaded+" Sightings";
+    document.getElementById("mlb-import-msg").textContent=existing>0?"You have "+existing+" existing sightings. Importing will replace all data.":"Found "+loaded+" valid sightings."+(skipped>0?" "+skipped+" rows skipped.":"")+" Ready to import?";
+    document.getElementById("mlb-import-confirm-btn").textContent=existing>0?"Replace & Import":"Yes, Import";
+    document.getElementById("mlb-import-wrap").classList.add("open");
+  };
+  reader.readAsText(file);
+});
+function mlbConfirmImport(){if(!mlbPendingImport)return;mlbData=mlbPendingImport;mlbPendingImport=null;mlbSave();mlbCloseImport();mlbRender();mlbRenderRankings();mlbRenderActivityLog();showToast("✅ CSV imported!");}
+function mlbCloseImport(){document.getElementById("mlb-import-wrap").classList.remove("open");mlbPendingImport=null;}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// CUSTOM SESSIONS (unchanged)
+// ══════════════════════════════════════════════════════════════════════════════
+var SESSIONS_KEY="custom_sessions_v1";var ACTIVE_SESSION_KEY="active_session_v1";
+var sessions=[];var activeSession=null;var pendingItems=[];var cusCurrentTab="tracker";var cusSortOn=false;var cusLogFilter="all";var sessionToDelete=null;
+var defaultColours=["#0E3386","#C41E3A","#2E7D32","#E65100","#6A1B9A","#00838F","#AD1457","#558B2F","#4527A0","#F57F17"];
+
+function loadSessions(){try{var r=localStorage.getItem(SESSIONS_KEY);if(r)sessions=JSON.parse(r);}catch(e){sessions=[];}}
+function saveSessions(){try{localStorage.setItem(SESSIONS_KEY,JSON.stringify(sessions));}catch(e){}}
+function loadActiveSession(){try{var r=localStorage.getItem(ACTIVE_SESSION_KEY);if(r)activeSession=JSON.parse(r);}catch(e){activeSession=null;}}
+function saveActiveSession(){try{if(activeSession)localStorage.setItem(ACTIVE_SESSION_KEY,JSON.stringify(activeSession));else localStorage.removeItem(ACTIVE_SESSION_KEY);}catch(e){}}
+
+function handleItemKeydown(e){if(e.key==="Enter")addItem();}
+function addItem(){
+  var nameEl=document.getElementById("item-name-input");var colourEl=document.getElementById("item-colour-picker");
+  var name=nameEl.value.trim();if(!name){showToast("⚠️ Please enter an item name.");return;}
+  pendingItems.push({name:name,colour:colourEl.value});nameEl.value="";
+  colourEl.value=defaultColours[pendingItems.length%defaultColours.length];renderPendingItems();nameEl.focus();
+}
+function renderPendingItems(){
+  var list=document.getElementById("items-list");var countLabel=document.getElementById("item-count-label");var startBtn=document.getElementById("start-session-btn");
+  if(!list)return;list.innerHTML="";countLabel.textContent="("+pendingItems.length+" added)";startBtn.disabled=pendingItems.length===0;
+  pendingItems.forEach(function(item,i){
+    var row=document.createElement("div");row.className="item-row";row.style.borderLeftColor=item.colour;
+    var swatch=document.createElement("div");swatch.className="item-row-swatch";swatch.style.background=item.colour;row.appendChild(swatch);
+    var nm=document.createElement("div");nm.className="item-row-name";nm.textContent=item.name;row.appendChild(nm);
+    var del=document.createElement("button");del.className="item-row-del";del.textContent="✕";
+    (function(idx){del.addEventListener("click",function(){pendingItems.splice(idx,1);renderPendingItems();});})(i);
+    row.appendChild(del);list.appendChild(row);
+  });
+}
+function startSession(){
+  var sessionName=document.getElementById("session-name-input").value.trim()||"Session "+new Date().toLocaleDateString();
+  if(pendingItems.length===0){showToast("⚠️ Add at least one item.");return;}
+  var sessionData={};pendingItems.forEach(function(item){sessionData[item.name]=[];});
+  activeSession={id:"session_"+Date.now(),name:sessionName,items:pendingItems.slice(),data:sessionData,created:new Date().toISOString(),lastModified:new Date().toISOString()};
+  saveActiveSession();launchCustomSession();
+}
+function launchCustomSession(){
+  if(!activeSession)return;
+  document.getElementById("custom-session-title").textContent=activeSession.name;
+  document.getElementById("custom-hdate").textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+  cusSwitchTab("tracker");cusLogFilter="all";cusSortOn=false;showScreen("screen-custom");cusRender();
+}
+function renderSessionList(){
+  loadSessions();var list=document.getElementById("session-list");var clearBtn=document.getElementById("clear-all-sessions-btn");
+  if(!list)return;list.innerHTML="";clearBtn.style.display=sessions.length>0?"block":"none";
+  if(sessions.length===0){var em=document.createElement("div");em.className="empty-sessions";em.textContent="No saved sessions yet.";list.appendChild(em);return;}
+  sessions.slice().reverse().forEach(function(session){
+    var total=0;session.items.forEach(function(item){total+=(session.data[item.name]||[]).length;});
+    var card=document.createElement("div");card.className="session-card custom-session";
+    var top=document.createElement("div");top.className="session-card-top";
+    var nm=document.createElement("div");nm.className="session-card-name";nm.textContent=session.name;top.appendChild(nm);
+    var dt=document.createElement("div");dt.className="session-card-date";dt.textContent=new Date(session.created).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"});top.appendChild(dt);card.appendChild(top);
+    var meta=document.createElement("div");meta.className="session-card-meta";meta.textContent=session.items.length+" items · "+total+" logs";card.appendChild(meta);
+    var btns=document.createElement("div");btns.className="session-card-btns";
+    var openBtn=document.createElement("button");openBtn.className="scb-open";openBtn.textContent="▶ Open";
+    (function(s){openBtn.addEventListener("click",function(){activeSession=JSON.parse(JSON.stringify(s));saveActiveSession();launchCustomSession();});})(session);btns.appendChild(openBtn);
+    var expBtn=document.createElement("button");expBtn.className="scb-export";expBtn.textContent="📥 Export";
+    (function(s){expBtn.addEventListener("click",function(){exportSessionCSV(s);});})(session);btns.appendChild(expBtn);
+    var delBtn=document.createElement("button");delBtn.className="scb-delete";delBtn.textContent="🗑 Delete";
+    (function(s){delBtn.addEventListener("click",function(){openDeleteSession(s.id,s.name);});})(session);btns.appendChild(delBtn);
+    card.appendChild(btns);list.appendChild(card);
+  });
+}
+function cusRender(){
+  var app=document.getElementById("cus-app");if(!app||!activeSession)return;app.innerHTML="";
+  var items=activeSession.items.slice();
+  if(cusSortOn){items.sort(function(a,b){return(activeSession.data[b.name]||[]).length-(activeSession.data[a.name]||[]).length;});}
+  var lbl=document.createElement("div");lbl.className="section-label";lbl.textContent=cusSortOn?"All Items — Sorted by Count":activeSession.name;app.appendChild(lbl);
+  var g=document.createElement("div");g.className="grid";items.forEach(function(item){g.appendChild(cusMakeCard(item));});app.appendChild(g);
+  cusUpdateTotals();
+}
+function cusMakeCard(item){
+  var count=(activeSession.data[item.name]||[]).length;var c1=item.colour;var c2=adjustColour(item.colour);
+  var card=document.createElement("div");card.className="card";card.style.borderColor=c2;
+  var head=document.createElement("div");head.className="card-head";head.style.background=c1;head.style.color=textOn(c1);head.textContent=item.name;card.appendChild(head);
+  var body=document.createElement("div");body.className="card-body";
+  var btn=document.createElement("button");btn.className="log-btn";btn.style.background=c2;btn.style.color=textOn(c2);btn.textContent="+ Log";
+  btn.addEventListener("click",function(e){e.stopPropagation();cusLogEntry(item.name);});body.appendChild(btn);
+  var badge=document.createElement("div");badge.className="badge"+(count>0?" lit":"");badge.style.background=count>0?c2:c1;badge.style.color=count>0?textOn(c2):textOn(c1);badge.textContent=count;
+  badge.addEventListener("click",function(e){e.stopPropagation();openModal(item.name,"custom");});body.appendChild(badge);card.appendChild(body);return card;
+}
+function adjustColour(hex){
+  var r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  var factor=isLight(hex)?0.65:1.4;
+  r=Math.min(255,Math.round(r*factor));g=Math.min(255,Math.round(g*factor));b=Math.min(255,Math.round(b*factor));
+  return"#"+[r,g,b].map(function(v){return v.toString(16).padStart(2,"0");}).join("");
+}
+function cusLogEntry(name){
+  if(!activeSession)return;if(!activeSession.data[name])activeSession.data[name]=[];
+  activeSession.data[name].push(new Date().toISOString());activeSession.lastModified=new Date().toISOString();
+  saveActiveSession();cusRender();if(cusCurrentTab==="rankings")cusRenderRankings();if(cusCurrentTab==="log")cusRenderActivityLog();showToast("✅ Logged: "+name);
+}
+function cusDeleteEntry(name,idx){
+  if(!activeSession)return;if(activeSession.data[name])activeSession.data[name].splice(idx,1);
+  activeSession.lastModified=new Date().toISOString();saveActiveSession();cusRender();cusRenderRankings();cusRenderActivityLog();openModal(name,"custom");
+}
+function cusGrandTotal(){if(!activeSession)return 0;var t=0;activeSession.items.forEach(function(item){t+=(activeSession.data[item.name]||[]).length;});return t;}
+function cusUpdateTotals(){var t=cusGrandTotal();["cus-gtotal","cus-gtotal-rank","cus-gtotal-log"].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t;});}
+function cusSwitchTab(tab){
+  cusCurrentTab=tab;
+  ["tracker","rankings","log"].forEach(function(t){document.getElementById("cus-page-"+t).classList.toggle("active",t===tab);document.getElementById("cus-tab-"+t).classList.toggle("active",t===tab);});
+  if(tab==="rankings")cusRenderRankings();if(tab==="log")cusRenderActivityLog();
+}
+function cusRenderRankings(){
+  var wrap=document.getElementById("cus-rankings-wrap");if(!wrap||!activeSession)return;wrap.innerHTML="";
+  var ranked=activeSession.items.map(function(item){return{name:item.name,count:(activeSession.data[item.name]||[]).length,colour:item.colour};}).sort(function(a,b){return b.count!==a.count?b.count-a.count:a.name.localeCompare(b.name);});
+  var max=ranked[0]?ranked[0].count:1;if(max===0)max=1;
+  function posLabel(i,count){if(count===0)return"—";if(i===0)return"🥇";if(i===1)return"🥈";if(i===2)return"🥉";return""+(i+1);}
+  var zeroDone=false;
+  ranked.forEach(function(item,i){
+    if(!zeroDone&&item.count===0){zeroDone=true;var d=document.createElement("div");d.className="rank-divider";d.textContent="Not yet logged";wrap.appendChild(d);}
+    var c2=adjustColour(item.colour);var card=document.createElement("div");card.className="rank-card"+(item.count===0?" rank-zero":"");card.style.borderLeft="4px solid "+c2;
+    var pos=document.createElement("div");pos.className="rank-pos";pos.textContent=posLabel(i,item.count);card.appendChild(pos);
+    var info=document.createElement("div");info.className="rank-info";var nm=document.createElement("div");nm.className="rank-name";nm.textContent=item.name;info.appendChild(nm);card.appendChild(info);
+    var bw=document.createElement("div");bw.className="rank-bar-wrap";var bb=document.createElement("div");bb.className="rank-bar-bg";
+    var bf=document.createElement("div");bf.className="rank-bar-fill";bf.style.background=item.colour;bf.style.width=Math.round((item.count/max)*100)+"%";
+    bb.appendChild(bf);bw.appendChild(bb);card.appendChild(bw);
+    var cnt=document.createElement("div");cnt.className="rank-count";cnt.style.color=item.colour;cnt.textContent=item.count;card.appendChild(cnt);wrap.appendChild(card);
+  });
+  cusUpdateTotals();
+}
+function cusSetLogFilter(f){cusLogFilter=f;["all","today","week"].forEach(function(x){document.getElementById("cus-filter-"+x).classList.toggle("active",x===f);});cusRenderActivityLog();}
+function cusRenderActivityLog(){
+  var list=document.getElementById("cus-activity-list");if(!list||!activeSession)return;list.innerHTML="";
+  var all=[];activeSession.items.forEach(function(item){(activeSession.data[item.name]||[]).forEach(function(ts,idx){all.push({team:item.name,colour:item.colour,ts:ts,idx:idx});});});
+  var now=new Date();var todayStr=now.toDateString();var weekAgo=new Date(now.getTime()-7*24*60*60*1000);
+  if(cusLogFilter==="today")all=all.filter(function(e){return new Date(e.ts).toDateString()===todayStr;});
+  else if(cusLogFilter==="week")all=all.filter(function(e){return new Date(e.ts)>=weekAgo;});
+  all.sort(function(a,b){return b.ts.localeCompare(a.ts);});
+  if(all.length===0){var em=document.createElement("div");em.className="activity-empty";em.textContent="Nothing logged yet.";list.appendChild(em);cusUpdateTotals();return;}
+  var groups={};var groupOrder=[];
+  all.forEach(function(e){var d=new Date(e.ts).toDateString();if(!groups[d]){groups[d]=[];groupOrder.push(d);}groups[d].push(e);});
+  groupOrder.forEach(function(dateStr){
+    var label=document.createElement("div");label.className="activity-date-label";label.textContent=new Date(dateStr).toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});list.appendChild(label);
+    groups[dateStr].forEach(function(e){
+      var c2=adjustColour(e.colour);var entry=document.createElement("div");entry.className="activity-entry";entry.style.borderLeftColor=c2;
+      var left=document.createElement("div");left.className="activity-entry-left";
+      var tn=document.createElement("div");tn.className="activity-team";tn.style.color=e.colour;tn.textContent=e.team;left.appendChild(tn);
+      var tm=document.createElement("div");tm.className="activity-time";tm.textContent=new Date(e.ts).toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"});left.appendChild(tm);entry.appendChild(left);
+      var num=document.createElement("div");num.className="activity-num";num.style.background=e.colour;num.style.color=textOn(e.colour);num.textContent="#"+(e.idx+1);entry.appendChild(num);
+      var del=document.createElement("button");del.className="activity-del";del.textContent="🗑";
+      (function(tn2,ti){del.addEventListener("click",function(){cusDeleteEntry(tn2,ti);});})(e.team,e.idx);
+      entry.appendChild(del);list.appendChild(entry);
+    });
+  });
+  cusUpdateTotals();
+}
+function cusToggleSort(){cusSortOn=!cusSortOn;cusRender();}
+function cusOpenConfirm(){document.getElementById("cus-confirm-wrap").classList.add("open");}
+function cusCloseConfirm(){document.getElementById("cus-confirm-wrap").classList.remove("open");}
+function cusDoReset(){
+  if(!activeSession)return;activeSession.items.forEach(function(item){activeSession.data[item.name]=[];});
+  activeSession.lastModified=new Date().toISOString();saveActiveSession();cusCloseConfirm();cusRender();cusRenderRankings();cusRenderActivityLog();showToast("🗑 Session data reset.");
+}
+function cusExportCSV(){
+  if(!activeSession)return;var rows=[["Timestamp","Item","Session"]];
+  activeSession.items.forEach(function(item){(activeSession.data[item.name]||[]).forEach(function(ts){rows.push([ts,item.name,activeSession.name]);});});
+  var hdr=rows.shift();rows.sort(function(a,b){return a[0]<b[0]?-1:1;});rows.unshift(hdr);
+  downloadCSV(rows,sanitiseFilename(activeSession.name)+"_"+new Date().toISOString().slice(0,10)+".csv");showToast("📥 CSV exported!");
+}
+function exportSessionCSV(session){
+  var rows=[["Timestamp","Item","Session"]];
+  session.items.forEach(function(item){(session.data[item.name]||[]).forEach(function(ts){rows.push([ts,item.name,session.name]);});});
+  var hdr=rows.shift();rows.sort(function(a,b){return a[0]<b[0]?-1:1;});rows.unshift(hdr);
+  downloadCSV(rows,sanitiseFilename(session.name)+"_"+new Date().toISOString().slice(0,10)+".csv");showToast("📥 Exported: "+session.name);
+}
+function openEndSession(){document.getElementById("end-session-wrap").classList.add("open");}
+function closeEndSession(){document.getElementById("end-session-wrap").classList.remove("open");}
+function endSession(){
+  if(!activeSession)return;activeSession.lastModified=new Date().toISOString();
+  var idx=-1;for(var i=0;i<sessions.length;i++){if(sessions[i].id===activeSession.id){idx=i;break;}}
+  if(idx>=0)sessions[idx]=JSON.parse(JSON.stringify(activeSession));else sessions.push(JSON.parse(JSON.stringify(activeSession)));
+  saveSessions();activeSession=null;saveActiveSession();closeEndSession();goCustomSessions();showToast("✅ Session saved.");
+}
+function openDeleteSession(id,name){sessionToDelete=id;document.getElementById("delete-session-msg").textContent="This will permanently delete \""+name+"\" and all its data.";document.getElementById("delete-session-wrap").classList.add("open");}
+function closeDeleteSession(){document.getElementById("delete-session-wrap").classList.remove("open");sessionToDelete=null;}
+function doDeleteSession(){if(!sessionToDelete)return;sessions=sessions.filter(function(s){return s.id!==sessionToDelete;});saveSessions();closeDeleteSession();renderSessionList();showToast("🗑 Session deleted.");}
+function openClearAllSessions(){document.getElementById("clear-sessions-wrap").classList.add("open");}
+function closeClearAllSessions(){document.getElementById("clear-sessions-wrap").classList.remove("open");}
+function doClearAllSessions(){sessions=[];saveSessions();closeClearAllSessions();renderSessionList();showToast("🗑 All sessions cleared.");}
+function getCusItemColour(name){if(!activeSession)return"#2E7D32";for(var i=0;i<activeSession.items.length;i++){if(activeSession.items[i].name===name)return activeSession.items[i].colour;}return"#2E7D32";}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// SOFTBALL SCORER
+// ══════════════════════════════════════════════════════════════════════════════
+var GAMES_KEY="softball_games_v1";var ACTIVE_GAME_KEY="active_game_v1";
+var games=[];var activeGame=null;var pendingHomePlayers=[];var pendingAwayPlayers=[];
+var sfCurrentTab="lineup";var sfSelectedBatter=null;var sfSelectedZone=null;var sfSelectedOutcome=null;var sfSelectedRBI=0;
+var gameToDelete=null;var pendingInningRuns=0;
+
+var OUTCOMES=[
+  {key:"single",label:"Single",cls:"ob-single"},
+  {key:"double",label:"Double",cls:"ob-double"},
+  {key:"triple",label:"Triple",cls:"ob-triple"},
+  {key:"hr",label:"Home Run",cls:"ob-hr"},
+  {key:"walk",label:"Walk",cls:"ob-walk"},
+  {key:"out",label:"Out",cls:"ob-out"},
+  {key:"k",label:"Strikeout",cls:"ob-k"},
+  {key:"sac",label:"Sac Fly",cls:"ob-sac"}
+];
+
+var OUTCOME_COLOURS={single:"#2E7D32",double:"#1565C0",triple:"#6A1B9A",hr:"#E65100",walk:"#00838F",out:"#546E7A",k:"#27251F",sac:"#795548"};
+
+var ZONES=[
+  {key:"lf",label:"LF",cx:22,cy:38,r:12},
+  {key:"lc",label:"LC",cx:38,cy:26,r:12},
+  {key:"cf",label:"CF",cx:55,cy:20,r:12},
+  {key:"rc",label:"RC",cx:72,cy:26,r:12},
+  {key:"rf",label:"RF",cx:88,cy:38,r:12},
+  {key:"3b",label:"3B",cx:22,cy:62,r:10},
+  {key:"ss",label:"SS",cx:36,cy:50,r:10},
+  {key:"mid",label:"Mid",cx:55,cy:45,r:10},
+  {key:"2b",label:"2B",cx:74,cy:50,r:10},
+  {key:"1b",label:"1B",cx:88,cy:62,r:10}
+];
+
+function loadGames(){try{var r=localStorage.getItem(GAMES_KEY);if(r)games=JSON.parse(r);}catch(e){games=[];}}
+function saveGames(){try{localStorage.setItem(GAMES_KEY,JSON.stringify(games));}catch(e){}}
+function loadActiveGame(){try{var r=localStorage.getItem(ACTIVE_GAME_KEY);if(r)activeGame=JSON.parse(r);}catch(e){activeGame=null;}}
+function saveActiveGame(){try{if(activeGame)localStorage.setItem(ACTIVE_GAME_KEY,JSON.stringify(activeGame));else localStorage.removeItem(ACTIVE_GAME_KEY);}catch(e){}}
+
+// ── New Game Setup ────────────────────────────────────────────────────────────
+function handleHomePlayerKeydown(e){if(e.key==="Enter")addHomePlayer();}
+function handleAwayPlayerKeydown(e){if(e.key==="Enter")addAwayPlayer();}
+
+function addHomePlayer(){
+  var nameEl=document.getElementById("home-player-input");var posEl=document.getElementById("player-pos-select");
+  var name=nameEl.value.trim();if(!name){showToast("⚠️ Enter player name.");return;}
+  pendingHomePlayers.push({name:name,pos:posEl.value,id:"p_"+Date.now()+"_"+Math.random().toString(36).slice(2)});
+  nameEl.value="";renderHomePlayers();updateStartGameBtn();nameEl.focus();
+}
+function addAwayPlayer(){
+  var nameEl=document.getElementById("away-player-input");var posEl=document.getElementById("away-player-pos-select");
+  var name=nameEl.value.trim();if(!name){showToast("⚠️ Enter player name.");return;}
+  pendingAwayPlayers.push({name:name,pos:posEl.value,id:"p_"+Date.now()+"_"+Math.random().toString(36).slice(2)});
+  nameEl.value="";renderAwayPlayers();updateStartGameBtn();nameEl.focus();
+}
+
+function renderHomePlayers(){renderPlayerList("home-players-list",pendingHomePlayers,"home");}
+function renderAwayPlayers(){renderPlayerList("away-players-list",pendingAwayPlayers,"away");}
+
+function renderPlayerList(listId,players,side){
+  var list=document.getElementById(listId);if(!list)return;list.innerHTML="";
+  players.forEach(function(p,i){
+    var row=document.createElement("div");row.className="item-row";row.style.borderLeftColor="#B71C1C";
+    var num=document.createElement("div");num.style.cssText="width:22px;height:22px;border-radius:50%;background:#B71C1C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0";num.textContent=i+1;row.appendChild(num);
+    var nm=document.createElement("div");nm.className="item-row-name";nm.textContent=p.name;row.appendChild(nm);
+    var pos=document.createElement("div");pos.className="item-row-pos";pos.textContent=p.pos;row.appendChild(pos);
+    var up=document.createElement("button");up.className="item-row-up";up.textContent="↑";up.disabled=i===0;
+    (function(idx,sd){up.addEventListener("click",function(){var arr=sd==="home"?pendingHomePlayers:pendingAwayPlayers;var tmp=arr[idx];arr[idx]=arr[idx-1];arr[idx-1]=tmp;if(sd==="home")renderHomePlayers();else renderAwayPlayers();});})(i,side);row.appendChild(up);
+    var dn=document.createElement("button");dn.className="item-row-dn";dn.textContent="↓";dn.disabled=i===players.length-1;
+    (function(idx,sd){dn.addEventListener("click",function(){var arr=sd==="home"?pendingHomePlayers:pendingAwayPlayers;var tmp=arr[idx];arr[idx]=arr[idx+1];arr[idx+1]=tmp;if(sd==="home")renderHomePlayers();else renderAwayPlayers();});})(i,side);row.appendChild(dn);
+    var del=document.createElement("button");del.className="item-row-del";del.textContent="✕";
+    (function(idx,sd){del.addEventListener("click",function(){if(sd==="home")pendingHomePlayers.splice(idx,1);else pendingAwayPlayers.splice(idx,1);if(sd==="home")renderHomePlayers();else renderAwayPlayers();updateStartGameBtn();});})(i,side);row.appendChild(del);
+    list.appendChild(row);
+  });
+}
+
+function updateStartGameBtn(){
+  var btn=document.getElementById("start-game-btn");
+  if(btn)btn.disabled=pendingHomePlayers.length===0&&pendingAwayPlayers.length===0;
+}
+
+function makePlayerStats(){return{ab:0,h:0,rbi:0,bb:0,k:0,hr:0,runs:0};}
+
+function startGame(){
+  var gameName=document.getElementById("game-name-input").value.trim()||"Game "+new Date().toLocaleDateString();
+  var homeName=document.getElementById("home-team-input").value.trim()||"Home";
+  var awayName=document.getElementById("away-team-input").value.trim()||"Away";
+  if(pendingHomePlayers.length===0&&pendingAwayPlayers.length===0){showToast("⚠️ Add at least one player.");return;}
+
+  var homeStats={};pendingHomePlayers.forEach(function(p){homeStats[p.id]=makePlayerStats();});
+  var awayStats={};pendingAwayPlayers.forEach(function(p){awayStats[p.id]=makePlayerStats();});
+
+  activeGame={
+    id:"game_"+Date.now(),
+    name:gameName,
+    homeName:homeName,
+    awayName:awayName,
+    homePlayers:pendingHomePlayers.slice(),
+    awayPlayers:pendingAwayPlayers.slice(),
+    homeStats:homeStats,
+    awayStats:awayStats,
+    innings:7,
+    currentInning:1,
+    currentHalf:"top", // top = away batting, bottom = home batting
+    outs:0,
+    homeRuns:0,
+    awayRuns:0,
+    inningScores:{home:[],away:[]}, // runs per inning
+    atBats:[], // full log
+    created:new Date().toISOString(),
+    lastModified:new Date().toISOString(),
+    finished:false
+  };
+  saveActiveGame();launchSoftballGame();
+}
+
+function launchSoftballGame(){
+  if(!activeGame)return;
+  document.getElementById("softball-game-title").textContent=activeGame.name;
+  document.getElementById("softball-hdate").textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+  sfSelectedBatter=null;sfSelectedZone=null;sfSelectedOutcome=null;sfSelectedRBI=0;
+  sfSwitchTab("lineup");updateScoreBanner();showScreen("screen-softball");sfRenderLineup();
+}
+
+// ── Score Banner ──────────────────────────────────────────────────────────────
+function updateScoreBanner(){
+  if(!activeGame)return;
+  document.getElementById("banner-home-name").textContent=activeGame.homeName;
+  document.getElementById("banner-away-name").textContent=activeGame.awayName;
+  document.getElementById("banner-home-runs").textContent=activeGame.homeRuns;
+  document.getElementById("banner-away-runs").textContent=activeGame.awayRuns;
+  document.getElementById("banner-inning").textContent=activeGame.currentInning;
+  document.getElementById("banner-half").textContent=activeGame.currentHalf==="top"?"Top":"Bot";
+  document.getElementById("banner-outs").textContent=activeGame.outs+" out"+(activeGame.outs!==1?"s":"");
+}
+
+// ── Tab Switching ─────────────────────────────────────────────────────────────
+function sfSwitchTab(tab){
+  sfCurrentTab=tab;
+  ["lineup","atbat","boxscore","log"].forEach(function(t){
+    document.getElementById("sf-page-"+t).classList.toggle("active",t===tab);
+    document.getElementById("sf-tab-"+t).classList.toggle("active",t===tab);
+    if(t===tab)document.getElementById("sf-tab-"+t).classList.add("softball");
+    else document.getElementById("sf-tab-"+t).classList.remove("softball");
+  });
+  if(tab==="lineup")sfRenderLineup();
+  if(tab==="atbat")sfRenderAtBat();
+  if(tab==="boxscore")sfRenderBoxScore();
+  if(tab==="log")sfRenderGameLog();
+}
+
+// ── Lineup ────────────────────────────────────────────────────────────────────
+function sfRenderLineup(){
+  var wrap=document.getElementById("sf-lineup-wrap");if(!wrap||!activeGame)return;
+  wrap.innerHTML="";
+
+  // Determine which team is batting
+  var battingTeam=activeGame.currentHalf==="top"?"away":"home";
+  var fieldingTeam=battingTeam==="home"?"away":"home";
+  var battingPlayers=battingTeam==="home"?activeGame.homePlayers:activeGame.awayPlayers;
+  var fieldingPlayers=fieldingTeam==="home"?activeGame.homePlayers:activeGame.awayPlayers;
+  var battingStats=battingTeam==="home"?activeGame.homeStats:activeGame.awayStats;
+  var battingName=battingTeam==="home"?activeGame.homeName:activeGame.awayName;
+  var fieldingName=fieldingTeam==="home"?activeGame.homeName:activeGame.awayName;
+
+  // Batting team
+  var bh=document.createElement("div");bh.className="team-section-header";bh.textContent="🏏 Batting: "+battingName;wrap.appendChild(bh);
+  battingPlayers.forEach(function(p,i){
+    var stats=battingStats[p.id]||makePlayerStats();
+    var isSelected=sfSelectedBatter&&sfSelectedBatter.id===p.id&&sfSelectedBatter.side===battingTeam;
+    var card=document.createElement("div");card.className="lineup-card"+(isSelected?" at-bat":"");
+    var num=document.createElement("div");num.className="lineup-num";num.textContent=i+1;card.appendChild(num);
+    var info=document.createElement("div");info.className="lineup-info";
+    var nm=document.createElement("div");nm.className="lineup-name";nm.textContent=p.name;info.appendChild(nm);
+    var pos=document.createElement("div");pos.className="lineup-pos";pos.textContent=p.pos;info.appendChild(pos);card.appendChild(info);
+    var statsWrap=document.createElement("div");statsWrap.className="lineup-stats";
+    [["AB",stats.ab],["H",stats.h],["RBI",stats.rbi]].forEach(function(s){
+      var st=document.createElement("div");st.className="lineup-stat";
+      var v=document.createElement("div");v.className="lineup-stat-val";v.textContent=s[1];st.appendChild(v);
+      var l=document.createElement("div");l.className="lineup-stat-lbl";l.textContent=s[0];st.appendChild(l);
+      statsWrap.appendChild(st);
+    });
+    card.appendChild(statsWrap);
+    if(isSelected){var ab=document.createElement("div");ab.className="at-bat-badge";ab.textContent="▶ AT BAT";card.appendChild(ab);}
+    (function(player,side){card.addEventListener("click",function(){
+      sfSelectedBatter={id:player.id,name:player.name,pos:player.pos,side:side};
+      sfSelectedZone=null;sfSelectedOutcome=null;sfSelectedRBI=0;
+      sfRenderLineup();sfSwitchTab("atbat");
+    });})(p,battingTeam);
+    wrap.appendChild(card);
+  });
+
+  // Fielding team
+  if(fieldingPlayers.length>0){
+    var fh=document.createElement("div");fh.className="team-section-header";fh.style.marginTop="12px";fh.textContent="🧤 Fielding: "+fieldingName;wrap.appendChild(fh);
+    var fieldingStats=fieldingTeam==="home"?activeGame.homeStats:activeGame.awayStats;
+    fieldingPlayers.forEach(function(p,i){
+      var stats=fieldingStats[p.id]||makePlayerStats();
+      var card=document.createElement("div");card.className="lineup-card";card.style.opacity=".7";
+      var num=document.createElement("div");num.className="lineup-num";num.style.background="#888";num.textContent=i+1;card.appendChild(num);
+      var info=document.createElement("div");info.className="lineup-info";
+      var nm=document.createElement("div");nm.className="lineup-name";nm.textContent=p.name;info.appendChild(nm);
+      var pos=document.createElement("div");pos.className="lineup-pos";pos.textContent=p.pos;info.appendChild(pos);card.appendChild(info);
+      var statsWrap=document.createElement("div");statsWrap.className="lineup-stats";
+      [["AB",stats.ab],["H",stats.h],["RBI",stats.rbi]].forEach(function(s){
+        var st=document.createElement("div");st.className="lineup-stat";
+        var v=document.createElement("div");v.className="lineup-stat-val";v.style.color="#888";v.textContent=s[1];st.appendChild(v);
+        var l=document.createElement("div");l.className="lineup-stat-lbl";l.textContent=s[0];st.appendChild(l);
+        statsWrap.appendChild(st);
+      });
+      card.appendChild(statsWrap);wrap.appendChild(card);
+    });
+  }
+}
+
+// ── At Bat ────────────────────────────────────────────────────────────────────
+function sfRenderAtBat(){
+  var wrap=document.getElementById("sf-atbat-wrap");if(!wrap)return;
+  wrap.innerHTML="";
+
+  if(!sfSelectedBatter){
+    var msg=document.createElement("div");msg.className="no-batter-msg";msg.textContent="← Select a batter from the Lineup tab first";wrap.appendChild(msg);return;
+  }
+
+  // Batter info
+  var info=document.createElement("div");info.className="atbat-batter-info";
+  var num=document.createElement("div");num.className="atbat-batter-num";
+  var players=sfSelectedBatter.side==="home"?activeGame.homePlayers:activeGame.awayPlayers;
+  var idx=0;for(var i=0;i<players.length;i++){if(players[i].id===sfSelectedBatter.id){idx=i;break;}}
+  num.textContent=idx+1;info.appendChild(num);
+  var det=document.createElement("div");
+  var nm=document.createElement("div");nm.className="atbat-batter-name";nm.textContent=sfSelectedBatter.name;det.appendChild(nm);
+  var pos=document.createElement("div");pos.className="atbat-batter-pos";pos.textContent=sfSelectedBatter.pos+" · "+(sfSelectedBatter.side==="home"?activeGame.homeName:activeGame.awayName);det.appendChild(pos);
+  info.appendChild(det);wrap.appendChild(info);
+
+  // Field graphic (SVG)
+  var fieldWrap=document.createElement("div");fieldWrap.className="field-wrap";
+  var svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+  svg.setAttribute("viewBox","0 0 110 100");svg.setAttribute("class","field-svg");
+
+  // Background
+  var bg=document.createElementNS("http://www.w3.org/2000/svg","rect");
+  bg.setAttribute("width","110");bg.setAttribute("height","100");bg.setAttribute("fill","#4CAF50");svg.appendChild(bg);
+
+  // Infield dirt
+  var dirt=document.createElementNS("http://www.w3.org/2000/svg","polygon");
+  dirt.setAttribute("points","55,55 22,72 55,88 88,72");dirt.setAttribute("fill","#D2B48C");svg.appendChild(dirt);
+
+  // Foul lines
+  var ll=document.createElementNS("http://www.w3.org/2000/svg","line");
+  ll.setAttribute("x1","55");ll.setAttribute("y1","85");ll.setAttribute("x2","5");ll.setAttribute("y2","5");
+  ll.setAttribute("stroke","white");ll.setAttribute("stroke-width","0.5");ll.setAttribute("opacity","0.5");svg.appendChild(ll);
+  var rl=document.createElementNS("http://www.w3.org/2000/svg","line");
+  rl.setAttribute("x1","55");rl.setAttribute("y1","85");rl.setAttribute("x2","105");rl.setAttribute("y2","5");
+  rl.setAttribute("stroke","white");rl.setAttribute("stroke-width","0.5");rl.setAttribute("opacity","0.5");svg.appendChild(rl);
+
+  // Home plate
+  var hp=document.createElementNS("http://www.w3.org/2000/svg","polygon");
+  hp.setAttribute("points","55,88 52,91 52,95 58,95 58,91");hp.setAttribute("fill","white");svg.appendChild(hp);
+
+  // Bases
+  [["55","55"],["88","72"],["55","88"],["22","72"]].forEach(function(b,i){
+    if(i===2)return;
+    var base=document.createElementNS("http://www.w3.org/2000/svg","rect");
+    base.setAttribute("x",parseFloat(b[0])-3);base.setAttribute("y",parseFloat(b[1])-3);
+    base.setAttribute("width","6");base.setAttribute("height","6");base.setAttribute("fill","white");
+    base.setAttribute("transform","rotate(45,"+b[0]+","+b[1]+")");svg.appendChild(base);
+  });
+
+  // Zone circles
+  ZONES.forEach(function(zone){
+    var isSelected=sfSelectedZone===zone.key;
+    var g=document.createElementNS("http://www.w3.org/2000/svg","g");
+    g.setAttribute("class","field-zone"+(sfSelectedZone?(isSelected?" selected":" unselected"):""));
+    var circle=document.createElementNS("http://www.w3.org/2000/svg","circle");
+    circle.setAttribute("cx",zone.cx);circle.setAttribute("cy",zone.cy);circle.setAttribute("r",zone.r);
+    circle.setAttribute("fill",isSelected?"#FF6F00":"rgba(255,255,255,0.25)");
+    circle.setAttribute("stroke",isSelected?"#FF6F00":"rgba(255,255,255,0.6)");
+    circle.setAttribute("stroke-width","1");g.appendChild(circle);
+    var text=document.createElementNS("http://www.w3.org/2000/svg","text");
+    text.setAttribute("x",zone.cx);text.setAttribute("y",zone.cy+1);
+    text.setAttribute("text-anchor","middle");text.setAttribute("dominant-baseline","middle");
+    text.setAttribute("fill","white");text.setAttribute("font-size","5");text.setAttribute("font-weight","bold");
+    text.textContent=zone.label;g.appendChild(text);
+    (function(zk){g.addEventListener("click",function(){sfSelectedZone=zk;sfRenderAtBat();});})(zone.key);
+    svg.appendChild(g);
+  });
+
+  fieldWrap.appendChild(svg);wrap.appendChild(fieldWrap);
+
+  // Outcome buttons
+  var outLabel=document.createElement("div");outLabel.className="rbi-label";outLabel.textContent="Outcome";wrap.appendChild(outLabel);
+  var outGrid=document.createElement("div");outGrid.className="outcome-grid";
+  OUTCOMES.forEach(function(o){
+    var btn=document.createElement("button");btn.className="outcome-btn "+o.cls+(sfSelectedOutcome===o.key?" selected":"");
+    btn.textContent=o.label;
+    (function(ok){btn.addEventListener("click",function(){sfSelectedOutcome=ok;sfRenderAtBat();});})(o.key);
+    outGrid.appendChild(btn);
+  });
+  wrap.appendChild(outGrid);
+
+  // RBI selector (hide for K)
+  if(sfSelectedOutcome!=="k"){
+    var rbiWrap=document.createElement("div");rbiWrap.className="rbi-wrap";
+    var rbiLabel=document.createElement("div");rbiLabel.className="rbi-label";rbiLabel.textContent="RBIs on this play";rbiWrap.appendChild(rbiLabel);
+    var rbiBtns=document.createElement("div");rbiBtns.className="rbi-btns";
+    [0,1,2,3,4].forEach(function(n){
+      var btn=document.createElement("button");btn.className="rbi-btn"+(sfSelectedRBI===n?" selected":"");btn.textContent=n;
+      (function(num){btn.addEventListener("click",function(){sfSelectedRBI=num;sfRenderAtBat();});})(n);
+      rbiBtns.appendChild(btn);
+    });
+    rbiWrap.appendChild(rbiBtns);wrap.appendChild(rbiWrap);
+  }
+
+  // Record button
+  var recBtn=document.createElement("button");recBtn.className="record-btn";recBtn.textContent="✅ Record At-Bat";
+  recBtn.disabled=!sfSelectedOutcome;
+  recBtn.addEventListener("click",recordAtBat);wrap.appendChild(recBtn);
+}
+
+// ── Record At-Bat ─────────────────────────────────────────────────────────────
+function recordAtBat(){
+  if(!activeGame||!sfSelectedBatter||!sfSelectedOutcome)return;
+  var side=sfSelectedBatter.side;
+  var stats=side==="home"?activeGame.homeStats:activeGame.awayStats;
+  if(!stats[sfSelectedBatter.id])stats[sfSelectedBatter.id]=makePlayerStats();
+  var s=stats[sfSelectedBatter.id];
+  var isHit=["single","double","triple","hr"].indexOf(sfSelectedOutcome)>=0;
+  var isWalk=sfSelectedOutcome==="walk";
+  var isK=sfSelectedOutcome==="k";
+  var isHR=sfSelectedOutcome==="hr";
+  if(!isWalk)s.ab++;
+  if(isHit)s.h++;
+  if(isHR)s.hr++;
+  if(isK)s.k++;
+  if(isWalk)s.bb++;
+  s.rbi+=sfSelectedRBI;
+
+  // Outs
+  var isOut=["out","k","sac"].indexOf(sfSelectedOutcome)>=0;
+  if(isOut)activeGame.outs++;
+
+  // Log entry
+  activeGame.atBats.push({
+    ts:new Date().toISOString(),
+    playerId:sfSelectedBatter.id,
+    playerName:sfSelectedBatter.name,
+    playerPos:sfSelectedBatter.pos,
+    side:side,
+    outcome:sfSelectedOutcome,
+    zone:sfSelectedZone,
+    rbi:sfSelectedRBI,
+    inning:activeGame.currentInning,
+    half:activeGame.currentHalf,
+    outs:activeGame.outs
+  });
+
+  activeGame.lastModified=new Date().toISOString();
+  saveActiveGame();
+  updateScoreBanner();
+
+  // Reset at-bat state
+  sfSelectedBatter=null;sfSelectedZone=null;sfSelectedOutcome=null;sfSelectedRBI=0;
+  showToast("✅ At-bat recorded!");
+  sfSwitchTab("lineup");
+}
+
+// ── End Half-Inning ───────────────────────────────────────────────────────────
+function openEndInning(){
+  if(!activeGame)return;
+  var half=activeGame.currentHalf==="top"?"Top":"Bottom";
+  document.getElementById("runs-modal-title").textContent=half+" of Inning "+activeGame.currentInning;
+  document.getElementById("runs-modal-desc").textContent="How many runs scored this half-inning?";
+  // Build runs grid
+  var grid=document.getElementById("runs-grid");grid.innerHTML="";
+  pendingInningRuns=0;
+  for(var i=0;i<=9;i++){
+    (function(n){
+      var btn=document.createElement("button");btn.className="runs-btn"+(pendingInningRuns===n?" selected":"");btn.textContent=n;
+      btn.addEventListener("click",function(){
+        pendingInningRuns=n;
+        document.querySelectorAll(".runs-btn").forEach(function(b){b.classList.remove("selected");});
+        btn.classList.add("selected");
+      });
+      grid.appendChild(btn);
+    })(i);
+  }
+  document.getElementById("runs-modal-wrap").classList.add("open");
+}
+function closeEndInning(){document.getElementById("runs-modal-wrap").classList.remove("open");}
+function confirmEndInning(){
+  if(!activeGame)return;
+  var battingTeam=activeGame.currentHalf==="top"?"away":"home";
+  if(battingTeam==="home"){
+    activeGame.homeRuns+=pendingInningRuns;
+    activeGame.inningScores.home.push(pendingInningRuns);
+  } else {
+    activeGame.awayRuns+=pendingInningRuns;
+    activeGame.inningScores.away.push(pendingInningRuns);
+  }
+  activeGame.outs=0;
+  // Advance half/inning
+  if(activeGame.currentHalf==="top"){
+    activeGame.currentHalf="bottom";
+  } else {
+    activeGame.currentHalf="top";
+    activeGame.currentInning++;
+  }
+  activeGame.lastModified=new Date().toISOString();
+  saveActiveGame();closeEndInning();updateScoreBanner();sfRenderLineup();
+  showToast("✅ Inning updated.");
+}
+
+// ── Box Score ─────────────────────────────────────────────────────────────────
+function sfRenderBoxScore(){
+  var wrap=document.getElementById("sf-boxscore-wrap");if(!wrap||!activeGame)return;
+  wrap.innerHTML="";
+
+  // Inning-by-inning table
+  var inningTitle=document.createElement("div");inningTitle.className="section-title";inningTitle.textContent="Inning by Inning";wrap.appendChild(inningTitle);
+  var it=document.createElement("table");it.className="inning-table";
+  var thead=document.createElement("thead");var hrow=document.createElement("tr");
+  var th0=document.createElement("th");th0.className="left";th0.textContent="Team";hrow.appendChild(th0);
+  for(var i=1;i<=activeGame.innings;i++){var th=document.createElement("th");th.textContent=i;hrow.appendChild(th);}
+  var thr=document.createElement("th");thr.textContent="R";hrow.appendChild(thr);
+  thead.appendChild(hrow);it.appendChild(thead);
+  var tbody=document.createElement("tbody");
+  [[activeGame.awayName,activeGame.inningScores.away,activeGame.awayRuns],[activeGame.homeName,activeGame.inningScores.home,activeGame.homeRuns]].forEach(function(row){
+    var tr=document.createElement("tr");
+    var td0=document.createElement("td");td0.className="left";td0.textContent=row[0];tr.appendChild(td0);
+    for(var i=0;i<activeGame.innings;i++){
+      var td=document.createElement("td");td.textContent=row[1][i]!==undefined?row[1][i]:"—";tr.appendChild(td);
+    }
+    var tdr=document.createElement("td");tdr.style.fontWeight="700";tdr.style.color="#B71C1C";tdr.textContent=row[2];tr.appendChild(tdr);
+    tbody.appendChild(tr);
+  });
+  it.appendChild(tbody);wrap.appendChild(it);
+
+  // Batting stats per team
+  [[activeGame.homeName,activeGame.homePlayers,activeGame.homeStats],[activeGame.awayName,activeGame.awayPlayers,activeGame.awayStats]].forEach(function(team){
+    var teamTitle=document.createElement("div");teamTitle.className="section-title";teamTitle.textContent=team[0]+" — Batting";wrap.appendChild(teamTitle);
+    var bt=document.createElement("table");bt.className="boxscore-table";
+    var bhead=document.createElement("thead");var bhr=document.createElement("tr");
+    ["#","Name","Pos","AB","H","RBI","BB","K","HR"].forEach(function(h,i){
+      var th=document.createElement("th");th.textContent=h;if(i<3)th.className="left";bhr.appendChild(th);
+    });
+    bhead.appendChild(bhr);bt.appendChild(bhead);
+    var btbody=document.createElement("tbody");
+    var totals={ab:0,h:0,rbi:0,bb:0,k:0,hr:0};
+    team[1].forEach(function(p,i){
+      var s=team[2][p.id]||makePlayerStats();
+      totals.ab+=s.ab;totals.h+=s.h;totals.rbi+=s.rbi;totals.bb+=s.bb;totals.k+=s.k;totals.hr+=s.hr;
+      var tr=document.createElement("tr");
+      [i+1,p.name,p.pos,s.ab,s.h,s.rbi,s.bb,s.k,s.hr].forEach(function(v,vi){
+        var td=document.createElement("td");td.textContent=v;if(vi<3)td.className="left";tr.appendChild(td);
+      });
+      btbody.appendChild(tr);
+    });
+    // Totals row
+    var ttr=document.createElement("tr");ttr.className="totals-row";
+    ["","Totals","",totals.ab,totals.h,totals.rbi,totals.bb,totals.k,totals.hr].forEach(function(v,vi){
+      var td=document.createElement("td");td.textContent=v;if(vi<3)td.className="left";ttr.appendChild(td);
+    });
+    btbody.appendChild(ttr);bt.appendChild(btbody);wrap.appendChild(bt);
+  });
+
+  // Export button
+  var expBtn=document.createElement("button");expBtn.style.cssText="width:100%;padding:14px;background:#041E42;color:#fff;border:none;border-radius:12px;font-size:.9rem;font-weight:700;cursor:pointer;margin-top:8px;margin-bottom:16px";
+  expBtn.textContent="📥 Export Box Score";expBtn.addEventListener("click",exportBoxScore);wrap.appendChild(expBtn);
+}
+
+// ── Game Log ──────────────────────────────────────────────────────────────────
+function sfRenderGameLog(){
+  var wrap=document.getElementById("sf-game-log-wrap");if(!wrap||!activeGame)return;
+  wrap.innerHTML="";
+  if(activeGame.atBats.length===0){var em=document.createElement("div");em.className="activity-empty";em.textContent="No at-bats recorded yet.";wrap.appendChild(em);return;}
+
+  // Group by inning/half
+  var groups={};var groupOrder=[];
+  activeGame.atBats.forEach(function(ab){
+    var key=ab.half==="top"?"Top "+ab.inning:"Bot "+ab.inning;
+    if(!groups[key]){groups[key]=[];groupOrder.push(key);}groups[key].push(ab);
+  });
+
+  groupOrder.forEach(function(key){
+    var label=document.createElement("div");label.className="inning-group-label";
+    label.textContent="Inning "+key.split(" ")[1]+" — "+(key.startsWith("Top")?"Top ("+activeGame.awayName+" batting)":"Bottom ("+activeGame.homeName+" batting)");
+    wrap.appendChild(label);
+    groups[key].forEach(function(ab,i){
+      var entry=document.createElement("div");entry.className="game-log-entry";
+      var oc=document.createElement("div");oc.className="game-log-outcome";
+      oc.style.background=OUTCOME_COLOURS[ab.outcome]||"#888";
+      oc.textContent=OUTCOMES.find(function(o){return o.key===ab.outcome;})?OUTCOMES.find(function(o){return o.key===ab.outcome;}).label:ab.outcome;
+      entry.appendChild(oc);
+      var info=document.createElement("div");info.className="game-log-info";
+      var pl=document.createElement("div");pl.className="game-log-player";pl.textContent=ab.playerName+" ("+ab.playerPos+")";info.appendChild(pl);
+      var det=document.createElement("div");det.className="game-log-detail";
+      det.textContent=(ab.zone?ab.zone.toUpperCase()+" · ":"No zone · ")+new Date(ab.ts).toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit"});
+      info.appendChild(det);entry.appendChild(info);
+      if(ab.rbi>0){var rbi=document.createElement("div");rbi.className="game-log-rbi";rbi.textContent=ab.rbi+" RBI";entry.appendChild(rbi);}
+      var del=document.createElement("button");del.className="game-log-del";del.textContent="🗑";
+      (function(idx){del.addEventListener("click",function(){
+        activeGame.atBats.splice(idx,1);
+        // Recalculate stats
+        recalcStats();saveActiveGame();sfRenderGameLog();sfRenderLineup();sfRenderBoxScore();updateScoreBanner();showToast("🗑 Entry deleted.");
+      });})(activeGame.atBats.indexOf(ab));
+      entry.appendChild(del);wrap.appendChild(entry);
+    });
+  });
+}
+
+function recalcStats(){
+  if(!activeGame)return;
+  // Reset all stats
+  activeGame.homePlayers.forEach(function(p){activeGame.homeStats[p.id]=makePlayerStats();});
+  activeGame.awayPlayers.forEach(function(p){activeGame.awayStats[p.id]=makePlayerStats();});
+  // Replay all at-bats
+  activeGame.atBats.forEach(function(ab){
+    var stats=ab.side==="home"?activeGame.homeStats:activeGame.awayStats;
+    if(!stats[ab.playerId])stats[ab.playerId]=makePlayerStats();
+    var s=stats[ab.playerId];
+    var isHit=["single","double","triple","hr"].indexOf(ab.outcome)>=0;
+    var isWalk=ab.outcome==="walk";var isK=ab.outcome==="k";var isHR=ab.outcome==="hr";
+    if(!isWalk)s.ab++;if(isHit)s.h++;if(isHR)s.hr++;if(isK)s.k++;if(isWalk)s.bb++;s.rbi+=ab.rbi;
+  });
+}
+
+// ── Export Box Score ──────────────────────────────────────────────────────────
+function exportBoxScore(){
+  if(!activeGame)return;
+  var rows=[];
+  rows.push([activeGame.name,"","","","","","","",""]);
+  rows.push([new Date(activeGame.created).toLocaleDateString(),"","","","","","","",""]);
+  rows.push(["","","","","","","","",""]);
+
+  // Inning scores
+  var inningHeader=["Team"];for(var i=1;i<=activeGame.innings;i++)inningHeader.push("Inn "+i);inningHeader.push("R");
+  rows.push(inningHeader);
+  var awayRow=[activeGame.awayName];activeGame.inningScores.away.forEach(function(r){awayRow.push(r);});
+  while(awayRow.length<activeGame.innings+1)awayRow.push("—");awayRow.push(activeGame.awayRuns);rows.push(awayRow);
+  var homeRow=[activeGame.homeName];activeGame.inningScores.home.forEach(function(r){homeRow.push(r);});
+  while(homeRow.length<activeGame.innings+1)homeRow.push("—");homeRow.push(activeGame.homeRuns);rows.push(homeRow);
+  rows.push(["","","","","","","","",""]);
+
+  // Batting stats
+  [[activeGame.homeName,activeGame.homePlayers,activeGame.homeStats],[activeGame.awayName,activeGame.awayPlayers,activeGame.awayStats]].forEach(function(team){
+    rows.push([team[0]+" Batting","","","","","","","",""]);
+    rows.push(["#","Name","Pos","AB","H","RBI","BB","K","HR"]);
+    var totals={ab:0,h:0,rbi:0,bb:0,k:0,hr:0};
+    team[1].forEach(function(p,i){
+      var s=team[2][p.id]||makePlayerStats();
+      totals.ab+=s.ab;totals.h+=s.h;totals.rbi+=s.rbi;totals.bb+=s.bb;totals.k+=s.k;totals.hr+=s.hr;
+      rows.push([i+1,p.name,p.pos,s.ab,s.h,s.rbi,s.bb,s.k,s.hr]);
+    });
+    rows.push(["","Totals","",totals.ab,totals.h,totals.rbi,totals.bb,totals.k,totals.hr]);
+    rows.push(["","","","","","","","",""]);
+  });
+
+  // At-bat log
+  rows.push(["At-Bat Log","","","","","","","",""]);
+  rows.push(["Inning","Half","Player","Pos","Team","Outcome","Zone","RBI","Time"]);
+  activeGame.atBats.forEach(function(ab){
+    rows.push([ab.inning,ab.half==="top"?"Top":"Bot",ab.playerName,ab.playerPos,ab.side==="home"?activeGame.homeName:activeGame.awayName,ab.outcome,ab.zone||"",ab.rbi,new Date(ab.ts).toLocaleTimeString()]);
+  });
+
+  downloadCSV(rows,sanitiseFilename(activeGame.name)+"_boxscore_"+new Date().toISOString().slice(0,10)+".csv");
+  showToast("📥 Box score exported!");
+}
+
+// ── Game List ─────────────────────────────────────────────────────────────────
+function renderGameList(){
+  loadGames();var list=document.getElementById("game-list");var clearBtn=document.getElementById("clear-all-games-btn");
+  if(!list)return;list.innerHTML="";clearBtn.style.display=games.length>0?"block":"none";
+  if(games.length===0){var em=document.createElement("div");em.className="empty-sessions";em.textContent="No saved games yet. Tap '+ New Game' to get started.";list.appendChild(em);return;}
+  games.slice().reverse().forEach(function(game){
+    var card=document.createElement("div");card.className="session-card softball-game";
+    var top=document.createElement("div");top.className="session-card-top";
+    var nm=document.createElement("div");nm.className="session-card-name";nm.textContent=game.name;top.appendChild(nm);
+    var dt=document.createElement("div");dt.className="session-card-date";dt.textContent=new Date(game.created).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"});top.appendChild(dt);card.appendChild(top);
+    var meta=document.createElement("div");meta.className="session-card-meta";
+    meta.textContent=game.homeName+" vs "+game.awayName+" · "+game.homeRuns+"-"+game.awayRuns+" · "+game.atBats.length+" at-bats"+(game.finished?" · Final":"");card.appendChild(meta);
+    var btns=document.createElement("div");btns.className="session-card-btns";
+    var openBtn=document.createElement("button");openBtn.className="scb-open softball";openBtn.textContent="▶ Open";
+    (function(g){openBtn.addEventListener("click",function(){activeGame=JSON.parse(JSON.stringify(g));saveActiveGame();launchSoftballGame();});})(game);btns.appendChild(openBtn);
+    var expBtn=document.createElement("button");expBtn.className="scb-export";expBtn.textContent="📥 Export";
+    (function(g){expBtn.addEventListener("click",function(){var tmp=activeGame;activeGame=g;exportBoxScore();activeGame=tmp;});})(game);btns.appendChild(expBtn);
+    var delBtn=document.createElement("button");delBtn.className="scb-delete";delBtn.textContent="🗑 Delete";
+    (function(g){delBtn.addEventListener("click",function(){openDeleteGame(g.id,g.name);});})(game);btns.appendChild(delBtn);
+    card.appendChild(btns);list.appendChild(card);
+  });
+}
+
+// ── End Game ──────────────────────────────────────────────────────────────────
+function openEndGame(){document.getElementById("end-game-wrap").classList.add("open");}
+function closeEndGame(){document.getElementById("end-game-wrap").classList.remove("open");}
+function endGame(){
+  if(!activeGame)return;
+  activeGame.finished=true;activeGame.lastModified=new Date().toISOString();
+  var idx=-1;for(var i=0;i<games.length;i++){if(games[i].id===activeGame.id){idx=i;break;}}
+  if(idx>=0)games[idx]=JSON.parse(JSON.stringify(activeGame));else games.push(JSON.parse(JSON.stringify(activeGame)));
+  saveGames();activeGame=null;saveActiveGame();closeEndGame();goSoftballGames();showToast("✅ Game saved.");
+}
+
+function openDeleteGame(id,name){gameToDelete=id;document.getElementById("delete-game-msg").textContent="This will permanently delete \""+name+"\" and all its data.";document.getElementById("delete-game-wrap").classList.add("open");}
+function closeDeleteGame(){document.getElementById("delete-game-wrap").classList.remove("open");gameToDelete=null;}
+function doDeleteGame(){if(!gameToDelete)return;games=games.filter(function(g){return g.id!==gameToDelete;});saveGames();closeDeleteGame();renderGameList();showToast("🗑 Game deleted.");}
+function openClearAllGames(){document.getElementById("clear-games-wrap").classList.add("open");}
+function closeClearAllGames(){document.getElementById("clear-games-wrap").classList.remove("open");}
+function doClearAllGames(){games=[];saveGames();closeClearAllGames();renderGameList();showToast("🗑 All games cleared.");}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// SHARED MODAL
+// ══════════════════════════════════════════════════════════════════════════════
+var modalMode="mlb";
+function openModal(name,mode){
+  modalMode=mode||"mlb";
+  var entries=mode==="mlb"?(mlbData[name]||[]):(activeSession?activeSession.data[name]||[]:[]);
+  var tc=mode==="mlb"?mlbGetTeamColors(name):{c1:getCusItemColour(name),c2:adjustColour(getCusItemColour(name))};
+  var hd=document.getElementById("modal-hd");hd.style.background=tc.c1;hd.style.color=textOn(tc.c1);
+  document.getElementById("modal-title").textContent="📋 "+name;
+  var bd=document.getElementById("modal-bd");bd.innerHTML="";
+  if(entries.length===0){var em=document.createElement("div");em.className="empty";em.textContent="No entries logged yet.";bd.appendChild(em);}
+  else{
+    var info=document.createElement("p");info.textContent=entries.length+" entr"+(entries.length!==1?"ies":"y")+" logged:";bd.appendChild(info);
+    entries.slice().reverse().forEach(function(ts,ri){
+      var realIdx=entries.length-1-ri;
+      var fmt=new Date(ts).toLocaleString(undefined,{year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit"});
+      var row=document.createElement("div");row.className="log-row";
+      var span=document.createElement("span");span.className="log-ts";span.textContent="#"+(realIdx+1)+"  "+fmt;row.appendChild(span);
+      var del=document.createElement("button");del.className="del";del.textContent="🗑";
+      (function(n,i,m){del.addEventListener("click",function(){if(m==="mlb")mlbDeleteEntry(n,i);else cusDeleteEntry(n,i);});})(name,realIdx,mode);
+      row.appendChild(del);bd.appendChild(row);
+    });
+  }
+  document.getElementById("log-overlay").classList.add("open");
+}
+function closeModal(){document.getElementById("log-overlay").classList.remove("open");}
+function handleOverlayClick(e){if(e.target===document.getElementById("log-overlay"))closeModal();}
+
+// ══════════════════════════════════════════════════════════════════════════════
 // EXPOSE GLOBALS
 // ══════════════════════════════════════════════════════════════════════════════
 window.goHome=goHome;window.goMLB=goMLB;window.goCustomSessions=goCustomSessions;window.goNewSession=goNewSession;
+window.goSoftballGames=goSoftballGames;window.goNewGame=goNewGame;
 window.mlbSwitchTab=mlbSwitchTab;window.mlbExportCSV=mlbExportCSV;window.mlbTriggerImport=mlbTriggerImport;
 window.mlbToggleSort=mlbToggleSort;window.mlbOpenConfirm=mlbOpenConfirm;window.mlbCloseConfirm=mlbCloseConfirm;
-window.mlbDoReset=mlbDoReset;window.mlbConfirmImport=mlbConfirmImport;window.mlbCloseImport=mlbCloseImport;
-window.mlbSetLogFilter=mlbSetLogFilter;
+window.mlbDoReset=mlbDoReset;window.mlbConfirmImport=mlbConfirmImport;window.mlbCloseImport=mlbCloseImport;window.mlbSetLogFilter=mlbSetLogFilter;
 window.cusSwitchTab=cusSwitchTab;window.cusExportCSV=cusExportCSV;window.cusToggleSort=cusToggleSort;
 window.cusOpenConfirm=cusOpenConfirm;window.cusCloseConfirm=cusCloseConfirm;window.cusDoReset=cusDoReset;
-window.cusSetLogFilter=cusSetLogFilter;window.openEndSession=openEndSession;window.closeEndSession=closeEndSession;
-window.endSession=endSession;window.closeDeleteSession=closeDeleteSession;window.doDeleteSession=doDeleteSession;
-window.openClearAllSessions=openClearAllSessions;window.closeClearAllSessions=closeClearAllSessions;
-window.doClearAllSessions=doClearAllSessions;window.addItem=addItem;window.startSession=startSession;
-window.handleItemKeydown=handleItemKeydown;window.closeModal=closeModal;window.handleOverlayClick=handleOverlayClick;
+window.cusSetLogFilter=cusSetLogFilter;window.openEndSession=openEndSession;window.closeEndSession=closeEndSession;window.endSession=endSession;
+window.closeDeleteSession=closeDeleteSession;window.doDeleteSession=doDeleteSession;
+window.openClearAllSessions=openClearAllSessions;window.closeClearAllSessions=closeClearAllSessions;window.doClearAllSessions=doClearAllSessions;
+window.addItem=addItem;window.startSession=startSession;window.handleItemKeydown=handleItemKeydown;
+window.sfSwitchTab=sfSwitchTab;window.openEndInning=openEndInning;window.closeEndInning=closeEndInning;window.confirmEndInning=confirmEndInning;
+window.openEndGame=openEndGame;window.closeEndGame=closeEndGame;window.endGame=endGame;
+window.openClearAllGames=openClearAllGames;window.closeClearAllGames=closeClearAllGames;window.doClearAllGames=doClearAllGames;
+window.closeDeleteGame=closeDeleteGame;window.doDeleteGame=doDeleteGame;
+window.addHomePlayer=addHomePlayer;window.addAwayPlayer=addAwayPlayer;window.startGame=startGame;
+window.handleHomePlayerKeydown=handleHomePlayerKeydown;window.handleAwayPlayerKeydown=handleAwayPlayerKeydown;
+window.closeModal=closeModal;window.handleOverlayClick=handleOverlayClick;
 
 // ══════════════════════════════════════════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════════════════════════════════════════
 function init(){
   document.getElementById("hdate").textContent=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
-  mlbLoad();
-  loadSessions();
-  loadActiveSession();
-  // If there was an active session when app was last closed, resume it
-  if(activeSession){
-    launchCustomSession();
-  } else {
-    showScreen("screen-home");
-  }
+  mlbLoad();loadSessions();loadActiveSession();loadGames();loadActiveGame();
+  if(activeGame){launchSoftballGame();}
+  else if(activeSession){launchCustomSession();}
+  else{showScreen("screen-home");}
 }
 
 if(document.readyState==="complete"||document.readyState==="interactive"){init();}
