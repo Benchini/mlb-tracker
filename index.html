@@ -1267,13 +1267,28 @@ function openEndInning(){
   if(!activeGame)return;
   var half=activeGame.currentHalf==="top"?"Top":"Bottom";
   document.getElementById("runs-modal-title").textContent=half+" of Inning "+activeGame.currentInning;
-  document.getElementById("runs-modal-desc").textContent="How many runs scored this half-inning?";
+
+  // ── Calculate RBIs logged this half-inning ────────────────────────────────
+  var halfRBI=0;
+  activeGame.atBats.forEach(function(ab){
+    if(ab.inning===activeGame.currentInning&&ab.half===activeGame.currentHalf){
+      halfRBI+=ab.rbi;
+    }
+  });
+
+  // ── Updated description with RBI reference ────────────────────────────────
+  document.getElementById("runs-modal-desc").textContent=
+    "How many runs scored this half-inning? "
+    +"("+halfRBI+" RBI recorded this half-inning)";
+
   // Build runs grid
   var grid=document.getElementById("runs-grid");grid.innerHTML="";
   pendingInningRuns=0;
   for(var i=0;i<=9;i++){
     (function(n){
-      var btn=document.createElement("button");btn.className="runs-btn"+(pendingInningRuns===n?" selected":"");btn.textContent=n;
+      var btn=document.createElement("button");
+      btn.className="runs-btn"+(pendingInningRuns===n?" selected":"");
+      btn.textContent=n;
       btn.addEventListener("click",function(){
         pendingInningRuns=n;
         document.querySelectorAll(".runs-btn").forEach(function(b){b.classList.remove("selected");});
@@ -1283,8 +1298,7 @@ function openEndInning(){
     })(i);
   }
   document.getElementById("runs-modal-wrap").classList.add("open");
-}
-function closeEndInning(){document.getElementById("runs-modal-wrap").classList.remove("open");}
+}function closeEndInning(){document.getElementById("runs-modal-wrap").classList.remove("open");}
 function confirmEndInning(){
   if(!activeGame)return;
   var battingTeam=activeGame.currentHalf==="top"?"away":"home";
